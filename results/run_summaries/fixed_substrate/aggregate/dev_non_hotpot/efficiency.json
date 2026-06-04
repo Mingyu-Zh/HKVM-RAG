@@ -1,0 +1,80 @@
+{
+  "datasets": {
+    "2wiki": {
+      "bm25": {
+        "latency_seconds_mean": 0.0002484151669123526,
+        "latency_seconds_std": 1.5677769693932457e-06,
+        "avg_retrieval_tokens_mean": 424.535941475827,
+        "avg_retrieval_tokens_std": 0.0
+      },
+      "kg_ppr": {
+        "latency_seconds_mean": 0.0005133355933708985,
+        "latency_seconds_std": 6.791048870789927e-06,
+        "avg_retrieval_tokens_mean": 392.48807251908397,
+        "avg_retrieval_tokens_std": 0.0
+      },
+      "hyper_rag": {
+        "latency_seconds_mean": 0.00013138740131680074,
+        "latency_seconds_std": 7.048270292877084e-06,
+        "avg_retrieval_tokens_mean": 382.90084287531806,
+        "avg_retrieval_tokens_std": 0.0
+      },
+      "static_hg": {
+        "latency_seconds_mean": 0.0001395078383816299,
+        "latency_seconds_std": 4.99430405717708e-06,
+        "avg_retrieval_tokens_mean": 396.0418256997456,
+        "avg_retrieval_tokens_std": 0.0
+      },
+      "weighted_kg_ppr": {
+        "latency_seconds_mean": 0.0005357898020191602,
+        "latency_seconds_std": 9.708970244378903e-06,
+        "avg_retrieval_tokens_mean": 392.4610368956743,
+        "avg_retrieval_tokens_std": 0.0
+      },
+      "weighted_hg_kv": {
+        "latency_seconds_mean": 0.00015711588866945393,
+        "latency_seconds_std": 5.6828963215381555e-06,
+        "avg_retrieval_tokens_mean": 393.89917302798983,
+        "avg_retrieval_tokens_std": 0.0
+      }
+    },
+    "musique": {
+      "bm25": {
+        "latency_seconds_mean": 0.0005899430246029058,
+        "latency_seconds_std": 8.21587483669914e-06,
+        "avg_retrieval_tokens_mean": 475.0368225072404,
+        "avg_retrieval_tokens_std": 0.0
+      },
+      "kg_ppr": {
+        "latency_seconds_mean": 0.001216182134628225,
+        "latency_seconds_std": 2.1358413979800558e-05,
+        "avg_retrieval_tokens_mean": 426.50351675630947,
+        "avg_retrieval_tokens_std": 0.0
+      },
+      "hyper_rag": {
+        "latency_seconds_mean": 0.00029080832544883757,
+        "latency_seconds_std": 1.3928388398170708e-05,
+        "avg_retrieval_tokens_mean": 428.3711212246587,
+        "avg_retrieval_tokens_std": 0.0
+      },
+      "static_hg": {
+        "latency_seconds_mean": 0.00029658097659478254,
+        "latency_seconds_std": 1.0708430255880562e-05,
+        "avg_retrieval_tokens_mean": 415.48696731485313,
+        "avg_retrieval_tokens_std": 0.0
+      },
+      "weighted_kg_ppr": {
+        "latency_seconds_mean": 0.0012594509370565422,
+        "latency_seconds_std": 4.554860227010451e-05,
+        "avg_retrieval_tokens_mean": 426.69549027720313,
+        "avg_retrieval_tokens_std": 0.0
+      },
+      "weighted_hg_kv": {
+        "latency_seconds_mean": 0.0003298828797678202,
+        "latency_seconds_std": 7.160586261268528e-06,
+        "avg_retrieval_tokens_mean": 411.095159288374,
+        "avg_retrieval_tokens_std": 0.0
+      }
+    }
+  }
+}

@@ -1,0 +1,70 @@
+{
+  "safe_claims": [
+    {
+      "claim": "Phase1C learned base-feature MLP reranking improves over the Phase1B scorer on MuSiQue and 2Wiki.",
+      "status": "supported",
+      "evidence": [
+        {
+          "dataset": "musique",
+          "delta_f1": 2.1327117924139003,
+          "ci": [
+            "1.4790109167177847",
+            "2.7871285038227533"
+          ],
+          "all_seed_means_positive": "True"
+        },
+        {
+          "dataset": "2wiki",
+          "delta_f1": 1.1793596269511966,
+          "ci": [
+            "1.0407237270613825",
+            "1.317794250324759"
+          ],
+          "all_seed_means_positive": "True"
+        }
+      ]
+    },
+    {
+      "claim": "The paper-facing conservative candidate is mlp_base_only_topk_4.",
+      "status": "supported",
+      "evidence": {
+        "mainline_decision": "go_mainline_candidate",
+        "selected_feature_structure": "mlp_base_only: 20 base direct features + MLP nonlinear calibration",
+        "selected_policy": "topk_4"
+      }
+    },
+    {
+      "claim": "The observed Phase1C gain should be described as learned key/edge calibration, not as full structural-proxy feature success.",
+      "status": "supported_with_boundary",
+      "evidence": {
+        "safe": [
+          "learned base-feature edge/key calibration is robustly positive on completed Phase1C MuSiQue and 2Wiki validation runs",
+          "mlp_base_only_topk_4 is the conservative cross-dataset candidate"
+        ],
+        "unsafe": [
+          "full Phase1C structural/proxy feature bundle drives the gain",
+          "complement selection is the main QA policy",
+          "current validation artifact is a hidden-test benchmark claim"
+        ]
+      }
+    }
+  ],
+  "unsafe_claims": [
+    {
+      "claim": "The full Phase1C structural/proxy feature bundle drives the gain.",
+      "reason": "MuSiQue validation found mlp_base_only stronger than mlp_full_phase1c; structural/proxy features mainly improved support recall."
+    },
+    {
+      "claim": "The result is a hidden-test benchmark claim.",
+      "reason": "All artifacts are train-to-dev validation over existing cache outputs."
+    },
+    {
+      "claim": "Complement selection is the main QA policy.",
+      "reason": "Complement is useful diagnostically but 2Wiki F1 favors topk_4 and the policy lacks a learned ordering objective."
+    }
+  ],
+  "evidence_sources": {
+    "mainline_manifest": "{REMOTE_RUN_ROOT}/phase1c_mainline_export_20260524/phase1c_mainline_manifest.json",
+    "bootstrap_manifest": "{REMOTE_RUN_ROOT}/phase1c_paired_bootstrap_20260524/phase1c_paired_bootstrap_manifest.json"
+  }
+}

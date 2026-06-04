@@ -1,0 +1,12 @@
+{
+  "datasets": {
+    "hotpotqa": {
+      "contriever": {
+        "latency_seconds_mean": 0.02691766245604222,
+        "latency_seconds_std": 0.0033339513490759213,
+        "avg_retrieval_tokens_mean": 400.7443619176232,
+        "avg_retrieval_tokens_std": 0.0
+      }
+    }
+  }
+}

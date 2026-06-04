@@ -1,0 +1,85 @@
+{
+  "safe_claims": [
+    {
+      "claim": "Adaptive dense+HKVM controller improves over ColBERTv2 on MuSiQue, 2Wiki, and HotpotQA under the train-to-dev protocol.",
+      "evidence": [
+        {
+          "ci": [
+            5.790957861107174,
+            7.726274984852882
+          ],
+          "dataset": "musique",
+          "delta_f1": 6.763367664995198,
+          "p_diff_le_0": 0.0
+        },
+        {
+          "ci": [
+            10.739534662208888,
+            11.436860955053916
+          ],
+          "dataset": "2wiki",
+          "delta_f1": 11.0835473918308,
+          "p_diff_le_0": 0.0
+        },
+        {
+          "ci": [
+            5.49103168302704,
+            6.452143377072066
+          ],
+          "dataset": "hotpotqa",
+          "delta_f1": 5.965954489391712,
+          "p_diff_le_0": 0.0
+        }
+      ],
+      "status": "supported"
+    },
+    {
+      "claim": "Adaptive dense+HKVM controller improves over learned HKVM calibration on MuSiQue, 2Wiki, and HotpotQA under the train-to-dev protocol.",
+      "evidence": [
+        {
+          "ci": [
+            7.327224397116886,
+            9.293333792182327
+          ],
+          "dataset": "musique",
+          "delta_f1": 8.319038774391789,
+          "p_diff_le_0": 0.0
+        },
+        {
+          "ci": [
+            0.3679902582574338,
+            0.5421354382470794
+          ],
+          "dataset": "2wiki",
+          "delta_f1": 0.45491916198023064,
+          "p_diff_le_0": 0.0
+        },
+        {
+          "ci": [
+            2.554894289129692,
+            3.201222820207591
+          ],
+          "dataset": "hotpotqa",
+          "delta_f1": 2.880863735496096,
+          "p_diff_le_0": 0.0
+        }
+      ],
+      "status": "supported"
+    },
+    {
+      "claim": "The paper should describe HKVM-RAG as a dense-aware key-value evidence controller, not only as a standalone structured retriever.",
+      "evidence": "Dense-only and HKVM-only controls do not fully explain the combined controller gain, while fixed-substrate HotpotQA blocks a standalone-retrieval overclaim.",
+      "status": "supported_with_boundary"
+    }
+  ],
+  "unsafe_claims": [
+    {
+      "claim": "The controller result proves broad dense retriever family generality.",
+      "reason": "ColBERTv2 is the primary paper-facing dense source; BM25 and Contriever are source-level diagnostics."
+    },
+    {
+      "claim": "Standalone WHG-KV is always stronger than dense retrieval.",
+      "reason": "HotpotQA fixed-substrate results show the opposite boundary for standalone answer F1."
+    }
+  ]
+}

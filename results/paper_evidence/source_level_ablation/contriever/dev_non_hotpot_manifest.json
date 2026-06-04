@@ -1,0 +1,238 @@
+{
+  "status": "completed",
+  "created_at": "2026-05-28T17:45:49Z",
+  "script": "tools/export_phase1d_source_level_ablation.py",
+  "run_root": "{REMOTE_RUN_ROOT}/phase1d_contriever_source_level_ablation_20260529",
+  "structured_train_root": "{REMOTE_RUN_ROOT}/phase1d_structured_train_predictions_20260528",
+  "dense_variant": "contriever",
+  "dense_label": "Contriever",
+  "source_only_variant": "phase1c_mlp_topk_4",
+  "output_prefix": "phase1d_contriever_source_level_ablation",
+  "datasets": [
+    "musique",
+    "2wiki"
+  ],
+  "sources": [
+    "hyper_rag",
+    "static_hg",
+    "weighted_kg_ppr",
+    "weighted_hg_kv"
+  ],
+  "seeds": [
+    13,
+    29,
+    43
+  ],
+  "metrics": [
+    "f1",
+    "em",
+    "all_recall@10",
+    "all_recall@5"
+  ],
+  "samples": 5000,
+  "alpha": 0.05,
+  "bootstrap_seed": 13,
+  "missing": [],
+  "llm_api_calls": 0,
+  "source_manifests": {
+    "musique/hyper_rag": {
+      "protocol": "train_to_dev",
+      "run_label": "phase1d_contriever_source_level_hyper_rag",
+      "structured_source_name": "hyper_rag",
+      "prediction_templates": {
+        "dense": {
+          "train": "{REMOTE_RUN_ROOT}/phase1d_input_prep_contriever_train_20260528/parallel_parts/{dataset}_seed_{seed}/runs/{dataset}/seed_{seed}/contriever.predictions.jsonl",
+          "dev": "{REMOTE_RUN_ROOT}/p1_contriever_only_dev_full_20260515/runs/{dataset}/seed_{seed}/contriever.predictions.jsonl"
+        },
+        "hkvm": {
+          "train": "{REMOTE_RUN_ROOT}/phase1d_structured_train_predictions_20260528/runs/{dataset}/seed_{seed}/hyper_rag.predictions.jsonl",
+          "dev": "{REMOTE_RUN_ROOT}/p2_deepseek_dev_full_20260516_factbridge/runs/{dataset}/seed_{seed}/hyper_rag.predictions.jsonl"
+        },
+        "bm25": {
+          "train": null,
+          "dev": null
+        }
+      },
+      "train_hkvm_stacking_risk": {
+        "requested": "no",
+        "may_have_in_sample_stacking_risk": false,
+        "note": "true means the HKVM train-side predictions may already reflect in-sample stacking or otherwise trained-on-train evidence features."
+      }
+    },
+    "musique/static_hg": {
+      "protocol": "train_to_dev",
+      "run_label": "phase1d_contriever_source_level_static_hg",
+      "structured_source_name": "static_hg",
+      "prediction_templates": {
+        "dense": {
+          "train": "{REMOTE_RUN_ROOT}/phase1d_input_prep_contriever_train_20260528/parallel_parts/{dataset}_seed_{seed}/runs/{dataset}/seed_{seed}/contriever.predictions.jsonl",
+          "dev": "{REMOTE_RUN_ROOT}/p1_contriever_only_dev_full_20260515/runs/{dataset}/seed_{seed}/contriever.predictions.jsonl"
+        },
+        "hkvm": {
+          "train": "{REMOTE_RUN_ROOT}/phase1d_structured_train_predictions_20260528/runs/{dataset}/seed_{seed}/static_hg.predictions.jsonl",
+          "dev": "{REMOTE_RUN_ROOT}/p2_deepseek_dev_full_20260516_factbridge/runs/{dataset}/seed_{seed}/static_hg.predictions.jsonl"
+        },
+        "bm25": {
+          "train": null,
+          "dev": null
+        }
+      },
+      "train_hkvm_stacking_risk": {
+        "requested": "no",
+        "may_have_in_sample_stacking_risk": false,
+        "note": "true means the HKVM train-side predictions may already reflect in-sample stacking or otherwise trained-on-train evidence features."
+      }
+    },
+    "musique/weighted_kg_ppr": {
+      "protocol": "train_to_dev",
+      "run_label": "phase1d_contriever_source_level_weighted_kg_ppr",
+      "structured_source_name": "weighted_kg_ppr",
+      "prediction_templates": {
+        "dense": {
+          "train": "{REMOTE_RUN_ROOT}/phase1d_input_prep_contriever_train_20260528/parallel_parts/{dataset}_seed_{seed}/runs/{dataset}/seed_{seed}/contriever.predictions.jsonl",
+          "dev": "{REMOTE_RUN_ROOT}/p1_contriever_only_dev_full_20260515/runs/{dataset}/seed_{seed}/contriever.predictions.jsonl"
+        },
+        "hkvm": {
+          "train": "{REMOTE_RUN_ROOT}/phase1d_structured_train_predictions_20260528/runs/{dataset}/seed_{seed}/weighted_kg_ppr.predictions.jsonl",
+          "dev": "{REMOTE_RUN_ROOT}/p2_deepseek_dev_full_20260516_factbridge/runs/{dataset}/seed_{seed}/weighted_kg_ppr.predictions.jsonl"
+        },
+        "bm25": {
+          "train": null,
+          "dev": null
+        }
+      },
+      "train_hkvm_stacking_risk": {
+        "requested": "no",
+        "may_have_in_sample_stacking_risk": false,
+        "note": "true means the HKVM train-side predictions may already reflect in-sample stacking or otherwise trained-on-train evidence features."
+      }
+    },
+    "musique/weighted_hg_kv": {
+      "protocol": "train_to_dev",
+      "run_label": "phase1d_contriever_source_level_weighted_hg_kv",
+      "structured_source_name": "weighted_hg_kv",
+      "prediction_templates": {
+        "dense": {
+          "train": "{REMOTE_RUN_ROOT}/phase1d_input_prep_contriever_train_20260528/parallel_parts/{dataset}_seed_{seed}/runs/{dataset}/seed_{seed}/contriever.predictions.jsonl",
+          "dev": "{REMOTE_RUN_ROOT}/p1_contriever_only_dev_full_20260515/runs/{dataset}/seed_{seed}/contriever.predictions.jsonl"
+        },
+        "hkvm": {
+          "train": "{REMOTE_RUN_ROOT}/phase1d_hkvm_train_oof_20260525/{dataset}/seed_{seed}/runs/{dataset}/seed_{seed}/train_oof/mlp_base_only_topk_4/weighted_hg_kv.predictions.jsonl",
+          "dev": "{REMOTE_RUN_ROOT}/phase1c_validation_musique10k_20260523/mlp_base_only/seed_{seed}/runs/musique/seed_{seed}/train_to_dev/mlp_base_only_topk_4/weighted_hg_kv.predictions.jsonl"
+        },
+        "bm25": {
+          "train": null,
+          "dev": null
+        }
+      },
+      "train_hkvm_stacking_risk": {
+        "requested": "no",
+        "may_have_in_sample_stacking_risk": false,
+        "note": "true means the HKVM train-side predictions may already reflect in-sample stacking or otherwise trained-on-train evidence features."
+      }
+    },
+    "2wiki/hyper_rag": {
+      "protocol": "train_to_dev",
+      "run_label": "phase1d_contriever_source_level_hyper_rag",
+      "structured_source_name": "hyper_rag",
+      "prediction_templates": {
+        "dense": {
+          "train": "{REMOTE_RUN_ROOT}/phase1d_input_prep_contriever_train_20260528/parallel_parts/{dataset}_seed_{seed}/runs/{dataset}/seed_{seed}/contriever.predictions.jsonl",
+          "dev": "{REMOTE_RUN_ROOT}/p1_contriever_only_dev_full_20260515/runs/{dataset}/seed_{seed}/contriever.predictions.jsonl"
+        },
+        "hkvm": {
+          "train": "{REMOTE_RUN_ROOT}/phase1d_structured_train_predictions_20260528/runs/{dataset}/seed_{seed}/hyper_rag.predictions.jsonl",
+          "dev": "{REMOTE_RUN_ROOT}/p2_deepseek_dev_full_20260516_factbridge/runs/{dataset}/seed_{seed}/hyper_rag.predictions.jsonl"
+        },
+        "bm25": {
+          "train": null,
+          "dev": null
+        }
+      },
+      "train_hkvm_stacking_risk": {
+        "requested": "no",
+        "may_have_in_sample_stacking_risk": false,
+        "note": "true means the HKVM train-side predictions may already reflect in-sample stacking or otherwise trained-on-train evidence features."
+      }
+    },
+    "2wiki/static_hg": {
+      "protocol": "train_to_dev",
+      "run_label": "phase1d_contriever_source_level_static_hg",
+      "structured_source_name": "static_hg",
+      "prediction_templates": {
+        "dense": {
+          "train": "{REMOTE_RUN_ROOT}/phase1d_input_prep_contriever_train_20260528/parallel_parts/{dataset}_seed_{seed}/runs/{dataset}/seed_{seed}/contriever.predictions.jsonl",
+          "dev": "{REMOTE_RUN_ROOT}/p1_contriever_only_dev_full_20260515/runs/{dataset}/seed_{seed}/contriever.predictions.jsonl"
+        },
+        "hkvm": {
+          "train": "{REMOTE_RUN_ROOT}/phase1d_structured_train_predictions_20260528/runs/{dataset}/seed_{seed}/static_hg.predictions.jsonl",
+          "dev": "{REMOTE_RUN_ROOT}/p2_deepseek_dev_full_20260516_factbridge/runs/{dataset}/seed_{seed}/static_hg.predictions.jsonl"
+        },
+        "bm25": {
+          "train": null,
+          "dev": null
+        }
+      },
+      "train_hkvm_stacking_risk": {
+        "requested": "no",
+        "may_have_in_sample_stacking_risk": false,
+        "note": "true means the HKVM train-side predictions may already reflect in-sample stacking or otherwise trained-on-train evidence features."
+      }
+    },
+    "2wiki/weighted_kg_ppr": {
+      "protocol": "train_to_dev",
+      "run_label": "phase1d_contriever_source_level_weighted_kg_ppr",
+      "structured_source_name": "weighted_kg_ppr",
+      "prediction_templates": {
+        "dense": {
+          "train": "{REMOTE_RUN_ROOT}/phase1d_input_prep_contriever_train_20260528/parallel_parts/{dataset}_seed_{seed}/runs/{dataset}/seed_{seed}/contriever.predictions.jsonl",
+          "dev": "{REMOTE_RUN_ROOT}/p1_contriever_only_dev_full_20260515/runs/{dataset}/seed_{seed}/contriever.predictions.jsonl"
+        },
+        "hkvm": {
+          "train": "{REMOTE_RUN_ROOT}/phase1d_structured_train_predictions_20260528/runs/{dataset}/seed_{seed}/weighted_kg_ppr.predictions.jsonl",
+          "dev": "{REMOTE_RUN_ROOT}/p2_deepseek_dev_full_20260516_factbridge/runs/{dataset}/seed_{seed}/weighted_kg_ppr.predictions.jsonl"
+        },
+        "bm25": {
+          "train": null,
+          "dev": null
+        }
+      },
+      "train_hkvm_stacking_risk": {
+        "requested": "no",
+        "may_have_in_sample_stacking_risk": false,
+        "note": "true means the HKVM train-side predictions may already reflect in-sample stacking or otherwise trained-on-train evidence features."
+      }
+    },
+    "2wiki/weighted_hg_kv": {
+      "protocol": "train_to_dev",
+      "run_label": "phase1d_contriever_source_level_weighted_hg_kv",
+      "structured_source_name": "weighted_hg_kv",
+      "prediction_templates": {
+        "dense": {
+          "train": "{REMOTE_RUN_ROOT}/phase1d_input_prep_contriever_train_20260528/parallel_parts/{dataset}_seed_{seed}/runs/{dataset}/seed_{seed}/contriever.predictions.jsonl",
+          "dev": "{REMOTE_RUN_ROOT}/p1_contriever_only_dev_full_20260515/runs/{dataset}/seed_{seed}/contriever.predictions.jsonl"
+        },
+        "hkvm": {
+          "train": "{REMOTE_RUN_ROOT}/phase1d_hkvm_train_oof_20260525/{dataset}/seed_{seed}/runs/{dataset}/seed_{seed}/train_oof/mlp_base_only_topk_4/weighted_hg_kv.predictions.jsonl",
+          "dev": "{REMOTE_RUN_ROOT}/phase1c_validation_2wiki10k_20260524/mlp_base_only/seed_{seed}/runs/2wiki/seed_{seed}/train_to_dev/mlp_base_only_topk_4/weighted_hg_kv.predictions.jsonl"
+        },
+        "bm25": {
+          "train": null,
+          "dev": null
+        }
+      },
+      "train_hkvm_stacking_risk": {
+        "requested": "no",
+        "may_have_in_sample_stacking_risk": false,
+        "note": "true means the HKVM train-side predictions may already reflect in-sample stacking or otherwise trained-on-train evidence features."
+      }
+    }
+  },
+  "outputs": {
+    "table_csv": "{REMOTE_RUN_ROOT}/phase1d_contriever_source_level_ablation_20260529/paper_export/phase1d_contriever_source_level_ablation_table.csv",
+    "table_md": "{REMOTE_RUN_ROOT}/phase1d_contriever_source_level_ablation_20260529/paper_export/phase1d_contriever_source_level_ablation_table.md",
+    "bootstrap_csv": "{REMOTE_RUN_ROOT}/phase1d_contriever_source_level_ablation_20260529/paper_export/phase1d_contriever_source_level_ablation_bootstrap.csv",
+    "claim_evidence_map": "{REMOTE_RUN_ROOT}/phase1d_contriever_source_level_ablation_20260529/paper_export/phase1d_contriever_source_level_ablation_claim_evidence_map.json"
+  },
+  "note": "Reads saved predictions only; no retrieval, extraction, controller training, or LLM calls in export."
+}

@@ -1,0 +1,171 @@
+{
+  "status": "completed",
+  "started_at": "2026-05-18T08:10:34Z",
+  "ended_at": "2026-05-18T08:33:45Z",
+  "host": "user-Z790-AORUS-ELITE-AX-DDR4",
+  "platform": "Linux-6.17.0-23-generic-x86_64-with-glibc2.39",
+  "python": "3.11.15 | packaged by conda-forge | (main, Mar  5 2026, 16:45:40) [GCC 14.3.0]",
+  "executable": "{REMOTE_HKVM_PYTHON}",
+  "cwd": "{REMOTE_CODE_ROOT}",
+  "argv": [
+    "run.py",
+    "--config",
+    "config.icde_hotpotqa_dense_full.yaml",
+    "--datasets",
+    "hotpotqa",
+    "--methods",
+    "colbertv2",
+    "--runs",
+    "3",
+    "--output_dir",
+    "{REMOTE_RUN_ROOT}/icde2027_hotpotqa_colbertv2_full_20260518"
+  ],
+  "conda_default_env": null,
+  "output_dir": "{REMOTE_RUN_ROOT}/icde2027_hotpotqa_colbertv2_full_20260518",
+  "config_hash": "b928b15c9b180665c61760df",
+  "extractor_config_hash": "1bfcdf9808f7a8d8f34121f9",
+  "hyperedge_mode": {
+    "cooccurrence_hg": false,
+    "answer_path_hg": true,
+    "low_order_only": false,
+    "high_order_only": false,
+    "all_hyperedges": false,
+    "gold_hyperedges": false,
+    "llm_extracted_hyperedges": false,
+    "random_hyperedges": false,
+    "diffusion_steps_1": true,
+    "diffusion_steps_2": false
+  },
+  "code": {
+    "root": "{REMOTE_CODE_ROOT}",
+    "files": {
+      "config.icde_hotpotqa_dense_full.yaml": "f67b42a5c0f92e272fe2892baddb3c758679e07e029bd9799585010524037b3d",
+      "config.p2_deepseek.yaml": "aa5ba62bf8374e68a80c0d5858cfeeddb74a137749e3c0ae0b2f498d0119eb1c",
+      "config.p2_deepseek_fast.yaml": "9375737c78c2491566e789c767bdfe7667cf7ee5d5e4ef9b94638bb5c57c61fe",
+      "config.p2_deepseek_fast_c16.yaml": "6220aefd0b568cebf1f5c4edfdb5ea2535f6fc73f1f4a9a9c4a4fd8e9c312b9d",
+      "config.p2_deepseek_fast_c32.yaml": "ec06f0526096e67cd0af8a3313671e2aa77064a1d25b1de533b5546538255624",
+      "config.p2_deepseek_fast_c48.yaml": "a2c6a3eb98d4e3747d47fb69422b775e7c976c7c52f19b63cd19234bfc9981fd",
+      "config.p2_deepseek_fast_c8.yaml": "5e5dc20990fb94857af2bac9c61b4414cbcd9cc78e7765ac8e9fe90ab8b3bb46",
+      "config.p2_deepseek_fast_current_weights.yaml": "332d18183b8e5db75bf095200936970d5e266eefc846e2a09cb7127e50235fcc",
+      "config.p2_deepseek_fast_run_c48.yaml": "903f47cacbcb5a1372730bf67d11aa5eed16106746f17594e668872c430f310b",
+      "config.p2_deepseek_fast_run_c48_factbridge.yaml": "5f3aff88837f02fd518f751e01998eb9aa7c880ae760b063dd78cc4fd5380f4c",
+      "config.p2_deepseek_hotpotqa_full.yaml": "fca2e3819065c2598e4570e810a2ec0724c3347cf6d462612fa9b6f9474bf785",
+      "config.p2_deepseek_hotpotqa_full_resume.yaml": "7336f441d402f30edd95443ec4fb9dc64d9830c12ab312fe10c6e6e6352b78fb",
+      "config.p2_deepseek_hotpotqa_smoke.yaml": "90aa990cb927a2ede954d8d77c476df1ca6f97f188deca09dc3e9e75aa95cb88",
+      "config.yaml": "5504610d45115d3fa71bbf6ac704b91e39aae39a08dfd45411fe9d60ad227120",
+      "experiment.py": "2dca3911e8fd3dd896fb77811e0c0f05546f04b56f0cb96f6fdc0841b7b97e10",
+      "hkvm_mvp/__init__.py": "d171dec6b9b2bdd2282b13308f9d8396b6e21fe3e3bad42f4529e6f8c98701b2",
+      "hkvm_mvp/config.py": "332f926ae541f00e1c034d4e6aebbfe32b112bc39af06988ee5c744c37a6eb2d",
+      "hkvm_mvp/data.py": "2fdd082dfbcf978a276ec158015be1dc8783d1d5609fe1b8defb1f6a2ef8809d",
+      "hkvm_mvp/extraction.py": "17a269e61a6d5c87c82af75f138f1dacbddbf5b352cb8de65bb0735a24e599f1",
+      "hkvm_mvp/generation.py": "a4b0f86be4eb9b0cb150324c42f6478db25e86d97ab9027ec4061a3124e74bca",
+      "hkvm_mvp/llm_openie.py": "473869f79a20cc85c5c5d059cea00a76fbc0958d7ffea1183e2311bb38ebb563",
+      "hkvm_mvp/methods.py": "ea73bd488cff3421e9f0039dcb63278f65b32ee1060e6d447e109165772c1301",
+      "hkvm_mvp/metrics.py": "6fde4467327fd81df959d490793901db20a6586c57b1685c9a064281d82e4e87",
+      "hkvm_mvp/plotting.py": "21a8c2fd2c777e332b712e69b685d3e7e45a59ddce4eefca122dcd68005d25f2",
+      "hkvm_mvp/reproducibility.py": "2276d7c8c4e37e78bd318eeca35dea0c526abd3deb9960a3b569860340831977",
+      "hkvm_mvp/retrieval.py": "7c5bcc938703484cc10841e830c70103869837bd3ad5250522a6a605fd0758fb",
+      "hkvm_mvp/runner.py": "d51f040896a6ccce648ac4c026e12469a280cb2cf7143ab6771787d663044022",
+      "hkvm_mvp/schema.py": "e1491609afeb539afb4226c5dbf3a22f5483ba1774aadf561697f630bc125fc8",
+      "hkvm_mvp/utils.py": "5c5e12d54161703a5c553453e473bfb401ebc75dfc8230c4ca5a742cc7736a41",
+      "plot.py": "28c1f12f3110ff1b13f16f6009ae16688032e6eb888bbf2b6231c6d51cef7197",
+      "run.py": "a16c4efc0982c5ed9ab6d406eea4d995ae8eb0ce1b124385c6078f6763e69721"
+    },
+    "hash": "a22e0262e42467e19a1cf6be"
+  },
+  "selection": {
+    "datasets": [
+      "hotpotqa"
+    ],
+    "methods": [
+      "colbertv2"
+    ],
+    "seeds": [
+      13,
+      29,
+      43
+    ],
+    "args": {
+      "config": "config.icde_hotpotqa_dense_full.yaml",
+      "datasets": "hotpotqa",
+      "methods": "colbertv2",
+      "runs": 3,
+      "limit": null,
+      "output_dir": "{REMOTE_RUN_ROOT}/icde2027_hotpotqa_colbertv2_full_20260518"
+    }
+  },
+  "datasets": {
+    "hotpotqa": {
+      "dataset": "hotpotqa",
+      "loader": "jsonl",
+      "path": "{REMOTE_DATA_ROOT}/hotpotqa/dev_distractor.jsonl",
+      "hf_name": null,
+      "hf_config": null,
+      "split": "validation",
+      "answerable_only": false,
+      "limit": null,
+      "file_size_bytes": 46443803,
+      "file_sha256": "1772669b450f5bbf03eb4b84cae40ece2bde2c9b82751593689ddefd74bdd9e3"
+    }
+  },
+  "outputs": {
+    "summary": "{REMOTE_RUN_ROOT}/icde2027_hotpotqa_colbertv2_full_20260518/summary.json",
+    "summary_csv": "{REMOTE_RUN_ROOT}/icde2027_hotpotqa_colbertv2_full_20260518/summary.csv",
+    "go_no_go": "{REMOTE_RUN_ROOT}/icde2027_hotpotqa_colbertv2_full_20260518/go_no_go.json",
+    "bootstrap": "{REMOTE_RUN_ROOT}/icde2027_hotpotqa_colbertv2_full_20260518/bootstrap.json",
+    "efficiency": "{REMOTE_RUN_ROOT}/icde2027_hotpotqa_colbertv2_full_20260518/efficiency.json",
+    "extraction_audit": "{REMOTE_RUN_ROOT}/icde2027_hotpotqa_colbertv2_full_20260518/extraction_audit.json"
+  },
+  "go_no_go": {
+    "passed_all": false,
+    "checks": [
+      {
+        "dataset": "hotpotqa",
+        "status": "missing_method"
+      }
+    ]
+  },
+  "efficiency": {
+    "datasets": {
+      "hotpotqa": {
+        "colbertv2": {
+          "latency_seconds_mean": 0.06168876522269512,
+          "latency_seconds_std": 0.02607414053683776,
+          "avg_retrieval_tokens_mean": 438.21404456448346,
+          "avg_retrieval_tokens_std": 0.0
+        }
+      }
+    }
+  },
+  "bootstrap": {
+    "enabled": true,
+    "samples": 1000,
+    "alpha": 0.05,
+    "comparisons": [
+      {
+        "dataset": "hotpotqa",
+        "reference": "kg_ppr",
+        "candidate": "weighted_hg_kv",
+        "missing": [
+          "hotpotqa/seed_13",
+          "hotpotqa/seed_29",
+          "hotpotqa/seed_43"
+        ],
+        "metrics": {
+          "all_recall@10": {
+            "n": 0
+          },
+          "all_recall@5": {
+            "n": 0
+          },
+          "f1": {
+            "n": 0
+          },
+          "em": {
+            "n": 0
+          }
+        }
+      }
+    ]
+  }
+}

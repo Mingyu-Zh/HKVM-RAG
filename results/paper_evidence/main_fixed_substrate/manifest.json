@@ -1,0 +1,49 @@
+{
+  "created_at": "2026-05-18T08:51:20Z",
+  "method_order": [
+    "bm25",
+    "contriever",
+    "colbertv2",
+    "kg_ppr",
+    "weighted_kg_ppr",
+    "hyper_rag",
+    "static_hg",
+    "weighted_hg_kv"
+  ],
+  "metrics": [
+    "all_recall@5",
+    "all_recall@10",
+    "f1",
+    "em",
+    "answer_support_rate",
+    "latency_seconds",
+    "avg_retrieval_tokens"
+  ],
+  "missing": [],
+  "outputs": {
+    "merged_manifest": "{REMOTE_RUN_ROOT}/icde2027_p3_unified_export_20260518/merged_manifest.json",
+    "paired_bootstrap": "{REMOTE_RUN_ROOT}/icde2027_p3_unified_export_20260518/paired_bootstrap.json",
+    "pruning_curve_csv": "{REMOTE_RUN_ROOT}/icde2027_p3_unified_export_20260518/pruning_curve.csv",
+    "t2_ablation_csv": "{REMOTE_RUN_ROOT}/icde2027_p3_unified_export_20260518/t2_ablation.csv",
+    "table_main_csv": "{REMOTE_RUN_ROOT}/icde2027_p3_unified_export_20260518/table_main.csv",
+    "unified_summary": "{REMOTE_RUN_ROOT}/icde2027_p3_unified_export_20260518/unified_summary.json"
+  },
+  "sources": {
+    "2wiki": {
+      "colbertv2": "{REMOTE_RUN_ROOT}/p1_colbertv2_only_dev_full_20260515",
+      "contriever": "{REMOTE_RUN_ROOT}/p1_contriever_only_dev_full_20260515",
+      "structured": "{REMOTE_RUN_ROOT}/p2_deepseek_dev_full_20260516_factbridge"
+    },
+    "hotpotqa": {
+      "colbertv2": "{REMOTE_RUN_ROOT}/icde2027_hotpotqa_colbertv2_full_20260518",
+      "contriever": "{REMOTE_RUN_ROOT}/icde2027_hotpotqa_contriever_full_20260518",
+      "structured": "{REMOTE_RUN_ROOT}/icde2027_hotpotqa_structured_3seed_20260518"
+    },
+    "musique": {
+      "colbertv2": "{REMOTE_RUN_ROOT}/p1_colbertv2_only_dev_full_20260515",
+      "contriever": "{REMOTE_RUN_ROOT}/p1_contriever_only_dev_full_20260515",
+      "structured": "{REMOTE_RUN_ROOT}/p2_deepseek_dev_full_20260516_factbridge"
+    }
+  },
+  "status": "completed"
+}

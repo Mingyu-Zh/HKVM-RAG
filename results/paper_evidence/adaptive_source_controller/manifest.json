@@ -1,0 +1,47 @@
+{
+  "bootstrap_manifest_json": "{REMOTE_RUN_ROOT}/phase1d_oof_paired_bootstrap_20260525/phase1d_paired_bootstrap_manifest.json",
+  "bootstrap_source": "summary",
+  "bootstrap_summary_csv": "{REMOTE_RUN_ROOT}/phase1d_oof_paired_bootstrap_20260525/phase1d_paired_bootstrap_summary.csv",
+  "candidate_variant": "controller_dense_hkvm",
+  "created_at": "2026-05-25T11:46:55Z",
+  "datasets": [
+    "musique",
+    "2wiki",
+    "hotpotqa"
+  ],
+  "learned_hkvm_reference_variant": "calibrated_hkvm_topk4",
+  "llm_api_calls": 0,
+  "methods": [
+    "colbertv2",
+    "calibrated_hkvm_topk4",
+    "quota_dense3_hkvm2",
+    "quota_dense4_hkvm1",
+    "rrf_dense_hkvm",
+    "rrf_dense_hkvm_bm25",
+    "controller_dense_only",
+    "controller_hkvm_only",
+    "controller_dense_hkvm"
+  ],
+  "metrics": [
+    "f1",
+    "em",
+    "all_recall@10",
+    "all_recall@5"
+  ],
+  "outputs": {
+    "claim_evidence_map_json": "{REMOTE_RUN_ROOT}/phase1d_oof_paper_table_export_20260525/phase1d_claim_evidence_map.json",
+    "manifest_json": "{REMOTE_RUN_ROOT}/phase1d_oof_paper_table_export_20260525/phase1d_paper_table_manifest.json",
+    "narrative_contract_md": "{REMOTE_RUN_ROOT}/phase1d_oof_paper_table_export_20260525/phase1d_result_narrative_contract.md",
+    "paper_table_csv": "{REMOTE_RUN_ROOT}/phase1d_oof_paper_table_export_20260525/phase1d_paper_table.csv",
+    "paper_table_md": "{REMOTE_RUN_ROOT}/phase1d_oof_paper_table_export_20260525/phase1d_paper_table.md"
+  },
+  "run_root": "{REMOTE_RUN_ROOT}/phase1d_train_to_dev_oof_hkvm_lr001_20260525",
+  "script": "artifact semantic reorganization: adaptive_source_controller paper evidence rebuilt from run_summaries and bootstrap summary",
+  "source_paths_after_reorg": {
+    "paired_bootstrap_summary_csv": "results/paper_evidence/adaptive_source_controller/paired_bootstrap/summary.csv",
+    "run_summaries": "results/run_summaries/adaptive_source_controller/",
+    "table_csv": "results/paper_evidence/adaptive_source_controller/table.csv"
+  },
+  "status": "completed",
+  "updated_at": "2026-06-04T11:37:04.546542+00:00"
+}

@@ -1,0 +1,319 @@
+{
+  "status": "completed",
+  "started_at": "2026-05-16T08:59:58Z",
+  "ended_at": "2026-05-16T11:44:32Z",
+  "host": "user-Z790-AORUS-ELITE-AX-DDR4",
+  "platform": "Linux-6.17.0-23-generic-x86_64-with-glibc2.39",
+  "python": "3.11.15 | packaged by conda-forge | (main, Mar  5 2026, 16:45:40) [GCC 14.3.0]",
+  "executable": "{REMOTE_HKVM_PYTHON}",
+  "cwd": "{REMOTE_CODE_ROOT}",
+  "argv": [
+    "run.py",
+    "--config",
+    "config.p2_deepseek_fast.yaml",
+    "--datasets",
+    "2wiki,musique",
+    "--methods",
+    "bm25,kg_ppr,hyper_rag,static_hg,weighted_kg_ppr,weighted_hg_kv",
+    "--runs",
+    "3",
+    "--output_dir",
+    "{REMOTE_RUN_ROOT}/p2_deepseek_dev_full_20260516_factbridge"
+  ],
+  "conda_default_env": null,
+  "output_dir": "{REMOTE_RUN_ROOT}/p2_deepseek_dev_full_20260516_factbridge",
+  "config_hash": "be7eab6b38acd091b473a0c6",
+  "extractor_config_hash": "ed5f1edab1d0bd8464cf4a3b",
+  "hyperedge_mode": {
+    "cooccurrence_hg": false,
+    "answer_path_hg": true,
+    "low_order_only": false,
+    "high_order_only": false,
+    "all_hyperedges": false,
+    "gold_hyperedges": false,
+    "llm_extracted_hyperedges": false,
+    "random_hyperedges": false,
+    "diffusion_steps_1": true,
+    "diffusion_steps_2": false
+  },
+  "code": {
+    "root": "{REMOTE_CODE_ROOT}",
+    "files": {
+      "config.p2_deepseek.yaml": "aa5ba62bf8374e68a80c0d5858cfeeddb74a137749e3c0ae0b2f498d0119eb1c",
+      "config.p2_deepseek_fast.yaml": "9375737c78c2491566e789c767bdfe7667cf7ee5d5e4ef9b94638bb5c57c61fe",
+      "config.p2_deepseek_fast_c16.yaml": "6220aefd0b568cebf1f5c4edfdb5ea2535f6fc73f1f4a9a9c4a4fd8e9c312b9d",
+      "config.p2_deepseek_fast_c32.yaml": "ec06f0526096e67cd0af8a3313671e2aa77064a1d25b1de533b5546538255624",
+      "config.p2_deepseek_fast_c48.yaml": "a2c6a3eb98d4e3747d47fb69422b775e7c976c7c52f19b63cd19234bfc9981fd",
+      "config.p2_deepseek_fast_c8.yaml": "5e5dc20990fb94857af2bac9c61b4414cbcd9cc78e7765ac8e9fe90ab8b3bb46",
+      "config.p2_deepseek_fast_current_weights.yaml": "332d18183b8e5db75bf095200936970d5e266eefc846e2a09cb7127e50235fcc",
+      "config.p2_deepseek_fast_run_c48.yaml": "903f47cacbcb5a1372730bf67d11aa5eed16106746f17594e668872c430f310b",
+      "config.p2_deepseek_fast_run_c48_factbridge.yaml": "5f3aff88837f02fd518f751e01998eb9aa7c880ae760b063dd78cc4fd5380f4c",
+      "config.yaml": "5504610d45115d3fa71bbf6ac704b91e39aae39a08dfd45411fe9d60ad227120",
+      "experiment.py": "2dca3911e8fd3dd896fb77811e0c0f05546f04b56f0cb96f6fdc0841b7b97e10",
+      "hkvm_mvp/__init__.py": "d171dec6b9b2bdd2282b13308f9d8396b6e21fe3e3bad42f4529e6f8c98701b2",
+      "hkvm_mvp/config.py": "332f926ae541f00e1c034d4e6aebbfe32b112bc39af06988ee5c744c37a6eb2d",
+      "hkvm_mvp/data.py": "2fdd082dfbcf978a276ec158015be1dc8783d1d5609fe1b8defb1f6a2ef8809d",
+      "hkvm_mvp/extraction.py": "17a269e61a6d5c87c82af75f138f1dacbddbf5b352cb8de65bb0735a24e599f1",
+      "hkvm_mvp/generation.py": "a4b0f86be4eb9b0cb150324c42f6478db25e86d97ab9027ec4061a3124e74bca",
+      "hkvm_mvp/llm_openie.py": "8e17b6ce5532e9fff415dbf8a1f09c41756e37d4c33be90ff6931266799a882f",
+      "hkvm_mvp/methods.py": "ea73bd488cff3421e9f0039dcb63278f65b32ee1060e6d447e109165772c1301",
+      "hkvm_mvp/metrics.py": "6fde4467327fd81df959d490793901db20a6586c57b1685c9a064281d82e4e87",
+      "hkvm_mvp/plotting.py": "21a8c2fd2c777e332b712e69b685d3e7e45a59ddce4eefca122dcd68005d25f2",
+      "hkvm_mvp/reproducibility.py": "2276d7c8c4e37e78bd318eeca35dea0c526abd3deb9960a3b569860340831977",
+      "hkvm_mvp/retrieval.py": "7c5bcc938703484cc10841e830c70103869837bd3ad5250522a6a605fd0758fb",
+      "hkvm_mvp/runner.py": "d51f040896a6ccce648ac4c026e12469a280cb2cf7143ab6771787d663044022",
+      "hkvm_mvp/schema.py": "e1491609afeb539afb4226c5dbf3a22f5483ba1774aadf561697f630bc125fc8",
+      "hkvm_mvp/utils.py": "5c5e12d54161703a5c553453e473bfb401ebc75dfc8230c4ca5a742cc7736a41",
+      "plot.py": "28c1f12f3110ff1b13f16f6009ae16688032e6eb888bbf2b6231c6d51cef7197",
+      "run.py": "a16c4efc0982c5ed9ab6d406eea4d995ae8eb0ce1b124385c6078f6763e69721"
+    },
+    "hash": "dd2ad57ae3521f67cbe4fc5c"
+  },
+  "selection": {
+    "datasets": [
+      "2wiki",
+      "musique"
+    ],
+    "methods": [
+      "bm25",
+      "kg_ppr",
+      "hyper_rag",
+      "static_hg",
+      "weighted_kg_ppr",
+      "weighted_hg_kv"
+    ],
+    "seeds": [
+      13,
+      29,
+      43
+    ],
+    "args": {
+      "config": "config.p2_deepseek_fast.yaml",
+      "datasets": "2wiki,musique",
+      "methods": "bm25,kg_ppr,hyper_rag,static_hg,weighted_kg_ppr,weighted_hg_kv",
+      "runs": 3,
+      "limit": null,
+      "output_dir": "{REMOTE_RUN_ROOT}/p2_deepseek_dev_full_20260516_factbridge"
+    }
+  },
+  "datasets": {
+    "2wiki": {
+      "dataset": "2wiki",
+      "loader": "jsonl",
+      "path": "{REMOTE_DATA_ROOT}/2wiki/dev.jsonl",
+      "hf_name": null,
+      "hf_config": null,
+      "split": "validation",
+      "answerable_only": false,
+      "limit": null,
+      "file_size_bytes": 55934464,
+      "file_sha256": "48b9bdc69654dc580fda5f935a48b88cb89f11887587310af60d406c8d0111a6"
+    },
+    "musique": {
+      "dataset": "musique",
+      "loader": "jsonl",
+      "path": "{REMOTE_DATA_ROOT}/musique/dev.jsonl",
+      "hf_name": null,
+      "hf_config": null,
+      "split": "validation",
+      "answerable_only": true,
+      "limit": null,
+      "file_size_bytes": 59422562,
+      "file_sha256": "8cab31d56a3a1c4ef491b205a8dab3f1ac9c66e472098c6cf1de4e20294f7a4a"
+    }
+  },
+  "outputs": {
+    "summary": "{REMOTE_RUN_ROOT}/p2_deepseek_dev_full_20260516_factbridge/summary.json",
+    "summary_csv": "{REMOTE_RUN_ROOT}/p2_deepseek_dev_full_20260516_factbridge/summary.csv",
+    "go_no_go": "{REMOTE_RUN_ROOT}/p2_deepseek_dev_full_20260516_factbridge/go_no_go.json",
+    "bootstrap": "{REMOTE_RUN_ROOT}/p2_deepseek_dev_full_20260516_factbridge/bootstrap.json",
+    "efficiency": "{REMOTE_RUN_ROOT}/p2_deepseek_dev_full_20260516_factbridge/efficiency.json",
+    "extraction_audit": "{REMOTE_RUN_ROOT}/p2_deepseek_dev_full_20260516_factbridge/extraction_audit.json"
+  },
+  "go_no_go": {
+    "passed_all": true,
+    "checks": [
+      {
+        "dataset": "2wiki",
+        "ceiling_effect": true,
+        "ceiling_rule_used": true,
+        "all_recall@10_gain": 1.5426208651399378,
+        "all_recall@5_gain": 5.804707379134854,
+        "f1_gain": 3.4260938601138378,
+        "em_gain": 3.2919847328244174,
+        "latency_ratio": 0.3060685654733736,
+        "status": "go"
+      },
+      {
+        "dataset": "musique",
+        "ceiling_effect": false,
+        "ceiling_rule_used": false,
+        "all_recall@10_gain": 6.16466694249069,
+        "all_recall@5_gain": 4.716590815059989,
+        "f1_gain": 3.592423987541906,
+        "em_gain": 3.682250724038063,
+        "latency_ratio": 0.2712446354662677,
+        "status": "go"
+      }
+    ]
+  },
+  "efficiency": {
+    "datasets": {
+      "2wiki": {
+        "bm25": {
+          "latency_seconds_mean": 0.0002484151669123526,
+          "latency_seconds_std": 1.5677769693932457e-06,
+          "avg_retrieval_tokens_mean": 424.535941475827,
+          "avg_retrieval_tokens_std": 0.0
+        },
+        "kg_ppr": {
+          "latency_seconds_mean": 0.0005133355933708985,
+          "latency_seconds_std": 6.791048870789927e-06,
+          "avg_retrieval_tokens_mean": 392.48807251908397,
+          "avg_retrieval_tokens_std": 0.0
+        },
+        "hyper_rag": {
+          "latency_seconds_mean": 0.00013138740131680074,
+          "latency_seconds_std": 7.048270292877084e-06,
+          "avg_retrieval_tokens_mean": 382.90084287531806,
+          "avg_retrieval_tokens_std": 0.0
+        },
+        "static_hg": {
+          "latency_seconds_mean": 0.0001395078383816299,
+          "latency_seconds_std": 4.99430405717708e-06,
+          "avg_retrieval_tokens_mean": 396.0418256997456,
+          "avg_retrieval_tokens_std": 0.0
+        },
+        "weighted_kg_ppr": {
+          "latency_seconds_mean": 0.0005357898020191602,
+          "latency_seconds_std": 9.708970244378903e-06,
+          "avg_retrieval_tokens_mean": 392.4610368956743,
+          "avg_retrieval_tokens_std": 0.0
+        },
+        "weighted_hg_kv": {
+          "latency_seconds_mean": 0.00015711588866945393,
+          "latency_seconds_std": 5.6828963215381555e-06,
+          "avg_retrieval_tokens_mean": 393.89917302798983,
+          "avg_retrieval_tokens_std": 0.0
+        }
+      },
+      "musique": {
+        "bm25": {
+          "latency_seconds_mean": 0.0005899430246029058,
+          "latency_seconds_std": 8.21587483669914e-06,
+          "avg_retrieval_tokens_mean": 475.0368225072404,
+          "avg_retrieval_tokens_std": 0.0
+        },
+        "kg_ppr": {
+          "latency_seconds_mean": 0.001216182134628225,
+          "latency_seconds_std": 2.1358413979800558e-05,
+          "avg_retrieval_tokens_mean": 426.50351675630947,
+          "avg_retrieval_tokens_std": 0.0
+        },
+        "hyper_rag": {
+          "latency_seconds_mean": 0.00029080832544883757,
+          "latency_seconds_std": 1.3928388398170708e-05,
+          "avg_retrieval_tokens_mean": 428.3711212246587,
+          "avg_retrieval_tokens_std": 0.0
+        },
+        "static_hg": {
+          "latency_seconds_mean": 0.00029658097659478254,
+          "latency_seconds_std": 1.0708430255880562e-05,
+          "avg_retrieval_tokens_mean": 415.48696731485313,
+          "avg_retrieval_tokens_std": 0.0
+        },
+        "weighted_kg_ppr": {
+          "latency_seconds_mean": 0.0012594509370565422,
+          "latency_seconds_std": 4.554860227010451e-05,
+          "avg_retrieval_tokens_mean": 426.69549027720313,
+          "avg_retrieval_tokens_std": 0.0
+        },
+        "weighted_hg_kv": {
+          "latency_seconds_mean": 0.0003298828797678202,
+          "latency_seconds_std": 7.160586261268528e-06,
+          "avg_retrieval_tokens_mean": 411.095159288374,
+          "avg_retrieval_tokens_std": 0.0
+        }
+      }
+    }
+  },
+  "bootstrap": {
+    "enabled": true,
+    "samples": 1000,
+    "alpha": 0.05,
+    "comparisons": [
+      {
+        "dataset": "2wiki",
+        "reference": "kg_ppr",
+        "candidate": "weighted_hg_kv",
+        "missing": [],
+        "metrics": {
+          "all_recall@10": {
+            "n": 37728,
+            "mean_diff": 1.5426208651399491,
+            "ci_low": 1.423279792196777,
+            "ci_high": 1.6699135920271415,
+            "p_diff_le_0": 0.0
+          },
+          "all_recall@5": {
+            "n": 37728,
+            "mean_diff": 5.80470737913486,
+            "ci_low": 5.364583333333333,
+            "ci_high": 6.226277565733672,
+            "p_diff_le_0": 0.0
+          },
+          "f1": {
+            "n": 37728,
+            "mean_diff": 3.426093860113842,
+            "ci_low": 3.09252224764206,
+            "ci_high": 3.7369249227752466,
+            "p_diff_le_0": 0.0
+          },
+          "em": {
+            "n": 37728,
+            "mean_diff": 3.2919847328244276,
+            "ci_low": 2.957816475826972,
+            "ci_high": 3.6048160517387613,
+            "p_diff_le_0": 0.0
+          }
+        }
+      },
+      {
+        "dataset": "musique",
+        "reference": "kg_ppr",
+        "candidate": "weighted_hg_kv",
+        "missing": [],
+        "metrics": {
+          "all_recall@10": {
+            "n": 7251,
+            "mean_diff": 6.164666942490691,
+            "ci_low": 5.267894083574679,
+            "ci_high": 7.13005102744449,
+            "p_diff_le_0": 0.0
+          },
+          "all_recall@5": {
+            "n": 7251,
+            "mean_diff": 4.716590815059992,
+            "ci_low": 3.944283547096952,
+            "ci_high": 5.530271686663909,
+            "p_diff_le_0": 0.0
+          },
+          "f1": {
+            "n": 7251,
+            "mean_diff": 3.592423987541902,
+            "ci_low": 2.7319456964678315,
+            "ci_high": 4.474507081664716,
+            "p_diff_le_0": 0.0
+          },
+          "em": {
+            "n": 7251,
+            "mean_diff": 3.6822507240380635,
+            "ci_low": 2.7444490415115155,
+            "ci_high": 4.5928147841677,
+            "p_diff_le_0": 0.0
+          }
+        }
+      }
+    ]
+  }
+}

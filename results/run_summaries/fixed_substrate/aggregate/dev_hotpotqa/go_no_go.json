@@ -1,0 +1,16 @@
+{
+  "passed_all": false,
+  "checks": [
+    {
+      "dataset": "hotpotqa",
+      "ceiling_effect": true,
+      "ceiling_rule_used": true,
+      "all_recall@10_gain": 2.8089128966914245,
+      "all_recall@5_gain": -5.820391627278866,
+      "f1_gain": -0.6889869546253635,
+      "em_gain": -0.7292370020256556,
+      "latency_ratio": 0.3594131481308826,
+      "status": "no_go"
+    }
+  ]
+}

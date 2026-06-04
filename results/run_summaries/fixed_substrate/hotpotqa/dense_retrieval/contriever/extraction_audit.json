@@ -1,0 +1,31 @@
+{
+  "hotpotqa": {
+    "13": {
+      "skipped": true,
+      "reason": "No selected method requires OpenIE / graph / hypergraph artifacts.",
+      "methods": [
+        "contriever"
+      ],
+      "examples": 7405,
+      "passages": 73700
+    },
+    "29": {
+      "skipped": true,
+      "reason": "No selected method requires OpenIE / graph / hypergraph artifacts.",
+      "methods": [
+        "contriever"
+      ],
+      "examples": 7405,
+      "passages": 73700
+    },
+    "43": {
+      "skipped": true,
+      "reason": "No selected method requires OpenIE / graph / hypergraph artifacts.",
+      "methods": [
+        "contriever"
+      ],
+      "examples": 7405,
+      "passages": 73700
+    }
+  }
+}

@@ -1,0 +1,12 @@
+dataset,method,metric,mean,std
+hotpotqa,contriever,all_recall@10,100.0,0.0
+hotpotqa,contriever,all_recall@5,71.3301823092505,0.0
+hotpotqa,contriever,answer_support_rate,79.72991222147198,0.0
+hotpotqa,contriever,avg_retrieval_tokens,400.7443619176232,0.0
+hotpotqa,contriever,em,79.72991222147198,0.0
+hotpotqa,contriever,f1,79.93030391338371,0.0
+hotpotqa,contriever,gold_rank,1.3786630654962864,0.0
+hotpotqa,contriever,latency_seconds,0.02691766245604222,0.0033339513490759213
+hotpotqa,contriever,mrr,0.8848226209232286,0.0
+hotpotqa,contriever,recall@10,100.0,0.0
+hotpotqa,contriever,recall@5,84.8885887913572,0.0

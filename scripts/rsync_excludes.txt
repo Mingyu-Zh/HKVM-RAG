@@ -1,0 +1,17 @@
+__pycache__/
+*.pyc
+.DS_Store
+.codegraph/
+*.bak
+*.bak_*
+*.corrupt*
+notes.txt
+*_smoke*/
+*smoke*
+*_dryrun*/
+*dryrun*
+miniforge3/
+hf_cache/
+.env
+*.key
+*.pem

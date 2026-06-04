@@ -1,0 +1,3032 @@
+{
+  "artifact_release_manifest_version": "0.2",
+  "created_at": "2026-06-04T13:18:57.447137+00:00",
+  "root_name": "hkvm_rag_icde2027_artifact",
+  "raw_datasets_included": false,
+  "model_weights_included": false,
+  "secrets_included": false,
+  "summary": {
+    "other": {
+      "file_count": 28,
+      "size_bytes": 144699
+    },
+    "benchmark_data": {
+      "file_count": 9,
+      "size_bytes": 355293085
+    },
+    "llm_cache": {
+      "file_count": 13,
+      "size_bytes": 734269603
+    },
+    "data_documentation": {
+      "file_count": 1,
+      "size_bytes": 253
+    },
+    "documentation": {
+      "file_count": 4,
+      "size_bytes": 4987
+    },
+    "frozen_output": {
+      "file_count": 143,
+      "size_bytes": 1200203334
+    },
+    "result": {
+      "file_count": 296,
+      "size_bytes": 1538964
+    },
+    "packaging_script": {
+      "file_count": 4,
+      "size_bytes": 13338
+    }
+  },
+  "files": [
+    {
+      "path": ".env.example",
+      "sha256": "befd5fda16e67b80cf180cd64082184efc2db61589ed9a256cbf0a039b3132dd",
+      "size_bytes": 714,
+      "class": "other"
+    },
+    {
+      "path": ".gitignore",
+      "sha256": "6aeedadbfe0918dff9c877c037eb5f547f315e0d6ad79ca4985a28e1a3884d3b",
+      "size_bytes": 58,
+      "class": "other"
+    },
+    {
+      "path": "LICENSE",
+      "sha256": "044e2e65ac9d4c85e6c9f133c61c3ff103dbf2f0646a6994080e6316f6741ae2",
+      "size_bytes": 1074,
+      "class": "other"
+    },
+    {
+      "path": "NOTICE.md",
+      "sha256": "7d513032211e553c32b131db03f4ed0ab8191373c00ffd1e8cf33bffb240d389",
+      "size_bytes": 2629,
+      "class": "other"
+    },
+    {
+      "path": "README.md",
+      "sha256": "af1a73ee6947d3ee491686b92fd6e1cacfc6fd7adaf9f74c47131e86a6d39247",
+      "size_bytes": 3704,
+      "class": "other"
+    },
+    {
+      "path": "configs/fixed_substrate_2wiki.yaml",
+      "sha256": "44f647ce07bf0d5eb2f1c06dcc7827ffb024149f84f17c4adf1e2c6eccb171a0",
+      "size_bytes": 3166,
+      "class": "other"
+    },
+    {
+      "path": "configs/fixed_substrate_hotpotqa.yaml",
+      "sha256": "703d73db689079c63dac519774db2bd100d49d4fea775478d58cb413e7a237bb",
+      "size_bytes": 3338,
+      "class": "other"
+    },
+    {
+      "path": "configs/fixed_substrate_hotpotqa_dense.yaml",
+      "sha256": "149b169e687ecdc3a8140e15f3fa0638101c37bb58c50edd4a09236bd9923fc9",
+      "size_bytes": 2780,
+      "class": "other"
+    },
+    {
+      "path": "configs/fixed_substrate_hotpotqa_structured.yaml",
+      "sha256": "8abb7b894ef5e3ccdf3cfd84aa22e7b5464f55463336dfb5e0e8818584b2f362",
+      "size_bytes": 3374,
+      "class": "other"
+    },
+    {
+      "path": "configs/fixed_substrate_musique.yaml",
+      "sha256": "a09c28e3e490e8ea2f74ea8b84d71c841d5ac4bd44a421dde64b729dcc028a0d",
+      "size_bytes": 3223,
+      "class": "other"
+    },
+    {
+      "path": "configs/fixed_substrate_non_hotpot.yaml",
+      "sha256": "043420775e9b104f1bb3bcf1692e2b4d68bcd78bfd5cf152165cd27393d827f1",
+      "size_bytes": 3344,
+      "class": "other"
+    },
+    {
+      "path": "data/README.md",
+      "sha256": "3305476b582ca6cf5db8a84f333ec1fb6367779c2cbe1cbdaa3e63a176c88266",
+      "size_bytes": 1360,
+      "class": "other"
+    },
+    {
+      "path": "data/benchmarks/2wiki/dataset_manifest.json",
+      "sha256": "2dfc1600f0d13f3127639d42635fd429e2ae52f04fa22230fa994f1a23bcee98",
+      "size_bytes": 1359,
+      "class": "benchmark_data"
+    },
+    {
+      "path": "data/benchmarks/2wiki/dev.jsonl",
+      "sha256": "022d72d5653639bf01b3009ae3a0314977b90757a451fb3a171a89a112b85968",
+      "size_bytes": 55397807,
+      "class": "benchmark_data"
+    },
+    {
+      "path": "data/benchmarks/2wiki/train_10k.jsonl",
+      "sha256": "321003ea5cb6e8478b8e0a39a9a594d5448b36d0f810ff14cceb6a77cdc65ddf",
+      "size_bytes": 40535593,
+      "class": "benchmark_data"
+    },
+    {
+      "path": "data/benchmarks/hotpotqa/dataset_manifest.json",
+      "sha256": "7cbd2f839092c7b728452852a62459dd8785d708a071d760b297cdd886eb945b",
+      "size_bytes": 1424,
+      "class": "benchmark_data"
+    },
+    {
+      "path": "data/benchmarks/hotpotqa/dev_distractor.jsonl",
+      "sha256": "511f73786a47ba761f5f44b26d591634d7ebb2a78759437183d7b22c74b7b1c4",
+      "size_bytes": 46443803,
+      "class": "benchmark_data"
+    },
+    {
+      "path": "data/benchmarks/hotpotqa/train_10k.jsonl",
+      "sha256": "4558ed6afcdc0757eb36d70cace9343eb70a3e48f818f8478b5555f42ff2c4e4",
+      "size_bytes": 61960643,
+      "class": "benchmark_data"
+    },
+    {
+      "path": "data/benchmarks/musique/dataset_manifest.json",
+      "sha256": "4479e902266cb91576cf63e136c2a3f7ed1abbcfc9673228363f3d92196dcf04",
+      "size_bytes": 1406,
+      "class": "benchmark_data"
+    },
+    {
+      "path": "data/benchmarks/musique/dev_answerable.jsonl",
+      "sha256": "f75f55631fadf8164c68f69584f78fc223c73fb3ea8d44d3b947025234b00f3e",
+      "size_bytes": 30032392,
+      "class": "benchmark_data"
+    },
+    {
+      "path": "data/benchmarks/musique/train_10k.jsonl",
+      "sha256": "6ff4a1e5658fd967b33ac1b7f35158c3a4eda7c583e0bc5be92c0052a73dd3ae",
+      "size_bytes": 120918658,
+      "class": "benchmark_data"
+    },
+    {
+      "path": "data/llm_extraction_caches/deepseek_v4_openie/2wiki/dev/2wiki_dev.llm_openie.json",
+      "sha256": "c21def27a5bb683c26d12beb05e59be74195823966d5c6c908913bd03429cc2e",
+      "size_bytes": 194381809,
+      "class": "llm_cache"
+    },
+    {
+      "path": "data/llm_extraction_caches/deepseek_v4_openie/2wiki/dev/2wiki_dev.llm_openie.json.manifest.json",
+      "sha256": "a8ddb490c500e5e681bd5ec6cad5f20daedb0752cd356b9f6ce82686ae33e3d5",
+      "size_bytes": 1296,
+      "class": "llm_cache"
+    },
+    {
+      "path": "data/llm_extraction_caches/deepseek_v4_openie/2wiki/train_10k/2wiki_train_10k.llm_openie.json",
+      "sha256": "cb1dd479cc151df2599c99f8d3d64b165f922b54c352ca6914dd41bea340d922",
+      "size_bytes": 149427664,
+      "class": "llm_cache"
+    },
+    {
+      "path": "data/llm_extraction_caches/deepseek_v4_openie/2wiki/train_10k/2wiki_train_10k.llm_openie.json.manifest.json",
+      "sha256": "8b3853ea675ac96acf4594953894febb9814f46944a4a9f8458ad5d12947121c",
+      "size_bytes": 1398,
+      "class": "llm_cache"
+    },
+    {
+      "path": "data/llm_extraction_caches/deepseek_v4_openie/cache_index.json",
+      "sha256": "4575c059c85f23f16349512187697dd975e3db6bc82873815bbc4010b12d228b",
+      "size_bytes": 5341,
+      "class": "llm_cache"
+    },
+    {
+      "path": "data/llm_extraction_caches/deepseek_v4_openie/hotpotqa/dev_distractor/hotpotqa_dev_distractor.llm_openie.json",
+      "sha256": "723d6e7bd9a7883d0999b04603d07f726ccb879f283b86d1ca2a14ab0c2c51c8",
+      "size_bytes": 131177450,
+      "class": "llm_cache"
+    },
+    {
+      "path": "data/llm_extraction_caches/deepseek_v4_openie/hotpotqa/dev_distractor/hotpotqa_dev_distractor.llm_openie.json.manifest.json",
+      "sha256": "b600206392ba8425f768535f5eea0ce06d141430c8507f84ca11afe8582d8e24",
+      "size_bytes": 1325,
+      "class": "llm_cache"
+    },
+    {
+      "path": "data/llm_extraction_caches/deepseek_v4_openie/hotpotqa/train_10k/hotpotqa_train_10k.llm_openie.json",
+      "sha256": "c26ed7d6bb27ca54807fddb66276f04f92dde86e3947082a161bde46d9372b0b",
+      "size_bytes": 177186490,
+      "class": "llm_cache"
+    },
+    {
+      "path": "data/llm_extraction_caches/deepseek_v4_openie/hotpotqa/train_10k/hotpotqa_train_10k.llm_openie.json.manifest.json",
+      "sha256": "020ce059ba53666876dbc3ba96b737cfcdc2cbba101b211c2654f2969ffff247",
+      "size_bytes": 1410,
+      "class": "llm_cache"
+    },
+    {
+      "path": "data/llm_extraction_caches/deepseek_v4_openie/musique/dev_answerable/musique_dev_answerable.llm_openie.json",
+      "sha256": "f17dd4523c68d624bdb405f2db9cc8cc92880c644b72e56e134d3f5ce0d7b94c",
+      "size_bytes": 81797253,
+      "class": "llm_cache"
+    },
+    {
+      "path": "data/llm_extraction_caches/deepseek_v4_openie/musique/dev_answerable/musique_dev_answerable.llm_openie.json.manifest.json",
+      "sha256": "872c0d2392e10fc53804ad93d5ca18d065ad96e005dd9dc82539245d37ffe6ae",
+      "size_bytes": 1298,
+      "class": "llm_cache"
+    },
+    {
+      "path": "data/llm_extraction_caches/deepseek_v4_openie/musique/train_10k/musique_train_10k.llm_openie.json",
+      "sha256": "dd43f19796377b03d2bfd5370afff4c76041bac955ba204b44392ef51ac4a1e5",
+      "size_bytes": 285762,
+      "class": "llm_cache"
+    },
+    {
+      "path": "data/llm_extraction_caches/deepseek_v4_openie/musique/train_10k/musique_train_10k.llm_openie.json.manifest.json",
+      "sha256": "4623db1965681d72ea2bd3755babd5efb89079eefdeef338e3147706928f653c",
+      "size_bytes": 1107,
+      "class": "llm_cache"
+    },
+    {
+      "path": "data/upstream/README.md",
+      "sha256": "64952a4a91101a6eada831b4b6422dd82d89744bf93a6dcdecac0c94f092ccf6",
+      "size_bytes": 253,
+      "class": "data_documentation"
+    },
+    {
+      "path": "docs/AUDIT_SUMMARY.md",
+      "sha256": "ea4a1f2ea537e278d47d05a0533d985d6943ce7cde870d239d03e8e1c15018e0",
+      "size_bytes": 1531,
+      "class": "documentation"
+    },
+    {
+      "path": "docs/PACKAGE_CONTENTS.md",
+      "sha256": "d4a41d8f210937cfdabb53c58d8edb963e1d39f69d564f079ed80ef3381e9242",
+      "size_bytes": 1211,
+      "class": "documentation"
+    },
+    {
+      "path": "docs/PATH_PLACEHOLDERS.md",
+      "sha256": "2aa77d1b9eaaa24690a60af6c52ec1c08d85653e0d9f20ba99b9911afa9567dd",
+      "size_bytes": 714,
+      "class": "documentation"
+    },
+    {
+      "path": "docs/REPRODUCTION_NOTES.md",
+      "sha256": "587444fe7261a7a7561bb5da2e0d7cf6fc5348dc8bf3c9485fc7b6205f0cd96b",
+      "size_bytes": 1531,
+      "class": "documentation"
+    },
+    {
+      "path": "environment.yml",
+      "sha256": "1eb179ea230ec3f1bc8495bc14ed9b21239d997bd84ecc86b7576c2949f4d68d",
+      "size_bytes": 112,
+      "class": "other"
+    },
+    {
+      "path": "frozen_outputs/README.md",
+      "sha256": "ead17a16c617eac017bcee0fead7e27ca6a26c064d1d8bd7a220e9b5bad6af67",
+      "size_bytes": 556,
+      "class": "frozen_output"
+    },
+    {
+      "path": "frozen_outputs/manifests/frozen_output_index.json",
+      "sha256": "a5d92d2c0ee1f4fbcc76acb1f177ff772b9a7e2934d1717d623f8045770abb56",
+      "size_bytes": 80932,
+      "class": "frozen_output"
+    },
+    {
+      "path": "frozen_outputs/predictions/adaptive_source_controller/2wiki/seed_13/calibrated_hkvm_topk4.predictions.jsonl",
+      "sha256": "83444911caf849a5fcb955cda3896c006785183f74d185052d01d07204a5f5fb",
+      "size_bytes": 13731343,
+      "class": "frozen_output"
+    },
+    {
+      "path": "frozen_outputs/predictions/adaptive_source_controller/2wiki/seed_13/colbertv2.predictions.jsonl",
+      "sha256": "b8b3c88169a5ae102f29ff859439164921eef36aa751e8586101b82289a95404",
+      "size_bytes": 15079438,
+      "class": "frozen_output"
+    },
+    {
+      "path": "frozen_outputs/predictions/adaptive_source_controller/2wiki/seed_13/controller_dense_hkvm.predictions.jsonl",
+      "sha256": "de837fce03d9b2f8c4406a584bbdbfed68399d1c053eccacb6d5dfbf7f808656",
+      "size_bytes": 15314258,
+      "class": "frozen_output"
+    },
+    {
+      "path": "frozen_outputs/predictions/adaptive_source_controller/2wiki/seed_13/controller_dense_only.predictions.jsonl",
+      "sha256": "cbeec305ec49b084aca6599d550a584635262faff07b43e7361a4916ede089b6",
+      "size_bytes": 15389000,
+      "class": "frozen_output"
+    },
+    {
+      "path": "frozen_outputs/predictions/adaptive_source_controller/2wiki/seed_13/controller_hkvm_only.predictions.jsonl",
+      "sha256": "851039dffa0a9da9313f8e34be7657abc9b5110c5563adbf6b57598caf093aad",
+      "size_bytes": 15309933,
+      "class": "frozen_output"
+    },
+    {
+      "path": "frozen_outputs/predictions/adaptive_source_controller/2wiki/seed_13/quota_dense3_hkvm2.predictions.jsonl",
+      "sha256": "fbf4bdec35823a1faa8d290c508a4b64ab4b048c77af2de2a18472ab283a2ca1",
+      "size_bytes": 13420887,
+      "class": "frozen_output"
+    },
+    {
+      "path": "frozen_outputs/predictions/adaptive_source_controller/2wiki/seed_13/quota_dense4_hkvm1.predictions.jsonl",
+      "sha256": "fb5b1c248a52ec6a1f7d2253d4198822b1cd499ebe8afeeffabf31e16af4d442",
+      "size_bytes": 13424361,
+      "class": "frozen_output"
+    },
+    {
+      "path": "frozen_outputs/predictions/adaptive_source_controller/2wiki/seed_13/rrf_dense_hkvm.predictions.jsonl",
+      "sha256": "4b22fac6dfea0960f3259bdf93c32bb813ce41cb62ca0df84aa37f3815c4a329",
+      "size_bytes": 15370719,
+      "class": "frozen_output"
+    },
+    {
+      "path": "frozen_outputs/predictions/adaptive_source_controller/2wiki/seed_13/rrf_dense_hkvm_bm25.predictions.jsonl",
+      "sha256": "631779f2aa1dc158059429fe169466c9311984c4846b34117bd9092f832a5523",
+      "size_bytes": 15433599,
+      "class": "frozen_output"
+    },
+    {
+      "path": "frozen_outputs/predictions/adaptive_source_controller/2wiki/seed_29/calibrated_hkvm_topk4.predictions.jsonl",
+      "sha256": "eb153b26b7d7e845bf3d63f667c735c435cf0b656c84063f1cb40183f055ece8",
+      "size_bytes": 13755457,
+      "class": "frozen_output"
+    },
+    {
+      "path": "frozen_outputs/predictions/adaptive_source_controller/2wiki/seed_29/colbertv2.predictions.jsonl",
+      "sha256": "b8b3c88169a5ae102f29ff859439164921eef36aa751e8586101b82289a95404",
+      "size_bytes": 15079438,
+      "class": "frozen_output"
+    },
+    {
+      "path": "frozen_outputs/predictions/adaptive_source_controller/2wiki/seed_29/controller_dense_hkvm.predictions.jsonl",
+      "sha256": "67f411214a99e507134c2aebedc95b68d8358743d65333cb67f23050d0ed54eb",
+      "size_bytes": 15311989,
+      "class": "frozen_output"
+    },
+    {
+      "path": "frozen_outputs/predictions/adaptive_source_controller/2wiki/seed_29/controller_dense_only.predictions.jsonl",
+      "sha256": "f788612475702d2b10bfb6723af125cfe18e618a22c254e937326cae3c0e53fa",
+      "size_bytes": 15401963,
+      "class": "frozen_output"
+    },
+    {
+      "path": "frozen_outputs/predictions/adaptive_source_controller/2wiki/seed_29/controller_hkvm_only.predictions.jsonl",
+      "sha256": "e02646975f707341a33acf974f8accc83c47986279be7685bca01d37c15dc61b",
+      "size_bytes": 15307976,
+      "class": "frozen_output"
+    },
+    {
+      "path": "frozen_outputs/predictions/adaptive_source_controller/2wiki/seed_29/quota_dense3_hkvm2.predictions.jsonl",
+      "sha256": "0b328d7c807c0335a8f4729059c0453caea1f67407d898738c5715625a5a3715",
+      "size_bytes": 13421014,
+      "class": "frozen_output"
+    },
+    {
+      "path": "frozen_outputs/predictions/adaptive_source_controller/2wiki/seed_29/quota_dense4_hkvm1.predictions.jsonl",
+      "sha256": "bf2b1262c18eea312603dc5e0c55d24c2e23bb2d4885a5dd4b47b28eae3aa312",
+      "size_bytes": 13424349,
+      "class": "frozen_output"
+    },
+    {
+      "path": "frozen_outputs/predictions/adaptive_source_controller/2wiki/seed_29/rrf_dense_hkvm.predictions.jsonl",
+      "sha256": "23e82e6bc66318a34b76f0d9da2609234bebc9893ed6ae1131a56f2abe69c6a1",
+      "size_bytes": 15371216,
+      "class": "frozen_output"
+    },
+    {
+      "path": "frozen_outputs/predictions/adaptive_source_controller/2wiki/seed_29/rrf_dense_hkvm_bm25.predictions.jsonl",
+      "sha256": "ef25b62b6e79a3a58585221eebc248598e8fe21cf7f59e32485fec2ea58f048c",
+      "size_bytes": 15434096,
+      "class": "frozen_output"
+    },
+    {
+      "path": "frozen_outputs/predictions/adaptive_source_controller/2wiki/seed_43/calibrated_hkvm_topk4.predictions.jsonl",
+      "sha256": "b1b9f5cfd0e1bdbeb55b18fc4c2427d6db2b823558841be167f7dd2001344786",
+      "size_bytes": 13737634,
+      "class": "frozen_output"
+    },
+    {
+      "path": "frozen_outputs/predictions/adaptive_source_controller/2wiki/seed_43/colbertv2.predictions.jsonl",
+      "sha256": "b8b3c88169a5ae102f29ff859439164921eef36aa751e8586101b82289a95404",
+      "size_bytes": 15079438,
+      "class": "frozen_output"
+    },
+    {
+      "path": "frozen_outputs/predictions/adaptive_source_controller/2wiki/seed_43/controller_dense_hkvm.predictions.jsonl",
+      "sha256": "af3d75b8ee7c8cccdbaf21633f661e4d88e6d995d166b01ad24de26f788bfe79",
+      "size_bytes": 15328118,
+      "class": "frozen_output"
+    },
+    {
+      "path": "frozen_outputs/predictions/adaptive_source_controller/2wiki/seed_43/controller_dense_only.predictions.jsonl",
+      "sha256": "e11af73aa0dac2374b194e4226a1874d77ecd23c177a5ab16535887bff474638",
+      "size_bytes": 15400342,
+      "class": "frozen_output"
+    },
+    {
+      "path": "frozen_outputs/predictions/adaptive_source_controller/2wiki/seed_43/controller_hkvm_only.predictions.jsonl",
+      "sha256": "2af4759fc8b763ca75139561a6a8a61c0fcda6c5933fb683a7cbe490db3d862e",
+      "size_bytes": 15294668,
+      "class": "frozen_output"
+    },
+    {
+      "path": "frozen_outputs/predictions/adaptive_source_controller/2wiki/seed_43/quota_dense3_hkvm2.predictions.jsonl",
+      "sha256": "de5ea7bb899f176a9e92addf5ac7509812b30409bdfb36ff5d24141e26aa5fc8",
+      "size_bytes": 13420873,
+      "class": "frozen_output"
+    },
+    {
+      "path": "frozen_outputs/predictions/adaptive_source_controller/2wiki/seed_43/quota_dense4_hkvm1.predictions.jsonl",
+      "sha256": "9ddb45ce1cc082148b702c0cca159537988bd5a100162e87a1c9a942379e67ed",
+      "size_bytes": 13424392,
+      "class": "frozen_output"
+    },
+    {
+      "path": "frozen_outputs/predictions/adaptive_source_controller/2wiki/seed_43/rrf_dense_hkvm.predictions.jsonl",
+      "sha256": "c0526179fd1549c6dc18e05fcf1ddf4dc1e79743d6aa067be23cfcae11f11c9f",
+      "size_bytes": 15371096,
+      "class": "frozen_output"
+    },
+    {
+      "path": "frozen_outputs/predictions/adaptive_source_controller/2wiki/seed_43/rrf_dense_hkvm_bm25.predictions.jsonl",
+      "sha256": "9be3a19afcb81c456f14999f788470908dd62ae71882a5b8e74845be59aa9182",
+      "size_bytes": 15433976,
+      "class": "frozen_output"
+    },
+    {
+      "path": "frozen_outputs/predictions/adaptive_source_controller/hotpotqa/seed_13/calibrated_hkvm_topk4.predictions.jsonl",
+      "sha256": "00e32960d530aaacb1357a4ffccc9123cb7a92b8b66c3b15d0a00a01d9a52720",
+      "size_bytes": 8666701,
+      "class": "frozen_output"
+    },
+    {
+      "path": "frozen_outputs/predictions/adaptive_source_controller/hotpotqa/seed_13/colbertv2.predictions.jsonl",
+      "sha256": "87d7ff268209ae562dfc9f96f0436cef689aee82e75209bb32db6c995c9d7d86",
+      "size_bytes": 9054434,
+      "class": "frozen_output"
+    },
+    {
+      "path": "frozen_outputs/predictions/adaptive_source_controller/hotpotqa/seed_13/controller_dense_hkvm.predictions.jsonl",
+      "sha256": "79f44a6518bed15a4d2bbb5bb8287119994f20c14f617c8d6eb512a3aa7b22a2",
+      "size_bytes": 9215397,
+      "class": "frozen_output"
+    },
+    {
+      "path": "frozen_outputs/predictions/adaptive_source_controller/hotpotqa/seed_13/controller_dense_only.predictions.jsonl",
+      "sha256": "8a432c163569808bd8b2abf8ac1e7a980b1f1b462a4834073e9d0b1f646cbd89",
+      "size_bytes": 9226807,
+      "class": "frozen_output"
+    },
+    {
+      "path": "frozen_outputs/predictions/adaptive_source_controller/hotpotqa/seed_13/controller_hkvm_only.predictions.jsonl",
+      "sha256": "dd17f9f61021b17f635e15e6803f2ea4647e4f6251ebb57ea9c7a2941ba6c950",
+      "size_bytes": 9226651,
+      "class": "frozen_output"
+    },
+    {
+      "path": "frozen_outputs/predictions/adaptive_source_controller/hotpotqa/seed_13/quota_dense3_hkvm2.predictions.jsonl",
+      "sha256": "625985652d19b414ac3368157ec042f9e60302d1f025ae0de8636cac44f9ed29",
+      "size_bytes": 8067177,
+      "class": "frozen_output"
+    },
+    {
+      "path": "frozen_outputs/predictions/adaptive_source_controller/hotpotqa/seed_13/quota_dense4_hkvm1.predictions.jsonl",
+      "sha256": "4828ad9bfecd17cb39672cd77f0147589d414e1f0ac1ebf0120008c8880de1d8",
+      "size_bytes": 8067181,
+      "class": "frozen_output"
+    },
+    {
+      "path": "frozen_outputs/predictions/adaptive_source_controller/hotpotqa/seed_13/rrf_dense_hkvm.predictions.jsonl",
+      "sha256": "cc16f0fbdfa7296d03e0d1d332c9a436d8f2102f41002993c4e5389c8a16cfcb",
+      "size_bytes": 9230679,
+      "class": "frozen_output"
+    },
+    {
+      "path": "frozen_outputs/predictions/adaptive_source_controller/hotpotqa/seed_13/rrf_dense_hkvm_bm25.predictions.jsonl",
+      "sha256": "aaec0c3512ede5339ad821b57bc3c9a167264fcea9aeabaf7211592119e6ba1e",
+      "size_bytes": 9267704,
+      "class": "frozen_output"
+    },
+    {
+      "path": "frozen_outputs/predictions/adaptive_source_controller/hotpotqa/seed_29/calibrated_hkvm_topk4.predictions.jsonl",
+      "sha256": "1fa2f29038df0aab3b70ae2c3fb6fb666bb5d69b7c89ae2d5a174ec911848056",
+      "size_bytes": 8665468,
+      "class": "frozen_output"
+    },
+    {
+      "path": "frozen_outputs/predictions/adaptive_source_controller/hotpotqa/seed_29/colbertv2.predictions.jsonl",
+      "sha256": "87d7ff268209ae562dfc9f96f0436cef689aee82e75209bb32db6c995c9d7d86",
+      "size_bytes": 9054434,
+      "class": "frozen_output"
+    },
+    {
+      "path": "frozen_outputs/predictions/adaptive_source_controller/hotpotqa/seed_29/controller_dense_hkvm.predictions.jsonl",
+      "sha256": "cd280c89800a00985fc2f7e739e5c356783b3738e57edf000539408a70a41157",
+      "size_bytes": 9220172,
+      "class": "frozen_output"
+    },
+    {
+      "path": "frozen_outputs/predictions/adaptive_source_controller/hotpotqa/seed_29/controller_dense_only.predictions.jsonl",
+      "sha256": "06df11f330fbc7b25374d141df86d62c2fc333cd994667629a33ed2bceb03fae",
+      "size_bytes": 9228331,
+      "class": "frozen_output"
+    },
+    {
+      "path": "frozen_outputs/predictions/adaptive_source_controller/hotpotqa/seed_29/controller_hkvm_only.predictions.jsonl",
+      "sha256": "79aa011eaf3c621ef7d3fe90b56f8e30a318dfeed96403e56045daf0b4b4a99d",
+      "size_bytes": 9221200,
+      "class": "frozen_output"
+    },
+    {
+      "path": "frozen_outputs/predictions/adaptive_source_controller/hotpotqa/seed_29/quota_dense3_hkvm2.predictions.jsonl",
+      "sha256": "50fdd812245b590cee8ef0febc1f28bde22d32cfe732ccd68cd8394b05aa8a5c",
+      "size_bytes": 8067198,
+      "class": "frozen_output"
+    },
+    {
+      "path": "frozen_outputs/predictions/adaptive_source_controller/hotpotqa/seed_29/quota_dense4_hkvm1.predictions.jsonl",
+      "sha256": "39a94e385fb2b0d695f273f1f031323db8c6fef089d1f366dbb3cbafcefc17d2",
+      "size_bytes": 8067194,
+      "class": "frozen_output"
+    },
+    {
+      "path": "frozen_outputs/predictions/adaptive_source_controller/hotpotqa/seed_29/rrf_dense_hkvm.predictions.jsonl",
+      "sha256": "2649a0715aefb65fb9e5af4beff99c35d237a0d336dd9311a727f33b3047ba42",
+      "size_bytes": 9230771,
+      "class": "frozen_output"
+    },
+    {
+      "path": "frozen_outputs/predictions/adaptive_source_controller/hotpotqa/seed_29/rrf_dense_hkvm_bm25.predictions.jsonl",
+      "sha256": "5de120b243bfea4f51dcaa2d65311f3fdd5530707d920861bf61dcd35a3559c1",
+      "size_bytes": 9267796,
+      "class": "frozen_output"
+    },
+    {
+      "path": "frozen_outputs/predictions/adaptive_source_controller/hotpotqa/seed_43/calibrated_hkvm_topk4.predictions.jsonl",
+      "sha256": "6d81a72cb7306e7ac13c898e2c144ee3c09d539ecc26e101df81fcdbfc2d3d1d",
+      "size_bytes": 8666885,
+      "class": "frozen_output"
+    },
+    {
+      "path": "frozen_outputs/predictions/adaptive_source_controller/hotpotqa/seed_43/colbertv2.predictions.jsonl",
+      "sha256": "87d7ff268209ae562dfc9f96f0436cef689aee82e75209bb32db6c995c9d7d86",
+      "size_bytes": 9054434,
+      "class": "frozen_output"
+    },
+    {
+      "path": "frozen_outputs/predictions/adaptive_source_controller/hotpotqa/seed_43/controller_dense_hkvm.predictions.jsonl",
+      "sha256": "6f101a10401a76f91a46f7e0c5e02b58adfc4e2a071432a725239774c6dc553c",
+      "size_bytes": 9218202,
+      "class": "frozen_output"
+    },
+    {
+      "path": "frozen_outputs/predictions/adaptive_source_controller/hotpotqa/seed_43/controller_dense_only.predictions.jsonl",
+      "sha256": "d6bce3b7e58c77a35b708154e20981edbd673c7be62bb9912aff9e42d72997e6",
+      "size_bytes": 9227040,
+      "class": "frozen_output"
+    },
+    {
+      "path": "frozen_outputs/predictions/adaptive_source_controller/hotpotqa/seed_43/controller_hkvm_only.predictions.jsonl",
+      "sha256": "3aa1c9beb1ebb13882980eb34dcfd997c128925d7838edf30d12a616ab4e61b1",
+      "size_bytes": 9220422,
+      "class": "frozen_output"
+    },
+    {
+      "path": "frozen_outputs/predictions/adaptive_source_controller/hotpotqa/seed_43/quota_dense3_hkvm2.predictions.jsonl",
+      "sha256": "b5f25a41c0586d4bc6fb8fa84e91c839a97523fc90b764a51af4c6b836cc0535",
+      "size_bytes": 8067108,
+      "class": "frozen_output"
+    },
+    {
+      "path": "frozen_outputs/predictions/adaptive_source_controller/hotpotqa/seed_43/quota_dense4_hkvm1.predictions.jsonl",
+      "sha256": "b892c0857e553a2262bf49bb76ba92af56969dbb347ee072b049b41e75db6f89",
+      "size_bytes": 8067109,
+      "class": "frozen_output"
+    },
+    {
+      "path": "frozen_outputs/predictions/adaptive_source_controller/hotpotqa/seed_43/rrf_dense_hkvm.predictions.jsonl",
+      "sha256": "58ac7de0230dbe38994cdd05f75d6ac88bc147cb9e461517def8016dcc17da7b",
+      "size_bytes": 9230483,
+      "class": "frozen_output"
+    },
+    {
+      "path": "frozen_outputs/predictions/adaptive_source_controller/hotpotqa/seed_43/rrf_dense_hkvm_bm25.predictions.jsonl",
+      "sha256": "b67f130ebde0b5eeed67c32bea0636843ad494cb798ae5be8e5ea9e59f98d132",
+      "size_bytes": 9267508,
+      "class": "frozen_output"
+    },
+    {
+      "path": "frozen_outputs/predictions/adaptive_source_controller/musique/seed_13/calibrated_hkvm_topk4.predictions.jsonl",
+      "sha256": "0806ca4de4670c65e20e735ca95ae3ddf14d360f9dc4193b20d97e5527f3783a",
+      "size_bytes": 2109286,
+      "class": "frozen_output"
+    },
+    {
+      "path": "frozen_outputs/predictions/adaptive_source_controller/musique/seed_13/colbertv2.predictions.jsonl",
+      "sha256": "6daa38e780201f25433273e1216f8f9f984c86b8beea25b1bd8e659289f5d5a0",
+      "size_bytes": 2130188,
+      "class": "frozen_output"
+    },
+    {
+      "path": "frozen_outputs/predictions/adaptive_source_controller/musique/seed_13/controller_dense_hkvm.predictions.jsonl",
+      "sha256": "3d379542bb03f3d7a66b4d0a66c5d27314e034449f76ad24e7fa64267b9bfa69",
+      "size_bytes": 2179704,
+      "class": "frozen_output"
+    },
+    {
+      "path": "frozen_outputs/predictions/adaptive_source_controller/musique/seed_13/controller_dense_only.predictions.jsonl",
+      "sha256": "8eaca16c1dfd3e79ece7165d4b32df474ce2353a3220fc9f1df8227a5af716d8",
+      "size_bytes": 2181799,
+      "class": "frozen_output"
+    },
+    {
+      "path": "frozen_outputs/predictions/adaptive_source_controller/musique/seed_13/controller_hkvm_only.predictions.jsonl",
+      "sha256": "9e6f8563881bc927ae0078799ca65b84777e5b326e4e204f514616b1418b1adb",
+      "size_bytes": 2182002,
+      "class": "frozen_output"
+    },
+    {
+      "path": "frozen_outputs/predictions/adaptive_source_controller/musique/seed_13/quota_dense3_hkvm2.predictions.jsonl",
+      "sha256": "be78927f6c68b5eb6c08211b2f3a4fec1ba2fc416352850cee3f8cc7a45e5613",
+      "size_bytes": 1805210,
+      "class": "frozen_output"
+    },
+    {
+      "path": "frozen_outputs/predictions/adaptive_source_controller/musique/seed_13/quota_dense4_hkvm1.predictions.jsonl",
+      "sha256": "c19198d2733fe0cee86d2e3e1b6741201a61246d55ec1598ce8eaa45ccfc671f",
+      "size_bytes": 1805597,
+      "class": "frozen_output"
+    },
+    {
+      "path": "frozen_outputs/predictions/adaptive_source_controller/musique/seed_13/rrf_dense_hkvm.predictions.jsonl",
+      "sha256": "acf76a48db6f823af1a93b3cbef8d1dfdce73b316f5831338e81cb9d592fe290",
+      "size_bytes": 2172963,
+      "class": "frozen_output"
+    },
+    {
+      "path": "frozen_outputs/predictions/adaptive_source_controller/musique/seed_13/rrf_dense_hkvm_bm25.predictions.jsonl",
+      "sha256": "e3ce0c4f83362390be010a3279db647b0d0e02429ba9c45ff48a8abe9422f6f5",
+      "size_bytes": 2185048,
+      "class": "frozen_output"
+    },
+    {
+      "path": "frozen_outputs/predictions/adaptive_source_controller/musique/seed_29/calibrated_hkvm_topk4.predictions.jsonl",
+      "sha256": "e761b31b94d65a47d03b1dc7ae24533a697ec548693e27bc61749850e86ba66b",
+      "size_bytes": 2108969,
+      "class": "frozen_output"
+    },
+    {
+      "path": "frozen_outputs/predictions/adaptive_source_controller/musique/seed_29/colbertv2.predictions.jsonl",
+      "sha256": "6daa38e780201f25433273e1216f8f9f984c86b8beea25b1bd8e659289f5d5a0",
+      "size_bytes": 2130188,
+      "class": "frozen_output"
+    },
+    {
+      "path": "frozen_outputs/predictions/adaptive_source_controller/musique/seed_29/controller_dense_hkvm.predictions.jsonl",
+      "sha256": "42d42eb4cd5314e9f6a2b212a66336b9e96417fde3ff4efd18d4a98ec36167e7",
+      "size_bytes": 2181273,
+      "class": "frozen_output"
+    },
+    {
+      "path": "frozen_outputs/predictions/adaptive_source_controller/musique/seed_29/controller_dense_only.predictions.jsonl",
+      "sha256": "a83fb0fa87280b17e1315f6f80722d20877003606314800e37409926b165c759",
+      "size_bytes": 2192738,
+      "class": "frozen_output"
+    },
+    {
+      "path": "frozen_outputs/predictions/adaptive_source_controller/musique/seed_29/controller_hkvm_only.predictions.jsonl",
+      "sha256": "d63dcea292c22cc9d8776b7965e6de8e614ed854a27efd71c222ebbe2b91c051",
+      "size_bytes": 2191341,
+      "class": "frozen_output"
+    },
+    {
+      "path": "frozen_outputs/predictions/adaptive_source_controller/musique/seed_29/quota_dense3_hkvm2.predictions.jsonl",
+      "sha256": "33d3ac41654fdbb7ad10214da02b808e634ca55a11a9207fdd1b407dfc5b3f6d",
+      "size_bytes": 1805301,
+      "class": "frozen_output"
+    },
+    {
+      "path": "frozen_outputs/predictions/adaptive_source_controller/musique/seed_29/quota_dense4_hkvm1.predictions.jsonl",
+      "sha256": "023e6e3810d7866d4c6188919dcd8ac7e1d7b619014fc4bccb8c161ef92f71ff",
+      "size_bytes": 1805676,
+      "class": "frozen_output"
+    },
+    {
+      "path": "frozen_outputs/predictions/adaptive_source_controller/musique/seed_29/rrf_dense_hkvm.predictions.jsonl",
+      "sha256": "1ed04de15991a5c7025bce3d8606c66b4ef292783c176408ad88e18b21c8fe41",
+      "size_bytes": 2172744,
+      "class": "frozen_output"
+    },
+    {
+      "path": "frozen_outputs/predictions/adaptive_source_controller/musique/seed_29/rrf_dense_hkvm_bm25.predictions.jsonl",
+      "sha256": "47606b626e9d1728be68fc76d970b9bd9adb4fd7c3ebc7dd16dcc89373eeb3bb",
+      "size_bytes": 2184829,
+      "class": "frozen_output"
+    },
+    {
+      "path": "frozen_outputs/predictions/adaptive_source_controller/musique/seed_43/calibrated_hkvm_topk4.predictions.jsonl",
+      "sha256": "6243265a48c3008e9baa1697a11e4b3175ca395e2767b76ac0e5a2083688741c",
+      "size_bytes": 2108733,
+      "class": "frozen_output"
+    },
+    {
+      "path": "frozen_outputs/predictions/adaptive_source_controller/musique/seed_43/colbertv2.predictions.jsonl",
+      "sha256": "6daa38e780201f25433273e1216f8f9f984c86b8beea25b1bd8e659289f5d5a0",
+      "size_bytes": 2130188,
+      "class": "frozen_output"
+    },
+    {
+      "path": "frozen_outputs/predictions/adaptive_source_controller/musique/seed_43/controller_dense_hkvm.predictions.jsonl",
+      "sha256": "fbc6e09dc2d3fe61b5feb1ba21815cc728d873fc3fa4a88a309b7ca52802e52f",
+      "size_bytes": 2181468,
+      "class": "frozen_output"
+    },
+    {
+      "path": "frozen_outputs/predictions/adaptive_source_controller/musique/seed_43/controller_dense_only.predictions.jsonl",
+      "sha256": "d7fcc944ca83f4d6f8b19d50028bba98171f9625aa79d90c846cc01de67060f0",
+      "size_bytes": 2183891,
+      "class": "frozen_output"
+    },
+    {
+      "path": "frozen_outputs/predictions/adaptive_source_controller/musique/seed_43/controller_hkvm_only.predictions.jsonl",
+      "sha256": "d9ae95571ada2ee6cc3520dd6bdc79db5fbdbe22d5b7365c867ca5677170b693",
+      "size_bytes": 2189873,
+      "class": "frozen_output"
+    },
+    {
+      "path": "frozen_outputs/predictions/adaptive_source_controller/musique/seed_43/quota_dense3_hkvm2.predictions.jsonl",
+      "sha256": "9c3d04ec1fce02b7da3de4c1f3e892be93cfb97bdf91ab3c63bd2a3e82b722dd",
+      "size_bytes": 1805520,
+      "class": "frozen_output"
+    },
+    {
+      "path": "frozen_outputs/predictions/adaptive_source_controller/musique/seed_43/quota_dense4_hkvm1.predictions.jsonl",
+      "sha256": "d6689d72e460b3ae98993aa3a5a70e459f1da227f6d5c034204f7f1f1cbb4c09",
+      "size_bytes": 1805809,
+      "class": "frozen_output"
+    },
+    {
+      "path": "frozen_outputs/predictions/adaptive_source_controller/musique/seed_43/rrf_dense_hkvm.predictions.jsonl",
+      "sha256": "31ebd7d7972b25a68e5c2cb2591d2e10dbb6a98c47671b35c4db9fa991940de9",
+      "size_bytes": 2172629,
+      "class": "frozen_output"
+    },
+    {
+      "path": "frozen_outputs/predictions/adaptive_source_controller/musique/seed_43/rrf_dense_hkvm_bm25.predictions.jsonl",
+      "sha256": "58c8254d02ab6fdb151f1c03552cfa0ab0cc592c1ed5997ae8c544a217ddd702",
+      "size_bytes": 2184714,
+      "class": "frozen_output"
+    },
+    {
+      "path": "frozen_outputs/predictions/fixed_substrate/2wiki/seed_13/bm25.predictions.jsonl",
+      "sha256": "ce14680bb8539fe42a3186d88a6915630578a6d2ac867d81c1b44e3811f50f52",
+      "size_bytes": 14665229,
+      "class": "frozen_output"
+    },
+    {
+      "path": "frozen_outputs/predictions/fixed_substrate/2wiki/seed_13/hyper_rag.predictions.jsonl",
+      "sha256": "52e87d12fd5bbda0bd1452b22a4db56aafb43c905bd0e94874c0a49199fcfae0",
+      "size_bytes": 14067996,
+      "class": "frozen_output"
+    },
+    {
+      "path": "frozen_outputs/predictions/fixed_substrate/2wiki/seed_13/kg_ppr.predictions.jsonl",
+      "sha256": "e634ddb73534a2cee6dff6a36ac9aa32778ca4a29cdb32123c645da487caf252",
+      "size_bytes": 13492172,
+      "class": "frozen_output"
+    },
+    {
+      "path": "frozen_outputs/predictions/fixed_substrate/2wiki/seed_13/static_hg.predictions.jsonl",
+      "sha256": "3c2a742ea807a9f88da3cc50ed0454f1382a81a3f75d1c3fadbf632b135b2b88",
+      "size_bytes": 14101326,
+      "class": "frozen_output"
+    },
+    {
+      "path": "frozen_outputs/predictions/fixed_substrate/2wiki/seed_13/weighted_hg_kv.predictions.jsonl",
+      "sha256": "366bc10efe54856dcd90332bbae8a0f2187539a714a0cfb2f904f6a0682158c5",
+      "size_bytes": 14195284,
+      "class": "frozen_output"
+    },
+    {
+      "path": "frozen_outputs/predictions/fixed_substrate/2wiki/seed_13/weighted_kg_ppr.predictions.jsonl",
+      "sha256": "b33a8e523e397bf57020d0ef191b4867ee8529ed7bd49a5be54965470049c2dc",
+      "size_bytes": 13491513,
+      "class": "frozen_output"
+    },
+    {
+      "path": "frozen_outputs/predictions/fixed_substrate/2wiki/seed_29/bm25.predictions.jsonl",
+      "sha256": "b3aec905f526258f48775bc552383419a1ab4c4bd9b225d45dfc886131049d0c",
+      "size_bytes": 14665268,
+      "class": "frozen_output"
+    },
+    {
+      "path": "frozen_outputs/predictions/fixed_substrate/2wiki/seed_29/hyper_rag.predictions.jsonl",
+      "sha256": "b8ab5d05d8c2595fdad844ab6c35eb5cc8178849b7b19359fd8ba561afd1d0a3",
+      "size_bytes": 14066993,
+      "class": "frozen_output"
+    },
+    {
+      "path": "frozen_outputs/predictions/fixed_substrate/2wiki/seed_29/kg_ppr.predictions.jsonl",
+      "sha256": "f1ea0ddd93cb8648aef7d835ef15d15599676ad1528a3d642cc8dec620bc86ab",
+      "size_bytes": 13491918,
+      "class": "frozen_output"
+    },
+    {
+      "path": "frozen_outputs/predictions/fixed_substrate/2wiki/seed_29/static_hg.predictions.jsonl",
+      "sha256": "60e9715c407a9d88f17aadd7cbef4e459198e7900894c81ef4af98dc02d9fd07",
+      "size_bytes": 14100949,
+      "class": "frozen_output"
+    },
+    {
+      "path": "frozen_outputs/predictions/fixed_substrate/2wiki/seed_29/weighted_hg_kv.predictions.jsonl",
+      "sha256": "0f54087d109932e7c1b16a50cd3be15767a56a65233b433ef41e90d92b659117",
+      "size_bytes": 14195474,
+      "class": "frozen_output"
+    },
+    {
+      "path": "frozen_outputs/predictions/fixed_substrate/2wiki/seed_29/weighted_kg_ppr.predictions.jsonl",
+      "sha256": "726d745f4442bdbf0738d1aae5d430a2ccb8dd7b06f8c9664b3ab505a6d5d3d3",
+      "size_bytes": 13491788,
+      "class": "frozen_output"
+    },
+    {
+      "path": "frozen_outputs/predictions/fixed_substrate/2wiki/seed_43/bm25.predictions.jsonl",
+      "sha256": "7960c7b24a815dd8fab97c08068eb3ea5ebf2a1c6b12613cacd7bb9408553146",
+      "size_bytes": 14665280,
+      "class": "frozen_output"
+    },
+    {
+      "path": "frozen_outputs/predictions/fixed_substrate/2wiki/seed_43/hyper_rag.predictions.jsonl",
+      "sha256": "24f43e85cb2fd0789555d7a5f7923bf8fc7966b61ab023ef8dfe15b622dfaf9c",
+      "size_bytes": 14067463,
+      "class": "frozen_output"
+    },
+    {
+      "path": "frozen_outputs/predictions/fixed_substrate/2wiki/seed_43/kg_ppr.predictions.jsonl",
+      "sha256": "908d0a2e1742fe806f977ceefa6beef192ff316f5ec5019a611cde2ed085dded",
+      "size_bytes": 13491788,
+      "class": "frozen_output"
+    },
+    {
+      "path": "frozen_outputs/predictions/fixed_substrate/2wiki/seed_43/static_hg.predictions.jsonl",
+      "sha256": "60984f36d0825b7cbb1be21cc5156df597ffe3d90170bf862bddce06232942e8",
+      "size_bytes": 14101087,
+      "class": "frozen_output"
+    },
+    {
+      "path": "frozen_outputs/predictions/fixed_substrate/2wiki/seed_43/weighted_hg_kv.predictions.jsonl",
+      "sha256": "9c5d7a8afc65dc4018a8edb5bdb9825fa7226ad7d5398b13babf8f679e2d079a",
+      "size_bytes": 14195366,
+      "class": "frozen_output"
+    },
+    {
+      "path": "frozen_outputs/predictions/fixed_substrate/2wiki/seed_43/weighted_kg_ppr.predictions.jsonl",
+      "sha256": "fa0cb1276a75de404df51cff68b392e6ab7d0617b526ef03f0d00f2f1668df9b",
+      "size_bytes": 13491129,
+      "class": "frozen_output"
+    },
+    {
+      "path": "frozen_outputs/predictions/fixed_substrate/hotpotqa/seed_13/bm25.predictions.jsonl",
+      "sha256": "d12a2744d4f350a8e7a8c11fa00b421e536b7010d80423331e40da88bf708439",
+      "size_bytes": 8819821,
+      "class": "frozen_output"
+    },
+    {
+      "path": "frozen_outputs/predictions/fixed_substrate/hotpotqa/seed_13/colbertv2.predictions.jsonl",
+      "sha256": "3c6c4a1bba310cc292eb7cc40ab2fab6359f9160a9c682c7674fe890fcd2f19d",
+      "size_bytes": 10485803,
+      "class": "frozen_output"
+    },
+    {
+      "path": "frozen_outputs/predictions/fixed_substrate/hotpotqa/seed_13/contriever.predictions.jsonl",
+      "sha256": "ee3b844240f2ea3723b25a73e7a75ec18daba4798ffc3429ce09b397857a7f64",
+      "size_bytes": 10208157,
+      "class": "frozen_output"
+    },
+    {
+      "path": "frozen_outputs/predictions/fixed_substrate/hotpotqa/seed_13/hyper_rag.predictions.jsonl",
+      "sha256": "dde27d045cc32ffda5085d22c28f3e573b39e84a436dc77ce836252ce5b7b959",
+      "size_bytes": 8613384,
+      "class": "frozen_output"
+    },
+    {
+      "path": "frozen_outputs/predictions/fixed_substrate/hotpotqa/seed_13/kg_ppr.predictions.jsonl",
+      "sha256": "cec54be6a0ecd26c416aa986c5a863db4b97119699a5d571e3c0d53a67f9ef9f",
+      "size_bytes": 8521759,
+      "class": "frozen_output"
+    },
+    {
+      "path": "frozen_outputs/predictions/fixed_substrate/hotpotqa/seed_13/static_hg.predictions.jsonl",
+      "sha256": "bcbecc25292046a8623755d50ed360a245629567c498a755cd8eb323dc4d4fa5",
+      "size_bytes": 8604125,
+      "class": "frozen_output"
+    },
+    {
+      "path": "frozen_outputs/predictions/fixed_substrate/hotpotqa/seed_13/weighted_hg_kv.predictions.jsonl",
+      "sha256": "3ca5ff320d63b3376e0aa22b63f3965c938b38f930f4c507526d1559c452827a",
+      "size_bytes": 8633768,
+      "class": "frozen_output"
+    },
+    {
+      "path": "frozen_outputs/predictions/fixed_substrate/hotpotqa/seed_13/weighted_kg_ppr.predictions.jsonl",
+      "sha256": "167e22111b840f3e3ce2e8a937a0b45dbe331f99842826cdfc1acea59aa1aa29",
+      "size_bytes": 8520698,
+      "class": "frozen_output"
+    },
+    {
+      "path": "frozen_outputs/predictions/fixed_substrate/hotpotqa/seed_29/bm25.predictions.jsonl",
+      "sha256": "7325c53991379aad39c9173f2afc1dd3100bea85fc9b0ccecb72ce3402a3de06",
+      "size_bytes": 8819579,
+      "class": "frozen_output"
+    },
+    {
+      "path": "frozen_outputs/predictions/fixed_substrate/hotpotqa/seed_29/colbertv2.predictions.jsonl",
+      "sha256": "002f01429d9633e36a72514bff640061e3a8812a95b276ad01a776dcdf5d8adf",
+      "size_bytes": 10487589,
+      "class": "frozen_output"
+    },
+    {
+      "path": "frozen_outputs/predictions/fixed_substrate/hotpotqa/seed_29/contriever.predictions.jsonl",
+      "sha256": "16c9de80cbfeeff20e20093fcba3ee7d24f3710224c7618e358b1dc48f604c5e",
+      "size_bytes": 10207378,
+      "class": "frozen_output"
+    },
+    {
+      "path": "frozen_outputs/predictions/fixed_substrate/hotpotqa/seed_29/hyper_rag.predictions.jsonl",
+      "sha256": "f9a4133456cf0e4f0a7797fc1b5bc74bbd44ec7634583ff9931643cbab5ad8b6",
+      "size_bytes": 8612835,
+      "class": "frozen_output"
+    },
+    {
+      "path": "frozen_outputs/predictions/fixed_substrate/hotpotqa/seed_29/kg_ppr.predictions.jsonl",
+      "sha256": "a0a739c65e9f1808052c113fe3c442dfc119c92695ebed546711c9b44e572a2c",
+      "size_bytes": 8521734,
+      "class": "frozen_output"
+    },
+    {
+      "path": "frozen_outputs/predictions/fixed_substrate/hotpotqa/seed_29/static_hg.predictions.jsonl",
+      "sha256": "ae733f26a0ee9d6de5b0b5b3953a7ce215cd26cad63a37344569f64259721dc8",
+      "size_bytes": 8603838,
+      "class": "frozen_output"
+    },
+    {
+      "path": "frozen_outputs/predictions/fixed_substrate/hotpotqa/seed_29/weighted_hg_kv.predictions.jsonl",
+      "sha256": "a9bcdb0e9ab6a5f6d8fcd9d0f6748a9607e33639f27657d24fe15429cfd7f2b0",
+      "size_bytes": 8633888,
+      "class": "frozen_output"
+    },
+    {
+      "path": "frozen_outputs/predictions/fixed_substrate/hotpotqa/seed_29/weighted_kg_ppr.predictions.jsonl",
+      "sha256": "1427b65fb836f90656cd16bea30d562966abc2b5782b69d0ff0047e61f0119af",
+      "size_bytes": 8520777,
+      "class": "frozen_output"
+    },
+    {
+      "path": "frozen_outputs/predictions/fixed_substrate/hotpotqa/seed_43/bm25.predictions.jsonl",
+      "sha256": "e755087672792732f905f4058a9d09d3a9d75025d767f9618ac14499a477ac69",
+      "size_bytes": 8819308,
+      "class": "frozen_output"
+    },
+    {
+      "path": "frozen_outputs/predictions/fixed_substrate/hotpotqa/seed_43/colbertv2.predictions.jsonl",
+      "sha256": "9b1c69912fbb9a18f240d1b3fff0bc0fa9f1d52ba425059b6dc3016b3d557a93",
+      "size_bytes": 10487535,
+      "class": "frozen_output"
+    },
+    {
+      "path": "frozen_outputs/predictions/fixed_substrate/hotpotqa/seed_43/contriever.predictions.jsonl",
+      "sha256": "543dc0ec6af0dd1d0db14408ca92beb454788281385dd80f6baf8c9ad968f2f6",
+      "size_bytes": 10207123,
+      "class": "frozen_output"
+    },
+    {
+      "path": "frozen_outputs/predictions/fixed_substrate/hotpotqa/seed_43/hyper_rag.predictions.jsonl",
+      "sha256": "bf30ad0ea7626680934b1e62c6376166ec84d9763c6b44bef0413c8a86202103",
+      "size_bytes": 8612737,
+      "class": "frozen_output"
+    },
+    {
+      "path": "frozen_outputs/predictions/fixed_substrate/hotpotqa/seed_43/kg_ppr.predictions.jsonl",
+      "sha256": "e04bfcb0987dd8a669b3e9b42f906ded83754fef602bfe8e214f864248b6309b",
+      "size_bytes": 8521770,
+      "class": "frozen_output"
+    },
+    {
+      "path": "frozen_outputs/predictions/fixed_substrate/hotpotqa/seed_43/static_hg.predictions.jsonl",
+      "sha256": "983c5d2285ac8ab69b4935d173db8dae2ee3948f773ce0aaddddbd7d91dd812b",
+      "size_bytes": 8603739,
+      "class": "frozen_output"
+    },
+    {
+      "path": "frozen_outputs/predictions/fixed_substrate/hotpotqa/seed_43/weighted_hg_kv.predictions.jsonl",
+      "sha256": "f6f4d90ebabe40ace6247dffd7bb8ccb28b624a8da9c89d37ad73fa185ce01e0",
+      "size_bytes": 8633377,
+      "class": "frozen_output"
+    },
+    {
+      "path": "frozen_outputs/predictions/fixed_substrate/hotpotqa/seed_43/weighted_kg_ppr.predictions.jsonl",
+      "sha256": "d9cdabfbdfa5b6913428722181b22ce96d39c358a2f9d8f69d6d5bef0994eb1f",
+      "size_bytes": 8520826,
+      "class": "frozen_output"
+    },
+    {
+      "path": "frozen_outputs/predictions/fixed_substrate/musique/seed_13/bm25.predictions.jsonl",
+      "sha256": "a5c4f706e5dc22e67d6a8361764319376314e473ead95faefbd8eea3bf7c81dc",
+      "size_bytes": 2055353,
+      "class": "frozen_output"
+    },
+    {
+      "path": "frozen_outputs/predictions/fixed_substrate/musique/seed_13/hyper_rag.predictions.jsonl",
+      "sha256": "71259091c142c2edf58a5f8869b5ed746855c9e46694baf7317fd366e9ca8050",
+      "size_bytes": 2033495,
+      "class": "frozen_output"
+    },
+    {
+      "path": "frozen_outputs/predictions/fixed_substrate/musique/seed_13/kg_ppr.predictions.jsonl",
+      "sha256": "27f2c6236dc88c98355cd9ca419f65a50feb03196366fff3e31c2a3956627a3b",
+      "size_bytes": 2092728,
+      "class": "frozen_output"
+    },
+    {
+      "path": "frozen_outputs/predictions/fixed_substrate/musique/seed_13/static_hg.predictions.jsonl",
+      "sha256": "7094a399cdfbb6e4c4eb3f3045ff61f92639909d071cc62ee13bade62a989d8b",
+      "size_bytes": 2031932,
+      "class": "frozen_output"
+    },
+    {
+      "path": "frozen_outputs/predictions/fixed_substrate/musique/seed_13/weighted_hg_kv.predictions.jsonl",
+      "sha256": "192a1ed7ec4fe9829952ea27178eb68cf93a835d33d982460bc1e78ed3a6fb62",
+      "size_bytes": 2039994,
+      "class": "frozen_output"
+    },
+    {
+      "path": "frozen_outputs/predictions/fixed_substrate/musique/seed_13/weighted_kg_ppr.predictions.jsonl",
+      "sha256": "29579376456922a108dea1946447ba610d88433a438155ac1a6e1ea513f0dfa6",
+      "size_bytes": 2092613,
+      "class": "frozen_output"
+    },
+    {
+      "path": "frozen_outputs/predictions/fixed_substrate/musique/seed_29/bm25.predictions.jsonl",
+      "sha256": "311f694cd2fe58801512f9575df35cf511b3b01c6fa18425ee1ed7d3f73ed973",
+      "size_bytes": 2055326,
+      "class": "frozen_output"
+    },
+    {
+      "path": "frozen_outputs/predictions/fixed_substrate/musique/seed_29/hyper_rag.predictions.jsonl",
+      "sha256": "01b7789db6b59ba2eaee9444420440b2c079ed78f50599cf09b207125f2563bd",
+      "size_bytes": 2033470,
+      "class": "frozen_output"
+    },
+    {
+      "path": "frozen_outputs/predictions/fixed_substrate/musique/seed_29/kg_ppr.predictions.jsonl",
+      "sha256": "3a5fc9fba186979a380322203a6f2a515caf3523b38903d6f2fd571b9c868c62",
+      "size_bytes": 2092774,
+      "class": "frozen_output"
+    },
+    {
+      "path": "frozen_outputs/predictions/fixed_substrate/musique/seed_29/static_hg.predictions.jsonl",
+      "sha256": "21f0aa619b33df5082b4dd5df9ac8a6669e06a0a5d65050bca7409aefc8d27f9",
+      "size_bytes": 2032024,
+      "class": "frozen_output"
+    },
+    {
+      "path": "frozen_outputs/predictions/fixed_substrate/musique/seed_29/weighted_hg_kv.predictions.jsonl",
+      "sha256": "72a8ce2b38b1746176a1bae6b295be160d4cd1bf4e164c0feb83bf5087c245e2",
+      "size_bytes": 2039953,
+      "class": "frozen_output"
+    },
+    {
+      "path": "frozen_outputs/predictions/fixed_substrate/musique/seed_29/weighted_kg_ppr.predictions.jsonl",
+      "sha256": "42e2555c256130a505d3d21b8c74c18664268aab1bbb564670038dcdb1e0bb7a",
+      "size_bytes": 2092599,
+      "class": "frozen_output"
+    },
+    {
+      "path": "frozen_outputs/predictions/fixed_substrate/musique/seed_43/bm25.predictions.jsonl",
+      "sha256": "3c0aa6c0c43257edeafd3233c82fe37a5fc233d36598910108cf597622bcec5c",
+      "size_bytes": 2055325,
+      "class": "frozen_output"
+    },
+    {
+      "path": "frozen_outputs/predictions/fixed_substrate/musique/seed_43/hyper_rag.predictions.jsonl",
+      "sha256": "09d89b87a45307fb9368aaa401505c9837ee03f79491a467d9aa396aeda2731c",
+      "size_bytes": 2033593,
+      "class": "frozen_output"
+    },
+    {
+      "path": "frozen_outputs/predictions/fixed_substrate/musique/seed_43/kg_ppr.predictions.jsonl",
+      "sha256": "b7d82d040fe725ce9b34e7ec6ce357a083c1442683d229a9826a95c60e169ead",
+      "size_bytes": 2092734,
+      "class": "frozen_output"
+    },
+    {
+      "path": "frozen_outputs/predictions/fixed_substrate/musique/seed_43/static_hg.predictions.jsonl",
+      "sha256": "5511eb33c80dad04a2830fda3e6414b264fd72569955720c35dac24c32310243",
+      "size_bytes": 2031989,
+      "class": "frozen_output"
+    },
+    {
+      "path": "frozen_outputs/predictions/fixed_substrate/musique/seed_43/weighted_hg_kv.predictions.jsonl",
+      "sha256": "79a607bf67b076e6b6eca67fb834b994574a2c61ff4771c5f4cd6168bedf7752",
+      "size_bytes": 2040019,
+      "class": "frozen_output"
+    },
+    {
+      "path": "frozen_outputs/predictions/fixed_substrate/musique/seed_43/weighted_kg_ppr.predictions.jsonl",
+      "sha256": "033cfdbca703ff773d5f81a1767b2a8913695b89c3acf68dd33f8a696d9925c5",
+      "size_bytes": 2092614,
+      "class": "frozen_output"
+    },
+    {
+      "path": "hkvm_mvp/__init__.py",
+      "sha256": "d171dec6b9b2bdd2282b13308f9d8396b6e21fe3e3bad42f4529e6f8c98701b2",
+      "size_bytes": 32,
+      "class": "other"
+    },
+    {
+      "path": "hkvm_mvp/config.py",
+      "sha256": "332f926ae541f00e1c034d4e6aebbfe32b112bc39af06988ee5c744c37a6eb2d",
+      "size_bytes": 634,
+      "class": "other"
+    },
+    {
+      "path": "hkvm_mvp/data.py",
+      "sha256": "2fdd082dfbcf978a276ec158015be1dc8783d1d5609fe1b8defb1f6a2ef8809d",
+      "size_bytes": 5711,
+      "class": "other"
+    },
+    {
+      "path": "hkvm_mvp/extraction.py",
+      "sha256": "17a269e61a6d5c87c82af75f138f1dacbddbf5b352cb8de65bb0735a24e599f1",
+      "size_bytes": 10714,
+      "class": "other"
+    },
+    {
+      "path": "hkvm_mvp/generation.py",
+      "sha256": "a4b0f86be4eb9b0cb150324c42f6478db25e86d97ab9027ec4061a3124e74bca",
+      "size_bytes": 1319,
+      "class": "other"
+    },
+    {
+      "path": "hkvm_mvp/llm_openie.py",
+      "sha256": "07feb83c47a7b99e9f45777c3803155af827a52a181c5b340ac102daedc273b3",
+      "size_bytes": 32192,
+      "class": "other"
+    },
+    {
+      "path": "hkvm_mvp/methods.py",
+      "sha256": "ea73bd488cff3421e9f0039dcb63278f65b32ee1060e6d447e109165772c1301",
+      "size_bytes": 10517,
+      "class": "other"
+    },
+    {
+      "path": "hkvm_mvp/metrics.py",
+      "sha256": "f0a4eb66a0c643e5ac70bfdb96c5cee3c89b9425d7f76d62568520d2d8d409a2",
+      "size_bytes": 4490,
+      "class": "other"
+    },
+    {
+      "path": "hkvm_mvp/plotting.py",
+      "sha256": "21a8c2fd2c777e332b712e69b685d3e7e45a59ddce4eefca122dcd68005d25f2",
+      "size_bytes": 1507,
+      "class": "other"
+    },
+    {
+      "path": "hkvm_mvp/reproducibility.py",
+      "sha256": "d1c304501413bc0e25f295602d7b3909e09b7d5787af702cb4ed60f6e72d7980",
+      "size_bytes": 13257,
+      "class": "other"
+    },
+    {
+      "path": "hkvm_mvp/retrieval.py",
+      "sha256": "7c5bcc938703484cc10841e830c70103869837bd3ad5250522a6a605fd0758fb",
+      "size_bytes": 19208,
+      "class": "other"
+    },
+    {
+      "path": "hkvm_mvp/runner.py",
+      "sha256": "15330c0ac8e14a49a8fcebeb9ead90fcdfa12ac9e532e39c41b01f4001fab96c",
+      "size_bytes": 10080,
+      "class": "other"
+    },
+    {
+      "path": "hkvm_mvp/schema.py",
+      "sha256": "e1491609afeb539afb4226c5dbf3a22f5483ba1774aadf561697f630bc125fc8",
+      "size_bytes": 1981,
+      "class": "other"
+    },
+    {
+      "path": "hkvm_mvp/utils.py",
+      "sha256": "5c5e12d54161703a5c553453e473bfb401ebc75dfc8230c4ca5a742cc7736a41",
+      "size_bytes": 4083,
+      "class": "other"
+    },
+    {
+      "path": "requirements.txt",
+      "sha256": "22fb442dc3695a14691ad05a95aebfcb233d56463f66749639978a97b458a3fa",
+      "size_bytes": 98,
+      "class": "other"
+    },
+    {
+      "path": "results/README.md",
+      "sha256": "2a0c79341058ed525201dcefef273501235168ede1fcc07320b6d95f50499c15",
+      "size_bytes": 661,
+      "class": "result"
+    },
+    {
+      "path": "results/indexes/result_file_index.json",
+      "sha256": "068446005964c1da70357c2fc0b8ed4a36acf7a013430fadc16d2b09e815f67f",
+      "size_bytes": 120605,
+      "class": "result"
+    },
+    {
+      "path": "results/paper_evidence/adaptive_source_controller/claim_evidence_map.json",
+      "sha256": "76b14962361459b85645308334d45c65f498305921492629e6199fce585d62ed",
+      "size_bytes": 2568,
+      "class": "result"
+    },
+    {
+      "path": "results/paper_evidence/adaptive_source_controller/manifest.json",
+      "sha256": "8eb693b18e79597f92a6e29e20ceaba935df958a66c83eb4daf1af09a8f616dc",
+      "size_bytes": 2058,
+      "class": "result"
+    },
+    {
+      "path": "results/paper_evidence/adaptive_source_controller/narrative_contract.md",
+      "sha256": "fc2581b656a78fb711e7442e35bfa0dc211e074dfd142bb2d70ef0cafbbc3650",
+      "size_bytes": 1700,
+      "class": "result"
+    },
+    {
+      "path": "results/paper_evidence/adaptive_source_controller/paired_bootstrap/dev_non_hotpot_manifest.json",
+      "sha256": "d12ee8c193800cddfc3830f8f8be54b2ea9811ca3ae898e8017dddd1f991cd6d",
+      "size_bytes": 1390,
+      "class": "result"
+    },
+    {
+      "path": "results/paper_evidence/adaptive_source_controller/paired_bootstrap/hotpotqa_manifest.json",
+      "sha256": "90f1eaeb3f68fcc3a72e12255b1ebcca2fc8d854e0549c252ffc4addb32e2dcf",
+      "size_bytes": 1494,
+      "class": "result"
+    },
+    {
+      "path": "results/paper_evidence/adaptive_source_controller/paired_bootstrap/seed_level_diffs.csv",
+      "sha256": "461d48479bf8cbbb524e38b7f9dc84f01c85ebf00b94ba9eb919ba48925e3c17",
+      "size_bytes": 25147,
+      "class": "result"
+    },
+    {
+      "path": "results/paper_evidence/adaptive_source_controller/paired_bootstrap/summary.csv",
+      "sha256": "c1f622fbf0537b6832cc49ddf2c15417d93c142b49aafa229cf18ae62d7ac065",
+      "size_bytes": 24028,
+      "class": "result"
+    },
+    {
+      "path": "results/paper_evidence/adaptive_source_controller/table.csv",
+      "sha256": "3a342219158df3cda8027789b7512998ad3cb3bdbd5b01e74e7fd00e29724720",
+      "size_bytes": 27712,
+      "class": "result"
+    },
+    {
+      "path": "results/paper_evidence/adaptive_source_controller/table.md",
+      "sha256": "2c184521a36a49b2cd37fac3a2255dc930037b40db29a41314f5e2e32565c203",
+      "size_bytes": 2550,
+      "class": "result"
+    },
+    {
+      "path": "results/paper_evidence/calibration_analysis/claim_evidence_map.json",
+      "sha256": "8382de0a497b13631bc0e02db86a3fea446142144b17665b956e5c606adc648b",
+      "size_bytes": 2628,
+      "class": "result"
+    },
+    {
+      "path": "results/paper_evidence/calibration_analysis/manifest.json",
+      "sha256": "86d605f6d3022738c742e2fb43c044625a6e4aa8925b6e577198afb166811032",
+      "size_bytes": 1427,
+      "class": "result"
+    },
+    {
+      "path": "results/paper_evidence/calibration_analysis/narrative_contract.md",
+      "sha256": "36e064751740c4d66ae938557377c2b7922aa529be8ffcdb8b26ae2cc69a95ed",
+      "size_bytes": 1213,
+      "class": "result"
+    },
+    {
+      "path": "results/paper_evidence/calibration_analysis/table.csv",
+      "sha256": "8758f0a80f5ce55bf958ebf449a64d6d5c8d1d97e28dd6d3a3722667f56b012d",
+      "size_bytes": 2846,
+      "class": "result"
+    },
+    {
+      "path": "results/paper_evidence/calibration_analysis/table.md",
+      "sha256": "e227d93d250590723f2070630aabf4e7e3e39d3c220772278547c5a983e71bfa",
+      "size_bytes": 920,
+      "class": "result"
+    },
+    {
+      "path": "results/paper_evidence/main_fixed_substrate/manifest.json",
+      "sha256": "4380ed2cf23afc8f09a60bf528630f693e4305a264f4433cab64c54938761069",
+      "size_bytes": 1831,
+      "class": "result"
+    },
+    {
+      "path": "results/paper_evidence/main_fixed_substrate/paired_bootstrap.json",
+      "sha256": "56bbfc5daf5c2656f61ee4202705f39d45778cbe0a2614452c6b95212127e679",
+      "size_bytes": 13867,
+      "class": "result"
+    },
+    {
+      "path": "results/paper_evidence/main_fixed_substrate/pruning_curve.csv",
+      "sha256": "bfdfa850adab023d10896e0ca96ae14dff8f8174c810707880d39d2a7071827c",
+      "size_bytes": 3193,
+      "class": "result"
+    },
+    {
+      "path": "results/paper_evidence/main_fixed_substrate/t2_ablation.csv",
+      "sha256": "48905922edc3793022dbf74ac60b5b78a832ef01bb9f2908e1c660fd13f2d858",
+      "size_bytes": 1500,
+      "class": "result"
+    },
+    {
+      "path": "results/paper_evidence/main_fixed_substrate/table_main.csv",
+      "sha256": "57a42dc3e1ba5ef1b925927a8b75ae213d72370937d1838b2dc64d7edeaf9140",
+      "size_bytes": 5138,
+      "class": "result"
+    },
+    {
+      "path": "results/paper_evidence/main_fixed_substrate/unified_summary.json",
+      "sha256": "db03a90185d9c840d748a2e79724a1c24c7147fddf3f4c76e80e07b68b045d95",
+      "size_bytes": 66030,
+      "class": "result"
+    },
+    {
+      "path": "results/paper_evidence/source_level_ablation/bm25/bootstrap.csv",
+      "sha256": "4d8ae0559e6c7d90a28e9310a5b8a6345233a32f77c1465c7cb020ee030c5b4a",
+      "size_bytes": 57648,
+      "class": "result"
+    },
+    {
+      "path": "results/paper_evidence/source_level_ablation/bm25/dev_non_hotpot_claim_evidence_map.json",
+      "sha256": "1a2fff1994ac85a5452d619205a50821b5d060751a9330ee24f705ca7a6599c1",
+      "size_bytes": 9404,
+      "class": "result"
+    },
+    {
+      "path": "results/paper_evidence/source_level_ablation/bm25/dev_non_hotpot_manifest.json",
+      "sha256": "a7a48dd9dc7c4730b9229501242952dbd707c7a90518446b53c9195d264e2c5f",
+      "size_bytes": 11013,
+      "class": "result"
+    },
+    {
+      "path": "results/paper_evidence/source_level_ablation/bm25/hotpotqa_claim_evidence_map.json",
+      "sha256": "b6aaccbc084c1256b5c4fba22498cec3fa28456e9fafe9a92ae63bdbf4ba5ad7",
+      "size_bytes": 5501,
+      "class": "result"
+    },
+    {
+      "path": "results/paper_evidence/source_level_ablation/bm25/hotpotqa_manifest.json",
+      "sha256": "2e45cff1cbee09dc9e4c9c3e0c4008d9ce291cce79bc93209d705d5d40f3bccb",
+      "size_bytes": 6600,
+      "class": "result"
+    },
+    {
+      "path": "results/paper_evidence/source_level_ablation/bm25/table.csv",
+      "sha256": "07e8a4a0f21816d59f42bb4623a2521c1135d61ce834d1822a523ff820ee1126",
+      "size_bytes": 35266,
+      "class": "result"
+    },
+    {
+      "path": "results/paper_evidence/source_level_ablation/colbertv2/bootstrap.csv",
+      "sha256": "4028f301aa68f66e7b0d254cfb83b9d3d4fbf4d919459e71fa1dc30d4575c8b8",
+      "size_bytes": 56740,
+      "class": "result"
+    },
+    {
+      "path": "results/paper_evidence/source_level_ablation/colbertv2/dev_non_hotpot_claim_evidence_map.json",
+      "sha256": "82a1c4402cfd8d8acffa8d43eaa943b3ec349f615a7d674946120c9207c99966",
+      "size_bytes": 9512,
+      "class": "result"
+    },
+    {
+      "path": "results/paper_evidence/source_level_ablation/colbertv2/dev_non_hotpot_manifest.json",
+      "sha256": "c1138f64169a4c9db152a417076c3a8af11189ea8bbcfbf9c3990af586046e54",
+      "size_bytes": 10868,
+      "class": "result"
+    },
+    {
+      "path": "results/paper_evidence/source_level_ablation/colbertv2/hotpotqa_claim_evidence_map.json",
+      "sha256": "ea4187660a0b99cc1a445caee0cd8429eb2ff3be328bfffae5005d85d1dbf757",
+      "size_bytes": 5541,
+      "class": "result"
+    },
+    {
+      "path": "results/paper_evidence/source_level_ablation/colbertv2/hotpotqa_manifest.json",
+      "sha256": "8f678ee4745b686260d86d8029deaf66df99d6181ddfbcd87fed7443a960a684",
+      "size_bytes": 6652,
+      "class": "result"
+    },
+    {
+      "path": "results/paper_evidence/source_level_ablation/colbertv2/table.csv",
+      "sha256": "5f93ee4f103219a6f4456ffc30f1dd75b4b7ad4d544ee12b9c49864eb03dbcdb",
+      "size_bytes": 34258,
+      "class": "result"
+    },
+    {
+      "path": "results/paper_evidence/source_level_ablation/contriever/bootstrap.csv",
+      "sha256": "ff5c3be5d2a90aa90ac9f53918dfeaa9db52e18fbd31738df0132df5370568b7",
+      "size_bytes": 59365,
+      "class": "result"
+    },
+    {
+      "path": "results/paper_evidence/source_level_ablation/contriever/dev_non_hotpot_claim_evidence_map.json",
+      "sha256": "4b8e64c3071e194c747db935a9dd3d159305d1288776d284e049c2ba34c70332",
+      "size_bytes": 9708,
+      "class": "result"
+    },
+    {
+      "path": "results/paper_evidence/source_level_ablation/contriever/dev_non_hotpot_manifest.json",
+      "sha256": "8f3cc7a08f75f973bd111e7de5f00c947c620749bd02c811f1951e83f3acb672",
+      "size_bytes": 11574,
+      "class": "result"
+    },
+    {
+      "path": "results/paper_evidence/source_level_ablation/contriever/hotpotqa_claim_evidence_map.json",
+      "sha256": "baffa57585b20fd84c3d1bc82b11a499599a80c68075ae561fa07d5d1622e9d9",
+      "size_bytes": 5543,
+      "class": "result"
+    },
+    {
+      "path": "results/paper_evidence/source_level_ablation/contriever/hotpotqa_manifest.json",
+      "sha256": "8c6652da3a760676e2a5dc82f2d8eec63ced6cc8da1c09d06fd04bec9b65a702",
+      "size_bytes": 6760,
+      "class": "result"
+    },
+    {
+      "path": "results/paper_evidence/source_level_ablation/contriever/table.csv",
+      "sha256": "63d167d206eb4624411485fe78d2bee98fc3c36da2e1542fd83614703a6a89b5",
+      "size_bytes": 38098,
+      "class": "result"
+    },
+    {
+      "path": "results/run_summaries/adaptive_source_controller/2wiki/aggregate_metrics.csv",
+      "sha256": "022f23e9f6c5277718daef5a932971fb13be7e6d612ff877e481b31302112946",
+      "size_bytes": 6158,
+      "class": "result"
+    },
+    {
+      "path": "results/run_summaries/adaptive_source_controller/2wiki/manifest.json",
+      "sha256": "e610f58be4de4ff9e991c36838d858f0baebeb005c079b8334366ec21bf2d68b",
+      "size_bytes": 4746,
+      "class": "result"
+    },
+    {
+      "path": "results/run_summaries/adaptive_source_controller/2wiki/seed_13/calibrated_hkvm_topk4.metrics.json",
+      "sha256": "20d0035824cb6a01515f7f452aafd76806839a4a68fb9a087ef49e626527cb85",
+      "size_bytes": 377,
+      "class": "result"
+    },
+    {
+      "path": "results/run_summaries/adaptive_source_controller/2wiki/seed_13/colbertv2.metrics.json",
+      "sha256": "53c0814c4cad2eddc59957e03849a23551994a2205bd5f2c30a95711aed191c3",
+      "size_bytes": 354,
+      "class": "result"
+    },
+    {
+      "path": "results/run_summaries/adaptive_source_controller/2wiki/seed_13/controller_dense_hkvm.metrics.json",
+      "sha256": "6ebe70e839948db966f3fd43175c8500dccb727887ff116ff875b03534908e46",
+      "size_bytes": 351,
+      "class": "result"
+    },
+    {
+      "path": "results/run_summaries/adaptive_source_controller/2wiki/seed_13/controller_dense_hkvm.model.json",
+      "sha256": "0cd8430fb34903a248f451bfc0fc4f4c8508c97047e9486de296adaf79604015",
+      "size_bytes": 6510,
+      "class": "result"
+    },
+    {
+      "path": "results/run_summaries/adaptive_source_controller/2wiki/seed_13/controller_dense_only.metrics.json",
+      "sha256": "7b8aaa3def987608aba0733a15d61fdaa88607df85e122af0537377c0a430d22",
+      "size_bytes": 354,
+      "class": "result"
+    },
+    {
+      "path": "results/run_summaries/adaptive_source_controller/2wiki/seed_13/controller_dense_only.model.json",
+      "sha256": "68398100e253f3ffd395249cb64155b083020c8adb5a40080ea846b299b7b0ef",
+      "size_bytes": 3719,
+      "class": "result"
+    },
+    {
+      "path": "results/run_summaries/adaptive_source_controller/2wiki/seed_13/controller_hkvm_only.metrics.json",
+      "sha256": "f9a545903dadc3c06977a5839a41ca9994ad7004c57651bc145ad1d3e69ccafb",
+      "size_bytes": 350,
+      "class": "result"
+    },
+    {
+      "path": "results/run_summaries/adaptive_source_controller/2wiki/seed_13/controller_hkvm_only.model.json",
+      "sha256": "4f6af8dc0b6daf1877b68c9fc66714cff112950a9e2d021c5e0302576a6dd725",
+      "size_bytes": 3802,
+      "class": "result"
+    },
+    {
+      "path": "results/run_summaries/adaptive_source_controller/2wiki/seed_13/paired_bootstrap_vs_dense.csv",
+      "sha256": "e1a9f12f2f26d9a4a3261e6017f28a9002a6796eb52681eb2bed9e301ff448a6",
+      "size_bytes": 2187,
+      "class": "result"
+    },
+    {
+      "path": "results/run_summaries/adaptive_source_controller/2wiki/seed_13/quota_dense3_hkvm2.metrics.json",
+      "sha256": "39c739cd28522c75192efe8afb91e3e6b586dc60931c9d4151a9e3a2f3a80f91",
+      "size_bytes": 353,
+      "class": "result"
+    },
+    {
+      "path": "results/run_summaries/adaptive_source_controller/2wiki/seed_13/quota_dense4_hkvm1.metrics.json",
+      "sha256": "835184752add45cd60c2678e34aaa284906a8e68172bcda4982093781252656c",
+      "size_bytes": 352,
+      "class": "result"
+    },
+    {
+      "path": "results/run_summaries/adaptive_source_controller/2wiki/seed_13/rrf_dense_hkvm.metrics.json",
+      "sha256": "21cfe26cd5755ec7cca68372fed7ef31492c6937a91a5b8dfaef99c025ed7932",
+      "size_bytes": 349,
+      "class": "result"
+    },
+    {
+      "path": "results/run_summaries/adaptive_source_controller/2wiki/seed_13/rrf_dense_hkvm_bm25.metrics.json",
+      "sha256": "21cfe26cd5755ec7cca68372fed7ef31492c6937a91a5b8dfaef99c025ed7932",
+      "size_bytes": 349,
+      "class": "result"
+    },
+    {
+      "path": "results/run_summaries/adaptive_source_controller/2wiki/seed_13/split.json",
+      "sha256": "0e99a7cf8a94479020f40dcc2c4d583fa58727d51fe7a55358607134f252ab53",
+      "size_bytes": 448,
+      "class": "result"
+    },
+    {
+      "path": "results/run_summaries/adaptive_source_controller/2wiki/seed_13/summary.json",
+      "sha256": "1488f625db922529f635d1722acbb13dc55efdeb24be28fe2fb2d8bd286eedb2",
+      "size_bytes": 15950,
+      "class": "result"
+    },
+    {
+      "path": "results/run_summaries/adaptive_source_controller/2wiki/seed_29/calibrated_hkvm_topk4.metrics.json",
+      "sha256": "35e42fe6b382b1bb4864dbad50810bbb5e48ab3f0834f1dc16aa5ffc8e89e4c6",
+      "size_bytes": 366,
+      "class": "result"
+    },
+    {
+      "path": "results/run_summaries/adaptive_source_controller/2wiki/seed_29/colbertv2.metrics.json",
+      "sha256": "53c0814c4cad2eddc59957e03849a23551994a2205bd5f2c30a95711aed191c3",
+      "size_bytes": 354,
+      "class": "result"
+    },
+    {
+      "path": "results/run_summaries/adaptive_source_controller/2wiki/seed_29/controller_dense_hkvm.metrics.json",
+      "sha256": "3ea306e989fb9bdec0eaeab48dc327f052701a8ea1a8781a9c18a00e778487bc",
+      "size_bytes": 352,
+      "class": "result"
+    },
+    {
+      "path": "results/run_summaries/adaptive_source_controller/2wiki/seed_29/controller_dense_hkvm.model.json",
+      "sha256": "696393c048a838b19b5d3c683ee33376c51b6adef5e4ab1099b62b783b91a61a",
+      "size_bytes": 6503,
+      "class": "result"
+    },
+    {
+      "path": "results/run_summaries/adaptive_source_controller/2wiki/seed_29/controller_dense_only.metrics.json",
+      "sha256": "f91a0d50e54b127785a37ebe891acb1cb8a173ef217c0a15377b598760e60329",
+      "size_bytes": 354,
+      "class": "result"
+    },
+    {
+      "path": "results/run_summaries/adaptive_source_controller/2wiki/seed_29/controller_dense_only.model.json",
+      "sha256": "a7be9b505bf0adbd9ed7973dfa02ff011ea76cbebfa5656387ca47e6d1d922cd",
+      "size_bytes": 3739,
+      "class": "result"
+    },
+    {
+      "path": "results/run_summaries/adaptive_source_controller/2wiki/seed_29/controller_hkvm_only.metrics.json",
+      "sha256": "ee8b835fbff25b2f294126595535e8d003a05ce26bd22c81c6108c154fc74cf9",
+      "size_bytes": 350,
+      "class": "result"
+    },
+    {
+      "path": "results/run_summaries/adaptive_source_controller/2wiki/seed_29/controller_hkvm_only.model.json",
+      "sha256": "0b1e6e6bd9f167a5771d00284d7317cb112175a461a270d1daad3a6c698fd6a9",
+      "size_bytes": 3812,
+      "class": "result"
+    },
+    {
+      "path": "results/run_summaries/adaptive_source_controller/2wiki/seed_29/paired_bootstrap_vs_dense.csv",
+      "sha256": "16ee76668127aa6afef35a3884d0317e1811d8e98968a1632d512f44e7ce936b",
+      "size_bytes": 2176,
+      "class": "result"
+    },
+    {
+      "path": "results/run_summaries/adaptive_source_controller/2wiki/seed_29/quota_dense3_hkvm2.metrics.json",
+      "sha256": "ed5c79319c26870e3228223ed42dee7074eaf4f1bec71121dd1a06abf61cc97b",
+      "size_bytes": 354,
+      "class": "result"
+    },
+    {
+      "path": "results/run_summaries/adaptive_source_controller/2wiki/seed_29/quota_dense4_hkvm1.metrics.json",
+      "sha256": "3a081588694686f0be664fa86b4382df671646324a36d933dfc2e315ce9542a0",
+      "size_bytes": 353,
+      "class": "result"
+    },
+    {
+      "path": "results/run_summaries/adaptive_source_controller/2wiki/seed_29/rrf_dense_hkvm.metrics.json",
+      "sha256": "b1cdab941a05f93c572e832e3e4d28b97b0f9340c42fc6014558e4fcf22a3154",
+      "size_bytes": 354,
+      "class": "result"
+    },
+    {
+      "path": "results/run_summaries/adaptive_source_controller/2wiki/seed_29/rrf_dense_hkvm_bm25.metrics.json",
+      "sha256": "b1cdab941a05f93c572e832e3e4d28b97b0f9340c42fc6014558e4fcf22a3154",
+      "size_bytes": 354,
+      "class": "result"
+    },
+    {
+      "path": "results/run_summaries/adaptive_source_controller/2wiki/seed_29/split.json",
+      "sha256": "561c5a928e5b5bfca092815b0adf1ec41c1677854e422c5b3de7d1d29b497ae4",
+      "size_bytes": 448,
+      "class": "result"
+    },
+    {
+      "path": "results/run_summaries/adaptive_source_controller/2wiki/seed_29/summary.json",
+      "sha256": "96cd9321e6051cd613377091fb99beab32ec97268bce1002634abeec8679a5bf",
+      "size_bytes": 15948,
+      "class": "result"
+    },
+    {
+      "path": "results/run_summaries/adaptive_source_controller/2wiki/seed_43/calibrated_hkvm_topk4.metrics.json",
+      "sha256": "9e2ec95c8256206775b63c713f5f52f6a4bd6131053a99f3563dd8dd73dd1572",
+      "size_bytes": 373,
+      "class": "result"
+    },
+    {
+      "path": "results/run_summaries/adaptive_source_controller/2wiki/seed_43/colbertv2.metrics.json",
+      "sha256": "53c0814c4cad2eddc59957e03849a23551994a2205bd5f2c30a95711aed191c3",
+      "size_bytes": 354,
+      "class": "result"
+    },
+    {
+      "path": "results/run_summaries/adaptive_source_controller/2wiki/seed_43/controller_dense_hkvm.metrics.json",
+      "sha256": "23ac2adc10bda713196fca7fee454d4d6b8bba65f47db8f582e5e78c7f849bba",
+      "size_bytes": 353,
+      "class": "result"
+    },
+    {
+      "path": "results/run_summaries/adaptive_source_controller/2wiki/seed_43/controller_dense_hkvm.model.json",
+      "sha256": "3fe28b9d659dfe3f9342768ff8c74560f7f3dc1eb99d4299c49b6fe7ceb4d1c5",
+      "size_bytes": 6505,
+      "class": "result"
+    },
+    {
+      "path": "results/run_summaries/adaptive_source_controller/2wiki/seed_43/controller_dense_only.metrics.json",
+      "sha256": "71f7ebd8d3492d624530a677a7755abd3a75715c2250b5fa0418cb1304cc578f",
+      "size_bytes": 352,
+      "class": "result"
+    },
+    {
+      "path": "results/run_summaries/adaptive_source_controller/2wiki/seed_43/controller_dense_only.model.json",
+      "sha256": "43394a7784e0a3e3fae97568c3d80bdde37eb0d12f3b9bbef597e42ff784c20b",
+      "size_bytes": 3733,
+      "class": "result"
+    },
+    {
+      "path": "results/run_summaries/adaptive_source_controller/2wiki/seed_43/controller_hkvm_only.metrics.json",
+      "sha256": "bed5bc2a5e7767e5496f0643dc210688682504500fb39afa555611acdfe52520",
+      "size_bytes": 353,
+      "class": "result"
+    },
+    {
+      "path": "results/run_summaries/adaptive_source_controller/2wiki/seed_43/controller_hkvm_only.model.json",
+      "sha256": "82b0b78da1dd7591c3b96df76d55822ad411ea9e80bc64c3cbc2aa095b686a75",
+      "size_bytes": 3809,
+      "class": "result"
+    },
+    {
+      "path": "results/run_summaries/adaptive_source_controller/2wiki/seed_43/paired_bootstrap_vs_dense.csv",
+      "sha256": "83200fa1f5bf00c121eb5599350e265174953777fb146993dee8132f1696e7c6",
+      "size_bytes": 2182,
+      "class": "result"
+    },
+    {
+      "path": "results/run_summaries/adaptive_source_controller/2wiki/seed_43/quota_dense3_hkvm2.metrics.json",
+      "sha256": "b2a1ad385b00869d69c806c3014781d26e2815ad00345ca14cb5d6fb0f59c84b",
+      "size_bytes": 353,
+      "class": "result"
+    },
+    {
+      "path": "results/run_summaries/adaptive_source_controller/2wiki/seed_43/quota_dense4_hkvm1.metrics.json",
+      "sha256": "6bb1ffe5fe40a78004c5388e7d715087cb5a151029f903df23a5dc5b0ae51ee0",
+      "size_bytes": 353,
+      "class": "result"
+    },
+    {
+      "path": "results/run_summaries/adaptive_source_controller/2wiki/seed_43/rrf_dense_hkvm.metrics.json",
+      "sha256": "c323e7f20325f645f10dd82af4c11dd91d702236b9594ac537a564c84b1384e1",
+      "size_bytes": 352,
+      "class": "result"
+    },
+    {
+      "path": "results/run_summaries/adaptive_source_controller/2wiki/seed_43/rrf_dense_hkvm_bm25.metrics.json",
+      "sha256": "c323e7f20325f645f10dd82af4c11dd91d702236b9594ac537a564c84b1384e1",
+      "size_bytes": 352,
+      "class": "result"
+    },
+    {
+      "path": "results/run_summaries/adaptive_source_controller/2wiki/seed_43/split.json",
+      "sha256": "81af5cf13a13642c7731285fb4abd5e7bc58fe98d2ad97cebb686453e075fc77",
+      "size_bytes": 448,
+      "class": "result"
+    },
+    {
+      "path": "results/run_summaries/adaptive_source_controller/2wiki/seed_43/summary.json",
+      "sha256": "40ff63f2bfd125f3fa91e6c993c563d2d77632f6bc25110baf8cc9044bb95932",
+      "size_bytes": 15945,
+      "class": "result"
+    },
+    {
+      "path": "results/run_summaries/adaptive_source_controller/2wiki/seed_metrics.csv",
+      "sha256": "d798b0ce0a71d2d09f0a95514048f03ccc3024e2507d5217feefe2be14a996fd",
+      "size_bytes": 14465,
+      "class": "result"
+    },
+    {
+      "path": "results/run_summaries/adaptive_source_controller/2wiki/summary.json",
+      "sha256": "0cbe02529b1b87e1596d28839979fd491868367a5b705c92bbfbc644a74c9a2b",
+      "size_bytes": 52203,
+      "class": "result"
+    },
+    {
+      "path": "results/run_summaries/adaptive_source_controller/hotpotqa/aggregate_metrics.csv",
+      "sha256": "1f2ddc47fde9f3267b1001d06369d8c186159b267fe91c30603fe42080dd8188",
+      "size_bytes": 6209,
+      "class": "result"
+    },
+    {
+      "path": "results/run_summaries/adaptive_source_controller/hotpotqa/manifest.json",
+      "sha256": "7ec00c4be0ce2ae0cf33e398383fc8e7cdac0ee236969d0691bf3724fa1033a7",
+      "size_bytes": 6349,
+      "class": "result"
+    },
+    {
+      "path": "results/run_summaries/adaptive_source_controller/hotpotqa/seed_13/calibrated_hkvm_topk4.metrics.json",
+      "sha256": "442f9b999288156244c7881daa20dec7577f0e7f1de2d8d47bd655779bdbaf3b",
+      "size_bytes": 376,
+      "class": "result"
+    },
+    {
+      "path": "results/run_summaries/adaptive_source_controller/hotpotqa/seed_13/colbertv2.metrics.json",
+      "sha256": "b028af69828a8d2f0d80e97c0566a2bec487189ed9e0d684b2cee51a39ca3592",
+      "size_bytes": 354,
+      "class": "result"
+    },
+    {
+      "path": "results/run_summaries/adaptive_source_controller/hotpotqa/seed_13/controller_dense_hkvm.metrics.json",
+      "sha256": "485b480e35c4798657d05479d199bc6e6d595fc88a03caf6b51d7be38689b720",
+      "size_bytes": 353,
+      "class": "result"
+    },
+    {
+      "path": "results/run_summaries/adaptive_source_controller/hotpotqa/seed_13/controller_dense_hkvm.model.json",
+      "sha256": "5eda0427ae013844c93769dbaba8832703e02fef0bd18a23073665d275cf3050",
+      "size_bytes": 6493,
+      "class": "result"
+    },
+    {
+      "path": "results/run_summaries/adaptive_source_controller/hotpotqa/seed_13/controller_dense_only.metrics.json",
+      "sha256": "0b2e5b1f1b035e4143a74f00a57d1ebc1807ba53a5d426a2f78a3707587fae22",
+      "size_bytes": 353,
+      "class": "result"
+    },
+    {
+      "path": "results/run_summaries/adaptive_source_controller/hotpotqa/seed_13/controller_dense_only.model.json",
+      "sha256": "a765a8cc35faa1f37bf43fd9f9fb380a024e35d89a54a62bcee7b80dccc4c8e3",
+      "size_bytes": 3734,
+      "class": "result"
+    },
+    {
+      "path": "results/run_summaries/adaptive_source_controller/hotpotqa/seed_13/controller_hkvm_only.metrics.json",
+      "sha256": "3532cf0793e25c2130654a6ee49895f9e922582f1c63e6ccbc149df13c4fe6fc",
+      "size_bytes": 354,
+      "class": "result"
+    },
+    {
+      "path": "results/run_summaries/adaptive_source_controller/hotpotqa/seed_13/controller_hkvm_only.model.json",
+      "sha256": "e94e14e1f6e2d4f655a69915d72c2d15b52a7f81872af6fe671dbbcb3aebd914",
+      "size_bytes": 3780,
+      "class": "result"
+    },
+    {
+      "path": "results/run_summaries/adaptive_source_controller/hotpotqa/seed_13/paired_bootstrap_vs_dense.csv",
+      "sha256": "39d1fadb864e0216a0d642cc525cad0865e35f9d584316946e7a2a1c846d2667",
+      "size_bytes": 2173,
+      "class": "result"
+    },
+    {
+      "path": "results/run_summaries/adaptive_source_controller/hotpotqa/seed_13/quota_dense3_hkvm2.metrics.json",
+      "sha256": "ef6e59461359ea7757f0f58e53cda2d64c68e0019e580cc16bcf5f607156fef9",
+      "size_bytes": 352,
+      "class": "result"
+    },
+    {
+      "path": "results/run_summaries/adaptive_source_controller/hotpotqa/seed_13/quota_dense4_hkvm1.metrics.json",
+      "sha256": "8fa4b86c29b3e7c359b4ae4464e80b802f3fa40cacb83a58597849de446b8d3d",
+      "size_bytes": 353,
+      "class": "result"
+    },
+    {
+      "path": "results/run_summaries/adaptive_source_controller/hotpotqa/seed_13/rrf_dense_hkvm.metrics.json",
+      "sha256": "2caf25a65ee5151d58e610683d427f6905595ba3a8ac6f21b847f0019b468919",
+      "size_bytes": 353,
+      "class": "result"
+    },
+    {
+      "path": "results/run_summaries/adaptive_source_controller/hotpotqa/seed_13/rrf_dense_hkvm_bm25.metrics.json",
+      "sha256": "2caf25a65ee5151d58e610683d427f6905595ba3a8ac6f21b847f0019b468919",
+      "size_bytes": 353,
+      "class": "result"
+    },
+    {
+      "path": "results/run_summaries/adaptive_source_controller/hotpotqa/seed_13/split.json",
+      "sha256": "e9b1e19abbb3c09da070c65b0bc76a98c12c55b2f11c541087777f9fa8690c97",
+      "size_bytes": 445,
+      "class": "result"
+    },
+    {
+      "path": "results/run_summaries/adaptive_source_controller/hotpotqa/seed_13/summary.json",
+      "sha256": "0226c9a331e0d799dcd2bc60a25a28fc1208fe9499d3acf5a9ecbc29c63e9788",
+      "size_bytes": 15949,
+      "class": "result"
+    },
+    {
+      "path": "results/run_summaries/adaptive_source_controller/hotpotqa/seed_29/calibrated_hkvm_topk4.metrics.json",
+      "sha256": "bf33a04ce6b2f5f712c6e72c7600b05ecdc00679312e31265b397c9113df2f20",
+      "size_bytes": 376,
+      "class": "result"
+    },
+    {
+      "path": "results/run_summaries/adaptive_source_controller/hotpotqa/seed_29/colbertv2.metrics.json",
+      "sha256": "b028af69828a8d2f0d80e97c0566a2bec487189ed9e0d684b2cee51a39ca3592",
+      "size_bytes": 354,
+      "class": "result"
+    },
+    {
+      "path": "results/run_summaries/adaptive_source_controller/hotpotqa/seed_29/controller_dense_hkvm.metrics.json",
+      "sha256": "e223a0e80907078b9feb1528b4ba16fe9250b99eca575e2d67a18014eab6bfa7",
+      "size_bytes": 353,
+      "class": "result"
+    },
+    {
+      "path": "results/run_summaries/adaptive_source_controller/hotpotqa/seed_29/controller_dense_hkvm.model.json",
+      "sha256": "2c409b6d73d49a61d9672bb37ac45d8026a8ba27c5adc827a656c49f9bf8c3fc",
+      "size_bytes": 6497,
+      "class": "result"
+    },
+    {
+      "path": "results/run_summaries/adaptive_source_controller/hotpotqa/seed_29/controller_dense_only.metrics.json",
+      "sha256": "f809deef78fbe97290383385521535872028e4310d01c6239eba4768f352a6f9",
+      "size_bytes": 353,
+      "class": "result"
+    },
+    {
+      "path": "results/run_summaries/adaptive_source_controller/hotpotqa/seed_29/controller_dense_only.model.json",
+      "sha256": "a588371709a73b546aaf86b92ff7b1905ade462b341ea77730ddfb559cf82a24",
+      "size_bytes": 3737,
+      "class": "result"
+    },
+    {
+      "path": "results/run_summaries/adaptive_source_controller/hotpotqa/seed_29/controller_hkvm_only.metrics.json",
+      "sha256": "983a468fc5004104f643dff2a9bb6524ac11c1d00a7496cd76a863a3d3c44e9c",
+      "size_bytes": 351,
+      "class": "result"
+    },
+    {
+      "path": "results/run_summaries/adaptive_source_controller/hotpotqa/seed_29/controller_hkvm_only.model.json",
+      "sha256": "4604bb2b7c801832240a0d7977b537a13e610db4d1a01b6a5586616a310dd102",
+      "size_bytes": 3782,
+      "class": "result"
+    },
+    {
+      "path": "results/run_summaries/adaptive_source_controller/hotpotqa/seed_29/paired_bootstrap_vs_dense.csv",
+      "sha256": "4d1e82e0400d8caea7a6ff0803b72ccbe78b407531e2da7d8bbbd8d29484e2b5",
+      "size_bytes": 2170,
+      "class": "result"
+    },
+    {
+      "path": "results/run_summaries/adaptive_source_controller/hotpotqa/seed_29/quota_dense3_hkvm2.metrics.json",
+      "sha256": "aa8f139c24060bd736a7851adf2d7fbd67e81b244507af758c35b12bcd47515f",
+      "size_bytes": 353,
+      "class": "result"
+    },
+    {
+      "path": "results/run_summaries/adaptive_source_controller/hotpotqa/seed_29/quota_dense4_hkvm1.metrics.json",
+      "sha256": "aac68b66d109aec0a9decb08ca84669b466dd8d90f61c4462c1dce706146d981",
+      "size_bytes": 353,
+      "class": "result"
+    },
+    {
+      "path": "results/run_summaries/adaptive_source_controller/hotpotqa/seed_29/rrf_dense_hkvm.metrics.json",
+      "sha256": "981d6416ca3d1af215e3904f5a2b13f65fc36ea2e620cc6365add74b5739daee",
+      "size_bytes": 353,
+      "class": "result"
+    },
+    {
+      "path": "results/run_summaries/adaptive_source_controller/hotpotqa/seed_29/rrf_dense_hkvm_bm25.metrics.json",
+      "sha256": "981d6416ca3d1af215e3904f5a2b13f65fc36ea2e620cc6365add74b5739daee",
+      "size_bytes": 353,
+      "class": "result"
+    },
+    {
+      "path": "results/run_summaries/adaptive_source_controller/hotpotqa/seed_29/split.json",
+      "sha256": "7cd3241476da9a06a8d558faf0eb8aea9cbe7f468c10197425836a327fa2635f",
+      "size_bytes": 445,
+      "class": "result"
+    },
+    {
+      "path": "results/run_summaries/adaptive_source_controller/hotpotqa/seed_29/summary.json",
+      "sha256": "a807bc28e7005e962a3947a81a034e63fa63e7950c2d454676170b87e372ca6e",
+      "size_bytes": 15947,
+      "class": "result"
+    },
+    {
+      "path": "results/run_summaries/adaptive_source_controller/hotpotqa/seed_43/calibrated_hkvm_topk4.metrics.json",
+      "sha256": "7d8bf79d1d56a37dc818c2d9a0c96fd72ed8ecf7a2f94356ae80f8b0b195eae0",
+      "size_bytes": 376,
+      "class": "result"
+    },
+    {
+      "path": "results/run_summaries/adaptive_source_controller/hotpotqa/seed_43/colbertv2.metrics.json",
+      "sha256": "b028af69828a8d2f0d80e97c0566a2bec487189ed9e0d684b2cee51a39ca3592",
+      "size_bytes": 354,
+      "class": "result"
+    },
+    {
+      "path": "results/run_summaries/adaptive_source_controller/hotpotqa/seed_43/controller_dense_hkvm.metrics.json",
+      "sha256": "22ec3a2584e884fad2a4484cd115beb8fb4b65a933237b0878d7b125c779cc3d",
+      "size_bytes": 352,
+      "class": "result"
+    },
+    {
+      "path": "results/run_summaries/adaptive_source_controller/hotpotqa/seed_43/controller_dense_hkvm.model.json",
+      "sha256": "9133edc0e9a29aa0d5a422fd09826d2a7183c925c6e4d65a357d7b9ca4ffb5a8",
+      "size_bytes": 6490,
+      "class": "result"
+    },
+    {
+      "path": "results/run_summaries/adaptive_source_controller/hotpotqa/seed_43/controller_dense_only.metrics.json",
+      "sha256": "c0f8cd403422c92cdc0e8fb32b3426076a732426c180e58a4116eaf42293b4c6",
+      "size_bytes": 352,
+      "class": "result"
+    },
+    {
+      "path": "results/run_summaries/adaptive_source_controller/hotpotqa/seed_43/controller_dense_only.model.json",
+      "sha256": "faeda25357801d20abab587ff5d8fd22e7cf64736b32bc368c36637577920469",
+      "size_bytes": 3732,
+      "class": "result"
+    },
+    {
+      "path": "results/run_summaries/adaptive_source_controller/hotpotqa/seed_43/controller_hkvm_only.metrics.json",
+      "sha256": "818c21dc1ff177764bacc51df75e41b16b6a9c91bc760100f26a2f5813852368",
+      "size_bytes": 351,
+      "class": "result"
+    },
+    {
+      "path": "results/run_summaries/adaptive_source_controller/hotpotqa/seed_43/controller_hkvm_only.model.json",
+      "sha256": "74261fee1720a2b30ac8db40519ebbaf74fdb4c82b44ee465ae85cce94799829",
+      "size_bytes": 3786,
+      "class": "result"
+    },
+    {
+      "path": "results/run_summaries/adaptive_source_controller/hotpotqa/seed_43/paired_bootstrap_vs_dense.csv",
+      "sha256": "1e81dfadb91718b8106ac88fc995edde175c37a5959272cf037e4fd90d5e3c6e",
+      "size_bytes": 2173,
+      "class": "result"
+    },
+    {
+      "path": "results/run_summaries/adaptive_source_controller/hotpotqa/seed_43/quota_dense3_hkvm2.metrics.json",
+      "sha256": "9bd157fd659f40223b0573ba35ef3c42f73eee67d3de15508ecbeecce7c3d83f",
+      "size_bytes": 352,
+      "class": "result"
+    },
+    {
+      "path": "results/run_summaries/adaptive_source_controller/hotpotqa/seed_43/quota_dense4_hkvm1.metrics.json",
+      "sha256": "2625c3f9837e23bd5e94f21cd2aac487b4a520c71aac6dc36517335895ac96f6",
+      "size_bytes": 353,
+      "class": "result"
+    },
+    {
+      "path": "results/run_summaries/adaptive_source_controller/hotpotqa/seed_43/rrf_dense_hkvm.metrics.json",
+      "sha256": "4cb61ef66e8682cdb47a995dd99870dd6ccfec9c339cf50f36799e0be62ccb90",
+      "size_bytes": 350,
+      "class": "result"
+    },
+    {
+      "path": "results/run_summaries/adaptive_source_controller/hotpotqa/seed_43/rrf_dense_hkvm_bm25.metrics.json",
+      "sha256": "4cb61ef66e8682cdb47a995dd99870dd6ccfec9c339cf50f36799e0be62ccb90",
+      "size_bytes": 350,
+      "class": "result"
+    },
+    {
+      "path": "results/run_summaries/adaptive_source_controller/hotpotqa/seed_43/split.json",
+      "sha256": "152085a76042155d4faafc788925a9126b92e1f76052fee342846e8d5e4043fa",
+      "size_bytes": 445,
+      "class": "result"
+    },
+    {
+      "path": "results/run_summaries/adaptive_source_controller/hotpotqa/seed_43/summary.json",
+      "sha256": "2a0f7799bdb29cca9470f3ff17e37582459183e7957ae3250087757e20c7594b",
+      "size_bytes": 15929,
+      "class": "result"
+    },
+    {
+      "path": "results/run_summaries/adaptive_source_controller/hotpotqa/seed_metrics.csv",
+      "sha256": "950ce21d34e673164d4c52213707e30641cd9bae2f594ee53bb4da5177903333",
+      "size_bytes": 14480,
+      "class": "result"
+    },
+    {
+      "path": "results/run_summaries/adaptive_source_controller/hotpotqa/summary.json",
+      "sha256": "868b1370a38ee6b6868a30befb6045dfb84303c8e02aee4fa5bb4c1cb0f10f62",
+      "size_bytes": 52234,
+      "class": "result"
+    },
+    {
+      "path": "results/run_summaries/adaptive_source_controller/musique/aggregate_metrics.csv",
+      "sha256": "b8b5bbefa3a06cd3117960cd02687b01c8d986e2eff0bdd2aa91f9ce5f45a844",
+      "size_bytes": 6633,
+      "class": "result"
+    },
+    {
+      "path": "results/run_summaries/adaptive_source_controller/musique/manifest.json",
+      "sha256": "64ebdec3766ca809795131e4bce16d6afe4e1996821a6591d455629b62075ccf",
+      "size_bytes": 4772,
+      "class": "result"
+    },
+    {
+      "path": "results/run_summaries/adaptive_source_controller/musique/seed_13/calibrated_hkvm_topk4.metrics.json",
+      "sha256": "a3431a2de96d9d57e6dd00c3f94de0995de29271b3577929fa8d210439a89142",
+      "size_bytes": 379,
+      "class": "result"
+    },
+    {
+      "path": "results/run_summaries/adaptive_source_controller/musique/seed_13/colbertv2.metrics.json",
+      "sha256": "4c4ac9a91cd52823a351bee25afdc3077c11de9aa058afc669f8eea70cc356bb",
+      "size_bytes": 378,
+      "class": "result"
+    },
+    {
+      "path": "results/run_summaries/adaptive_source_controller/musique/seed_13/controller_dense_hkvm.metrics.json",
+      "sha256": "eaff061300bbd7080590a642b628df7d56add2366d01dcd49ab6e16226d8fb49",
+      "size_bytes": 376,
+      "class": "result"
+    },
+    {
+      "path": "results/run_summaries/adaptive_source_controller/musique/seed_13/controller_dense_hkvm.model.json",
+      "sha256": "37d37954132ab2bd8e3afed084bda5a7f4ffebb433c17cae48ab4278ff8b5f7a",
+      "size_bytes": 6605,
+      "class": "result"
+    },
+    {
+      "path": "results/run_summaries/adaptive_source_controller/musique/seed_13/controller_dense_only.metrics.json",
+      "sha256": "53db064dda3c6f74573bfa47fda513e023f664e39fad825367432521c7cd8ff3",
+      "size_bytes": 382,
+      "class": "result"
+    },
+    {
+      "path": "results/run_summaries/adaptive_source_controller/musique/seed_13/controller_dense_only.model.json",
+      "sha256": "8042828962efc1a32ab553a3481ac36d5e9abd783a482b5cffe0b63fb6fa967b",
+      "size_bytes": 3795,
+      "class": "result"
+    },
+    {
+      "path": "results/run_summaries/adaptive_source_controller/musique/seed_13/controller_hkvm_only.metrics.json",
+      "sha256": "37e7f9207dbc6bded055553bfb4667ad166a6d87aa61b8664372013561d72a1e",
+      "size_bytes": 381,
+      "class": "result"
+    },
+    {
+      "path": "results/run_summaries/adaptive_source_controller/musique/seed_13/controller_hkvm_only.model.json",
+      "sha256": "d1c8629ae0c14f1e7efba1ec397f122cbfb0e9b5ecce21f46f493b8af3f22fff",
+      "size_bytes": 3791,
+      "class": "result"
+    },
+    {
+      "path": "results/run_summaries/adaptive_source_controller/musique/seed_13/paired_bootstrap_vs_dense.csv",
+      "sha256": "922693e080a6aaec92f820bd61a45023592ef3c2746c2d4ab94edf0861309d3d",
+      "size_bytes": 2505,
+      "class": "result"
+    },
+    {
+      "path": "results/run_summaries/adaptive_source_controller/musique/seed_13/quota_dense3_hkvm2.metrics.json",
+      "sha256": "14507fe3ae9719c6475eadfff941b99e457110ac2e76cf980567ca23e1432258",
+      "size_bytes": 378,
+      "class": "result"
+    },
+    {
+      "path": "results/run_summaries/adaptive_source_controller/musique/seed_13/quota_dense4_hkvm1.metrics.json",
+      "sha256": "a27d4117e75be9af150dd0b56ffb5c8be0658ea5126fd2cef5fb961735a3adfe",
+      "size_bytes": 378,
+      "class": "result"
+    },
+    {
+      "path": "results/run_summaries/adaptive_source_controller/musique/seed_13/rrf_dense_hkvm.metrics.json",
+      "sha256": "9bc0632751548eb0180b53a13da6ce8eb923099992bbe9699946e55e49adaf32",
+      "size_bytes": 377,
+      "class": "result"
+    },
+    {
+      "path": "results/run_summaries/adaptive_source_controller/musique/seed_13/rrf_dense_hkvm_bm25.metrics.json",
+      "sha256": "9bc0632751548eb0180b53a13da6ce8eb923099992bbe9699946e55e49adaf32",
+      "size_bytes": 377,
+      "class": "result"
+    },
+    {
+      "path": "results/run_summaries/adaptive_source_controller/musique/seed_13/split.json",
+      "sha256": "af3036c01ea9ba8486854dd3bf60dcb005d281dc00dd79f095e82ee5ff70c204",
+      "size_bytes": 445,
+      "class": "result"
+    },
+    {
+      "path": "results/run_summaries/adaptive_source_controller/musique/seed_13/summary.json",
+      "sha256": "79adc929379520a8acd576cd9a672834b474b42c00d4ebe2e40862e3d96501bd",
+      "size_bytes": 16508,
+      "class": "result"
+    },
+    {
+      "path": "results/run_summaries/adaptive_source_controller/musique/seed_29/calibrated_hkvm_topk4.metrics.json",
+      "sha256": "eb8a1119922658711374a4d2d5daaf35d942202e9a0faee419d5ab9a71ea9a71",
+      "size_bytes": 377,
+      "class": "result"
+    },
+    {
+      "path": "results/run_summaries/adaptive_source_controller/musique/seed_29/colbertv2.metrics.json",
+      "sha256": "4c4ac9a91cd52823a351bee25afdc3077c11de9aa058afc669f8eea70cc356bb",
+      "size_bytes": 378,
+      "class": "result"
+    },
+    {
+      "path": "results/run_summaries/adaptive_source_controller/musique/seed_29/controller_dense_hkvm.metrics.json",
+      "sha256": "11266b1b7de7f4b720fbb9b989043cfb32ed4efdec160d3e824d574dc7bf8171",
+      "size_bytes": 377,
+      "class": "result"
+    },
+    {
+      "path": "results/run_summaries/adaptive_source_controller/musique/seed_29/controller_dense_hkvm.model.json",
+      "sha256": "5cb01bab809f9734ea6ab2f913c26ea38f815a0e014497982e20e7d298d8ce46",
+      "size_bytes": 6601,
+      "class": "result"
+    },
+    {
+      "path": "results/run_summaries/adaptive_source_controller/musique/seed_29/controller_dense_only.metrics.json",
+      "sha256": "715e53e222c54321f71779074cc118ca781c68e7985e47919c847e6d9aaaca70",
+      "size_bytes": 377,
+      "class": "result"
+    },
+    {
+      "path": "results/run_summaries/adaptive_source_controller/musique/seed_29/controller_dense_only.model.json",
+      "sha256": "62720afcb8a27f46e78198af26a6243e527107e00a8a069718265b36b8d695c2",
+      "size_bytes": 3799,
+      "class": "result"
+    },
+    {
+      "path": "results/run_summaries/adaptive_source_controller/musique/seed_29/controller_hkvm_only.metrics.json",
+      "sha256": "71db2ff743e721486f65eb2348889d06b2baa06e4a9dbe282f7074f14d65ab99",
+      "size_bytes": 378,
+      "class": "result"
+    },
+    {
+      "path": "results/run_summaries/adaptive_source_controller/musique/seed_29/controller_hkvm_only.model.json",
+      "sha256": "a3e827eb3dcfd20402dad41567e751a369f854f3695b50a5866eb743be05f43c",
+      "size_bytes": 3800,
+      "class": "result"
+    },
+    {
+      "path": "results/run_summaries/adaptive_source_controller/musique/seed_29/paired_bootstrap_vs_dense.csv",
+      "sha256": "a2c5beacc6f9d3b0e66e1a9181f7ac97d14e4b7db1befad8f0182ed326d98cb0",
+      "size_bytes": 2532,
+      "class": "result"
+    },
+    {
+      "path": "results/run_summaries/adaptive_source_controller/musique/seed_29/quota_dense3_hkvm2.metrics.json",
+      "sha256": "570b1be6cf14b06b1eb98fb4120ab9eb381b2e2d475ac2b4196c05043a05b024",
+      "size_bytes": 376,
+      "class": "result"
+    },
+    {
+      "path": "results/run_summaries/adaptive_source_controller/musique/seed_29/quota_dense4_hkvm1.metrics.json",
+      "sha256": "7a3cac9671ebf7e4fd303f8bd7af7203bee2a2afbaccd20ef68cd3264fb9fce8",
+      "size_bytes": 380,
+      "class": "result"
+    },
+    {
+      "path": "results/run_summaries/adaptive_source_controller/musique/seed_29/rrf_dense_hkvm.metrics.json",
+      "sha256": "cbffe9257bbaa012092ae7143d5762d768013f4bba25db9ebdd7daa7d55fece6",
+      "size_bytes": 377,
+      "class": "result"
+    },
+    {
+      "path": "results/run_summaries/adaptive_source_controller/musique/seed_29/rrf_dense_hkvm_bm25.metrics.json",
+      "sha256": "cbffe9257bbaa012092ae7143d5762d768013f4bba25db9ebdd7daa7d55fece6",
+      "size_bytes": 377,
+      "class": "result"
+    },
+    {
+      "path": "results/run_summaries/adaptive_source_controller/musique/seed_29/split.json",
+      "sha256": "e09dce594fa15772f958d4f6c45a2e1bc76d584a10ed15f4eadfb73b049e7e06",
+      "size_bytes": 445,
+      "class": "result"
+    },
+    {
+      "path": "results/run_summaries/adaptive_source_controller/musique/seed_29/summary.json",
+      "sha256": "f815ec17078391c1e18f61141b77ff41b929ecc83ce7d2f1cdfd2d57f634176d",
+      "size_bytes": 16540,
+      "class": "result"
+    },
+    {
+      "path": "results/run_summaries/adaptive_source_controller/musique/seed_43/calibrated_hkvm_topk4.metrics.json",
+      "sha256": "09dae7760fb63ee9b0a7d4d4a5aa78cf22f6ce9c9bf415966ab917fcfa028902",
+      "size_bytes": 379,
+      "class": "result"
+    },
+    {
+      "path": "results/run_summaries/adaptive_source_controller/musique/seed_43/colbertv2.metrics.json",
+      "sha256": "4c4ac9a91cd52823a351bee25afdc3077c11de9aa058afc669f8eea70cc356bb",
+      "size_bytes": 378,
+      "class": "result"
+    },
+    {
+      "path": "results/run_summaries/adaptive_source_controller/musique/seed_43/controller_dense_hkvm.metrics.json",
+      "sha256": "75f8d65761667eb297d499ad56d2a8350020dbc18cdefb10d14d9e5195f0f299",
+      "size_bytes": 378,
+      "class": "result"
+    },
+    {
+      "path": "results/run_summaries/adaptive_source_controller/musique/seed_43/controller_dense_hkvm.model.json",
+      "sha256": "8ee5420b96a1f3a1124298d3e1df2cd88e333aaf3de23a3c486d5f4e4f141545",
+      "size_bytes": 6626,
+      "class": "result"
+    },
+    {
+      "path": "results/run_summaries/adaptive_source_controller/musique/seed_43/controller_dense_only.metrics.json",
+      "sha256": "c876820ad06de3840b85b489e97eb53ba850c6fc048b64c0ca3a7a387348205a",
+      "size_bytes": 380,
+      "class": "result"
+    },
+    {
+      "path": "results/run_summaries/adaptive_source_controller/musique/seed_43/controller_dense_only.model.json",
+      "sha256": "79bf7bbcf2c75feb15c19c081d482e445f0476ad9ba93a7594a2775c6168e080",
+      "size_bytes": 3803,
+      "class": "result"
+    },
+    {
+      "path": "results/run_summaries/adaptive_source_controller/musique/seed_43/controller_hkvm_only.metrics.json",
+      "sha256": "567dd246c0686726e75af6bfb89f463e791da5b82d109b3fbd8b57fda766d8e6",
+      "size_bytes": 381,
+      "class": "result"
+    },
+    {
+      "path": "results/run_summaries/adaptive_source_controller/musique/seed_43/controller_hkvm_only.model.json",
+      "sha256": "d487730a543d9c9e537e0ec389c62c015fb097fb6b7426388c723244bf6ecfea",
+      "size_bytes": 3782,
+      "class": "result"
+    },
+    {
+      "path": "results/run_summaries/adaptive_source_controller/musique/seed_43/paired_bootstrap_vs_dense.csv",
+      "sha256": "978b3749519943fef04faaea5fa6df8fad8c6ccff424f58e330baa2df473bf4e",
+      "size_bytes": 2537,
+      "class": "result"
+    },
+    {
+      "path": "results/run_summaries/adaptive_source_controller/musique/seed_43/quota_dense3_hkvm2.metrics.json",
+      "sha256": "fb3029032279dd1dde20fd0192de9921e18cb0bb7ce86e5239813b9ef84bf0b5",
+      "size_bytes": 375,
+      "class": "result"
+    },
+    {
+      "path": "results/run_summaries/adaptive_source_controller/musique/seed_43/quota_dense4_hkvm1.metrics.json",
+      "sha256": "8641b65abe42fbd36e7cbf53b0f85aa7c5a192286d63bb550c12e3614ece991b",
+      "size_bytes": 380,
+      "class": "result"
+    },
+    {
+      "path": "results/run_summaries/adaptive_source_controller/musique/seed_43/rrf_dense_hkvm.metrics.json",
+      "sha256": "eb5ce3aca8eb6b36d563fe4e393103dbc911c7aa4c877082eb8bd8220e3d4593",
+      "size_bytes": 378,
+      "class": "result"
+    },
+    {
+      "path": "results/run_summaries/adaptive_source_controller/musique/seed_43/rrf_dense_hkvm_bm25.metrics.json",
+      "sha256": "eb5ce3aca8eb6b36d563fe4e393103dbc911c7aa4c877082eb8bd8220e3d4593",
+      "size_bytes": 378,
+      "class": "result"
+    },
+    {
+      "path": "results/run_summaries/adaptive_source_controller/musique/seed_43/split.json",
+      "sha256": "e48715066fbe611370b1c26f2735fc19ceaeb03e91b3a2c87cf29c5e6fd40883",
+      "size_bytes": 445,
+      "class": "result"
+    },
+    {
+      "path": "results/run_summaries/adaptive_source_controller/musique/seed_43/summary.json",
+      "sha256": "17053df4b10b153dfba2a3a42861de398f7560a322245156b657c4949ee3ab7b",
+      "size_bytes": 16562,
+      "class": "result"
+    },
+    {
+      "path": "results/run_summaries/adaptive_source_controller/musique/seed_metrics.csv",
+      "sha256": "33a5f711e290b8ee89e184c2ba2d6c2f8e604f46d862af0febec194dac56d902",
+      "size_bytes": 15100,
+      "class": "result"
+    },
+    {
+      "path": "results/run_summaries/adaptive_source_controller/musique/summary.json",
+      "sha256": "7b3d2c999d4da6ca14ea7ae2756a374e633136e9cc84c014dbc47309c4679f3f",
+      "size_bytes": 54335,
+      "class": "result"
+    },
+    {
+      "path": "results/run_summaries/extraction_quality/aggregate/dev_non_hotpot/bootstrap_unique_seed13.json",
+      "sha256": "62dc8e8349a9197e5ea76ff4c72f337a3ffc4474db719d2da045a0a895d8f12f",
+      "size_bytes": 1822,
+      "class": "result"
+    },
+    {
+      "path": "results/run_summaries/extraction_quality/aggregate/dev_non_hotpot/extraction_audit.json",
+      "sha256": "4df176ca856a10b2db229dd26a19c3ea5f733062e2231874adc3341a01b1036f",
+      "size_bytes": 24503,
+      "class": "result"
+    },
+    {
+      "path": "results/run_summaries/extraction_quality/aggregate/dev_non_hotpot/go_no_go.json",
+      "sha256": "b49c103d9f923891c4d0bb3fd75d29a9690f7b53cfeef0c146d821f9a2d823e6",
+      "size_bytes": 710,
+      "class": "result"
+    },
+    {
+      "path": "results/run_summaries/extraction_quality/aggregate/dev_non_hotpot/go_no_go.md",
+      "sha256": "b4a634d67dc524f40cc1af05abd0c43fc7c1d3f3c3171621461f6fc719539581",
+      "size_bytes": 324,
+      "class": "result"
+    },
+    {
+      "path": "results/run_summaries/extraction_quality/aggregate/dev_non_hotpot/run_manifest.json",
+      "sha256": "cdc58226587d509ca32cc909796a61a0356be769d52b3c6352fd8630a88cd07f",
+      "size_bytes": 12069,
+      "class": "result"
+    },
+    {
+      "path": "results/run_summaries/extraction_quality/aggregate/dev_non_hotpot/summary.csv",
+      "sha256": "46ece915023ccebe695765300bed9adfc404fc84ed84d34e7e9e9bdaaa9453b2",
+      "size_bytes": 7149,
+      "class": "result"
+    },
+    {
+      "path": "results/run_summaries/extraction_quality/aggregate/dev_non_hotpot/summary.json",
+      "sha256": "c23f1750913792d75cfca216cd95c679ea8ed921f84e3403fb20d29db2589e17",
+      "size_bytes": 32182,
+      "class": "result"
+    },
+    {
+      "path": "results/run_summaries/fixed_substrate/2wiki/seed_13/bm25.metrics.json",
+      "sha256": "d25437d16bad7aae218dbced8250b672b357e081e3221a3648e07d8555a35d8e",
+      "size_bytes": 389,
+      "class": "result"
+    },
+    {
+      "path": "results/run_summaries/fixed_substrate/2wiki/seed_13/hyper_rag.metrics.json",
+      "sha256": "9c09e6b7749aff837badc9d80f0cdaf900f7ef73f747903aaf997ea6259fa369",
+      "size_bytes": 395,
+      "class": "result"
+    },
+    {
+      "path": "results/run_summaries/fixed_substrate/2wiki/seed_13/kg_ppr.metrics.json",
+      "sha256": "b0d4296ad773aedfe86fbdea399b40ed27a4fac20149bc4158ce25865c0ddd85",
+      "size_bytes": 396,
+      "class": "result"
+    },
+    {
+      "path": "results/run_summaries/fixed_substrate/2wiki/seed_13/seed_13.extraction_audit.json",
+      "sha256": "ce8fe21a792f369f87932b2ed452c2093198868184fc9565e934b4913ada8468",
+      "size_bytes": 3333,
+      "class": "result"
+    },
+    {
+      "path": "results/run_summaries/fixed_substrate/2wiki/seed_13/static_hg.metrics.json",
+      "sha256": "d497e9882fc3a5cf7b1060e526eec33755d3eb32830e46e24ce5d35102cb4a78",
+      "size_bytes": 394,
+      "class": "result"
+    },
+    {
+      "path": "results/run_summaries/fixed_substrate/2wiki/seed_13/weighted_hg_kv.metrics.json",
+      "sha256": "6a3df508864d304e35ba29c4415435f93dd23ce5f53933e329d7f933cd41bbb2",
+      "size_bytes": 394,
+      "class": "result"
+    },
+    {
+      "path": "results/run_summaries/fixed_substrate/2wiki/seed_13/weighted_kg_ppr.metrics.json",
+      "sha256": "764e9432d5bbb67e599e72d6ef8fbc11af31e915c12497b3939a6f3a03dc32ac",
+      "size_bytes": 395,
+      "class": "result"
+    },
+    {
+      "path": "results/run_summaries/fixed_substrate/2wiki/seed_29/bm25.metrics.json",
+      "sha256": "c87ce2120600ff81952c9638d465cd5a08395d692d5e577d48e3f26f26322b5e",
+      "size_bytes": 390,
+      "class": "result"
+    },
+    {
+      "path": "results/run_summaries/fixed_substrate/2wiki/seed_29/hyper_rag.metrics.json",
+      "sha256": "f7656c3010b5e78fa588ed41e9e7e8a38f17007b27ee74d1d000e6e21047d2b6",
+      "size_bytes": 394,
+      "class": "result"
+    },
+    {
+      "path": "results/run_summaries/fixed_substrate/2wiki/seed_29/kg_ppr.metrics.json",
+      "sha256": "1af00bed5bdb9597716e96e7f992b745354c3b256450a50fc09210aa7d2fd032",
+      "size_bytes": 396,
+      "class": "result"
+    },
+    {
+      "path": "results/run_summaries/fixed_substrate/2wiki/seed_29/seed_29.extraction_audit.json",
+      "sha256": "ce8fe21a792f369f87932b2ed452c2093198868184fc9565e934b4913ada8468",
+      "size_bytes": 3333,
+      "class": "result"
+    },
+    {
+      "path": "results/run_summaries/fixed_substrate/2wiki/seed_29/static_hg.metrics.json",
+      "sha256": "9b994c37a094b74c77d8b55f25a610a469f3aced430ce09c773b7180852b9ebe",
+      "size_bytes": 394,
+      "class": "result"
+    },
+    {
+      "path": "results/run_summaries/fixed_substrate/2wiki/seed_29/weighted_hg_kv.metrics.json",
+      "sha256": "41af9fa312f69319f2bcbba51dd6a08c414cef627371771f75888d2972ff4c1a",
+      "size_bytes": 394,
+      "class": "result"
+    },
+    {
+      "path": "results/run_summaries/fixed_substrate/2wiki/seed_29/weighted_kg_ppr.metrics.json",
+      "sha256": "5aa02134f0a8549c81d7ffca8702553c3a02270cf19368ffde972ef412662d6c",
+      "size_bytes": 395,
+      "class": "result"
+    },
+    {
+      "path": "results/run_summaries/fixed_substrate/2wiki/seed_43/bm25.metrics.json",
+      "sha256": "83cb90232d07f78dabea9ffea9895b28cddb8079b35d3082b19660b5c5fd6fd4",
+      "size_bytes": 388,
+      "class": "result"
+    },
+    {
+      "path": "results/run_summaries/fixed_substrate/2wiki/seed_43/hyper_rag.metrics.json",
+      "sha256": "a3263fb3ef6845206aa0795a1c30db5437d9b97c21399144d00aaeed7686cab1",
+      "size_bytes": 394,
+      "class": "result"
+    },
+    {
+      "path": "results/run_summaries/fixed_substrate/2wiki/seed_43/kg_ppr.metrics.json",
+      "sha256": "04fc2222e8c15efd269b553bdfc1d1827f15a5b9a242cd5b140c2ba0a9525d0e",
+      "size_bytes": 396,
+      "class": "result"
+    },
+    {
+      "path": "results/run_summaries/fixed_substrate/2wiki/seed_43/seed_43.extraction_audit.json",
+      "sha256": "ce8fe21a792f369f87932b2ed452c2093198868184fc9565e934b4913ada8468",
+      "size_bytes": 3333,
+      "class": "result"
+    },
+    {
+      "path": "results/run_summaries/fixed_substrate/2wiki/seed_43/static_hg.metrics.json",
+      "sha256": "b360fbe96b8b0644f96dced7556eb6f091a11a119e1d9cf237ec8a5232498b38",
+      "size_bytes": 394,
+      "class": "result"
+    },
+    {
+      "path": "results/run_summaries/fixed_substrate/2wiki/seed_43/weighted_hg_kv.metrics.json",
+      "sha256": "d396a6c59e87543c35f9a6d81a1b077f0c9fc27feb2f5941d6b189275eaaeaba",
+      "size_bytes": 394,
+      "class": "result"
+    },
+    {
+      "path": "results/run_summaries/fixed_substrate/2wiki/seed_43/weighted_kg_ppr.metrics.json",
+      "sha256": "57a9da8fc4ac105afa9629055ad53e256cdd32c5c7aaa15345a37e551d069555",
+      "size_bytes": 395,
+      "class": "result"
+    },
+    {
+      "path": "results/run_summaries/fixed_substrate/aggregate/dev_hotpotqa/bootstrap.json",
+      "sha256": "b9cb3d27f1b1777cf885984129e5b28cefe0c1e51877ee880ba6582070e3579f",
+      "size_bytes": 1074,
+      "class": "result"
+    },
+    {
+      "path": "results/run_summaries/fixed_substrate/aggregate/dev_hotpotqa/efficiency.json",
+      "sha256": "5357c73cd672242b21e00955a1e9367bf8994ddaf61be1a024888050ace28fc9",
+      "size_bytes": 1466,
+      "class": "result"
+    },
+    {
+      "path": "results/run_summaries/fixed_substrate/aggregate/dev_hotpotqa/extraction_audit.json",
+      "sha256": "9bc9e8eaa6b45183004c38be213a04f0dc75b19e8f401a7f6273cf94a11c3c02",
+      "size_bytes": 12094,
+      "class": "result"
+    },
+    {
+      "path": "results/run_summaries/fixed_substrate/aggregate/dev_hotpotqa/go_no_go.json",
+      "sha256": "e3e27fe3b4287a07a6899d859534441a8acd4808f05405293c8048eca199c9b0",
+      "size_bytes": 386,
+      "class": "result"
+    },
+    {
+      "path": "results/run_summaries/fixed_substrate/aggregate/dev_hotpotqa/go_no_go.md",
+      "sha256": "41af375d82721c4821f9d34e6cfa96f534365c283657774be5e8543c76516343",
+      "size_bytes": 269,
+      "class": "result"
+    },
+    {
+      "path": "results/run_summaries/fixed_substrate/aggregate/dev_hotpotqa/run_manifest.json",
+      "sha256": "98f9db290446e523f7b5cc90dcd5e99b1c2a18a0123d506134d5e05f5a7ce920",
+      "size_bytes": 9414,
+      "class": "result"
+    },
+    {
+      "path": "results/run_summaries/fixed_substrate/aggregate/dev_hotpotqa/summary.csv",
+      "sha256": "0b0c72ab000c360e3cefbab80e90dc8e10e4a4fbd3322496ff1855a753ab3bde",
+      "size_bytes": 3722,
+      "class": "result"
+    },
+    {
+      "path": "results/run_summaries/fixed_substrate/aggregate/dev_hotpotqa/summary.json",
+      "sha256": "90dc0a97ca1e71857575d2ce48c984ceec7bc3fcfb01161b237991a75ec6259a",
+      "size_bytes": 16100,
+      "class": "result"
+    },
+    {
+      "path": "results/run_summaries/fixed_substrate/aggregate/dev_non_hotpot/bootstrap.json",
+      "sha256": "35c46cb439abec6d035dafbc47a910f65ea0e35c6a4912ef2752114925bc4e6b",
+      "size_bytes": 2019,
+      "class": "result"
+    },
+    {
+      "path": "results/run_summaries/fixed_substrate/aggregate/dev_non_hotpot/bootstrap_unique_seed13.json",
+      "sha256": "62dc8e8349a9197e5ea76ff4c72f337a3ffc4474db719d2da045a0a895d8f12f",
+      "size_bytes": 1822,
+      "class": "result"
+    },
+    {
+      "path": "results/run_summaries/fixed_substrate/aggregate/dev_non_hotpot/efficiency.json",
+      "sha256": "f8ae092a1a60a771bcbc9f9d2416666c676412d437b4f0de6ede5f25e893a4e9",
+      "size_bytes": 2902,
+      "class": "result"
+    },
+    {
+      "path": "results/run_summaries/fixed_substrate/aggregate/dev_non_hotpot/extraction_audit.json",
+      "sha256": "4df176ca856a10b2db229dd26a19c3ea5f733062e2231874adc3341a01b1036f",
+      "size_bytes": 24503,
+      "class": "result"
+    },
+    {
+      "path": "results/run_summaries/fixed_substrate/aggregate/dev_non_hotpot/go_no_go.json",
+      "sha256": "b49c103d9f923891c4d0bb3fd75d29a9690f7b53cfeef0c146d821f9a2d823e6",
+      "size_bytes": 710,
+      "class": "result"
+    },
+    {
+      "path": "results/run_summaries/fixed_substrate/aggregate/dev_non_hotpot/go_no_go.md",
+      "sha256": "b4a634d67dc524f40cc1af05abd0c43fc7c1d3f3c3171621461f6fc719539581",
+      "size_bytes": 324,
+      "class": "result"
+    },
+    {
+      "path": "results/run_summaries/fixed_substrate/aggregate/dev_non_hotpot/run_manifest.json",
+      "sha256": "cdc58226587d509ca32cc909796a61a0356be769d52b3c6352fd8630a88cd07f",
+      "size_bytes": 12069,
+      "class": "result"
+    },
+    {
+      "path": "results/run_summaries/fixed_substrate/aggregate/dev_non_hotpot/summary.csv",
+      "sha256": "46ece915023ccebe695765300bed9adfc404fc84ed84d34e7e9e9bdaaa9453b2",
+      "size_bytes": 7149,
+      "class": "result"
+    },
+    {
+      "path": "results/run_summaries/fixed_substrate/aggregate/dev_non_hotpot/summary.json",
+      "sha256": "c23f1750913792d75cfca216cd95c679ea8ed921f84e3403fb20d29db2589e17",
+      "size_bytes": 32182,
+      "class": "result"
+    },
+    {
+      "path": "results/run_summaries/fixed_substrate/hotpotqa/dense_retrieval/colbertv2/bootstrap.json",
+      "sha256": "276e398efbac5328a93363b3fa9ae981f0d938efc040eaf1cd4104991c90b900",
+      "size_bytes": 522,
+      "class": "result"
+    },
+    {
+      "path": "results/run_summaries/fixed_substrate/hotpotqa/dense_retrieval/colbertv2/efficiency.json",
+      "sha256": "23e553b1721a81e2283555ffb119afb0c1f84a00048db77404c9d0fb7a029374",
+      "size_bytes": 278,
+      "class": "result"
+    },
+    {
+      "path": "results/run_summaries/fixed_substrate/hotpotqa/dense_retrieval/colbertv2/extraction_audit.json",
+      "sha256": "05757929adef6a1703a73221a6a0fa13b51fa468ed450124d4cba0ee32fac3eb",
+      "size_bytes": 694,
+      "class": "result"
+    },
+    {
+      "path": "results/run_summaries/fixed_substrate/hotpotqa/dense_retrieval/colbertv2/go_no_go.json",
+      "sha256": "30b28cfe452dc6ec3b8bc543fc5e5a631134341251428b31049f656ec297307a",
+      "size_bytes": 118,
+      "class": "result"
+    },
+    {
+      "path": "results/run_summaries/fixed_substrate/hotpotqa/dense_retrieval/colbertv2/go_no_go.md",
+      "sha256": "359e8eb8b7253ae4394ae8f6bbbf5514f26027510d4faf70cdaad2413365ff8a",
+      "size_bytes": 276,
+      "class": "result"
+    },
+    {
+      "path": "results/run_summaries/fixed_substrate/hotpotqa/dense_retrieval/colbertv2/run_manifest.json",
+      "sha256": "1799c15387cd85cf16761dda713005efa3adfe9a949f53d31b12290e04719add",
+      "size_bytes": 6989,
+      "class": "result"
+    },
+    {
+      "path": "results/run_summaries/fixed_substrate/hotpotqa/dense_retrieval/colbertv2/summary.csv",
+      "sha256": "1c2d44923344f33106bc96a8de8bbfcb08c4b7dc0f9e2a65a6bb50c9707e13a4",
+      "size_bytes": 614,
+      "class": "result"
+    },
+    {
+      "path": "results/run_summaries/fixed_substrate/hotpotqa/dense_retrieval/colbertv2/summary.json",
+      "sha256": "9a896cc5c9ca9f8c5353f37a473047732e218062665eb31813365f761477486f",
+      "size_bytes": 2642,
+      "class": "result"
+    },
+    {
+      "path": "results/run_summaries/fixed_substrate/hotpotqa/dense_retrieval/contriever/bootstrap.json",
+      "sha256": "276e398efbac5328a93363b3fa9ae981f0d938efc040eaf1cd4104991c90b900",
+      "size_bytes": 522,
+      "class": "result"
+    },
+    {
+      "path": "results/run_summaries/fixed_substrate/hotpotqa/dense_retrieval/contriever/efficiency.json",
+      "sha256": "76434f4c9463fd579c9daad7a1ea3f8976a04369b94fb9cc5f9ea89e83080a3e",
+      "size_bytes": 280,
+      "class": "result"
+    },
+    {
+      "path": "results/run_summaries/fixed_substrate/hotpotqa/dense_retrieval/contriever/extraction_audit.json",
+      "sha256": "9c0cfc90463c09659c629d046a900cf6cc7de2fcc050a1077900d60704d2067f",
+      "size_bytes": 697,
+      "class": "result"
+    },
+    {
+      "path": "results/run_summaries/fixed_substrate/hotpotqa/dense_retrieval/contriever/go_no_go.json",
+      "sha256": "30b28cfe452dc6ec3b8bc543fc5e5a631134341251428b31049f656ec297307a",
+      "size_bytes": 118,
+      "class": "result"
+    },
+    {
+      "path": "results/run_summaries/fixed_substrate/hotpotqa/dense_retrieval/contriever/go_no_go.md",
+      "sha256": "359e8eb8b7253ae4394ae8f6bbbf5514f26027510d4faf70cdaad2413365ff8a",
+      "size_bytes": 276,
+      "class": "result"
+    },
+    {
+      "path": "results/run_summaries/fixed_substrate/hotpotqa/dense_retrieval/contriever/run_manifest.json",
+      "sha256": "d232e1f331b133b0889d631cb3768d16f11df7a8007b6449fa803025648ed27e",
+      "size_bytes": 7003,
+      "class": "result"
+    },
+    {
+      "path": "results/run_summaries/fixed_substrate/hotpotqa/dense_retrieval/contriever/summary.csv",
+      "sha256": "b2c4257740b508b07005ef6ace028cb2b5076edc67098fe158f1d151212b601c",
+      "size_bytes": 624,
+      "class": "result"
+    },
+    {
+      "path": "results/run_summaries/fixed_substrate/hotpotqa/dense_retrieval/contriever/summary.json",
+      "sha256": "dfc8cc8e9b87896f9da76d1fa0904273f1c56fd62c4fb60c51d2b35979471ec9",
+      "size_bytes": 2633,
+      "class": "result"
+    },
+    {
+      "path": "results/run_summaries/fixed_substrate/hotpotqa/seed_13/bm25.metrics.json",
+      "sha256": "c7c8a09a0532c487ae0240fb48b1f746ad597285e22461f9457ceff49bdab5da",
+      "size_bytes": 394,
+      "class": "result"
+    },
+    {
+      "path": "results/run_summaries/fixed_substrate/hotpotqa/seed_13/colbertv2.metrics.json",
+      "sha256": "debed8440fc45bf4a764a85165c0960e356918af18c50a09020d135f9ef1ab4e",
+      "size_bytes": 370,
+      "class": "result"
+    },
+    {
+      "path": "results/run_summaries/fixed_substrate/hotpotqa/seed_13/contriever.metrics.json",
+      "sha256": "0eeca8531780e2ecf9bc5f812575ade4deabcb5adbaa986a30fcd2c3c8879641",
+      "size_bytes": 367,
+      "class": "result"
+    },
+    {
+      "path": "results/run_summaries/fixed_substrate/hotpotqa/seed_13/hyper_rag.metrics.json",
+      "sha256": "f017b0fd7c57ffb6f8c102c548a890352baebd9bbd1f2731bdef8cfa12511acc",
+      "size_bytes": 396,
+      "class": "result"
+    },
+    {
+      "path": "results/run_summaries/fixed_substrate/hotpotqa/seed_13/kg_ppr.metrics.json",
+      "sha256": "f553a51ad7b886a9e68e7593361258b6a7771ca1ac4e6f54ccf59d4e95c5210a",
+      "size_bytes": 395,
+      "class": "result"
+    },
+    {
+      "path": "results/run_summaries/fixed_substrate/hotpotqa/seed_13/seed_13.extraction_audit.json",
+      "sha256": "cd4548dabed79ac6f9e55b03fe220413181fdf185724376ff792788e1583aea6",
+      "size_bytes": 3288,
+      "class": "result"
+    },
+    {
+      "path": "results/run_summaries/fixed_substrate/hotpotqa/seed_13/static_hg.metrics.json",
+      "sha256": "ee7b913aca56d505ce3ca58bc145bc949a6292cffd531a25295e68b0ac53ae86",
+      "size_bytes": 394,
+      "class": "result"
+    },
+    {
+      "path": "results/run_summaries/fixed_substrate/hotpotqa/seed_13/weighted_hg_kv.metrics.json",
+      "sha256": "5db04cfaf5f6eec9a87de13e439ade3f1f762c6cce026da50cfd48866b90a12c",
+      "size_bytes": 396,
+      "class": "result"
+    },
+    {
+      "path": "results/run_summaries/fixed_substrate/hotpotqa/seed_13/weighted_kg_ppr.metrics.json",
+      "sha256": "a8623841733f55e8102b0ac47de143551ee0910bf149d0a4060280955ae12520",
+      "size_bytes": 396,
+      "class": "result"
+    },
+    {
+      "path": "results/run_summaries/fixed_substrate/hotpotqa/seed_29/bm25.metrics.json",
+      "sha256": "e624325a2ad213b3592e5ee1241bb84f0714dfcb8d727e8e9e3f9ac0d3a0f348",
+      "size_bytes": 394,
+      "class": "result"
+    },
+    {
+      "path": "results/run_summaries/fixed_substrate/hotpotqa/seed_29/colbertv2.metrics.json",
+      "sha256": "e58c3003439feb58b88b6cc8afa5f922c825cbf245de9f2b6aa6e102f55ee061",
+      "size_bytes": 370,
+      "class": "result"
+    },
+    {
+      "path": "results/run_summaries/fixed_substrate/hotpotqa/seed_29/contriever.metrics.json",
+      "sha256": "7cc7d7f654e3d10d8124ce54bba6f6d84a4782c433e1bef53ff4c0d557d17b69",
+      "size_bytes": 368,
+      "class": "result"
+    },
+    {
+      "path": "results/run_summaries/fixed_substrate/hotpotqa/seed_29/hyper_rag.metrics.json",
+      "sha256": "13fbaaf8e33d694b7b6283b43050ffef5629283d64c73e6a9f76c794ea166b30",
+      "size_bytes": 396,
+      "class": "result"
+    },
+    {
+      "path": "results/run_summaries/fixed_substrate/hotpotqa/seed_29/kg_ppr.metrics.json",
+      "sha256": "c028aae52c169fbf1fa8b23a74c6cf8425c8ac564589b319dd615ef25e876a7f",
+      "size_bytes": 395,
+      "class": "result"
+    },
+    {
+      "path": "results/run_summaries/fixed_substrate/hotpotqa/seed_29/seed_29.extraction_audit.json",
+      "sha256": "cd4548dabed79ac6f9e55b03fe220413181fdf185724376ff792788e1583aea6",
+      "size_bytes": 3288,
+      "class": "result"
+    },
+    {
+      "path": "results/run_summaries/fixed_substrate/hotpotqa/seed_29/static_hg.metrics.json",
+      "sha256": "65f31f8c09b53c4741d460d8ab66d7d3da8c605c9b5fe30f65e7be02829aae71",
+      "size_bytes": 394,
+      "class": "result"
+    },
+    {
+      "path": "results/run_summaries/fixed_substrate/hotpotqa/seed_29/weighted_hg_kv.metrics.json",
+      "sha256": "8b444f9224473e93be731dedfa4662ec594f8cb87116e8eef74c65a9aba0106e",
+      "size_bytes": 396,
+      "class": "result"
+    },
+    {
+      "path": "results/run_summaries/fixed_substrate/hotpotqa/seed_29/weighted_kg_ppr.metrics.json",
+      "sha256": "fb5bc26e871ca95e069fa2d0f3ee8a6f7f0741ad7cb8a62ac5eb27084c56b853",
+      "size_bytes": 395,
+      "class": "result"
+    },
+    {
+      "path": "results/run_summaries/fixed_substrate/hotpotqa/seed_43/bm25.metrics.json",
+      "sha256": "b4d6947f126be90270dc58aeca2422788a57f5d4e5413c29d730b9c19216a387",
+      "size_bytes": 394,
+      "class": "result"
+    },
+    {
+      "path": "results/run_summaries/fixed_substrate/hotpotqa/seed_43/colbertv2.metrics.json",
+      "sha256": "ec5146e0a20212c1845c1d67b30395a7b066bc61dc0e605ea96d0634d70c27a7",
+      "size_bytes": 371,
+      "class": "result"
+    },
+    {
+      "path": "results/run_summaries/fixed_substrate/hotpotqa/seed_43/contriever.metrics.json",
+      "sha256": "6a3a0f3ca7690ca4e9d40c9c177848ae94c219e96ad5fa22379c616e99fecef6",
+      "size_bytes": 367,
+      "class": "result"
+    },
+    {
+      "path": "results/run_summaries/fixed_substrate/hotpotqa/seed_43/hyper_rag.metrics.json",
+      "sha256": "6df9171876eb484f93f2542fec60e099997ca718bcaf70171e1b138051c7beee",
+      "size_bytes": 395,
+      "class": "result"
+    },
+    {
+      "path": "results/run_summaries/fixed_substrate/hotpotqa/seed_43/kg_ppr.metrics.json",
+      "sha256": "8bee27017a6af9c81b7efc045f5f5ef464cc7494b9ceb95ad4ae9fb31b48f3fd",
+      "size_bytes": 395,
+      "class": "result"
+    },
+    {
+      "path": "results/run_summaries/fixed_substrate/hotpotqa/seed_43/seed_43.extraction_audit.json",
+      "sha256": "cd4548dabed79ac6f9e55b03fe220413181fdf185724376ff792788e1583aea6",
+      "size_bytes": 3288,
+      "class": "result"
+    },
+    {
+      "path": "results/run_summaries/fixed_substrate/hotpotqa/seed_43/static_hg.metrics.json",
+      "sha256": "4192ea132b10929109d21a8ebd54968fe06d92e236814970f135a09de04f508e",
+      "size_bytes": 393,
+      "class": "result"
+    },
+    {
+      "path": "results/run_summaries/fixed_substrate/hotpotqa/seed_43/weighted_hg_kv.metrics.json",
+      "sha256": "5fc8535b9056c1488641b65a1cef60a8491d5055cb13872abbc80bb8f18dc016",
+      "size_bytes": 397,
+      "class": "result"
+    },
+    {
+      "path": "results/run_summaries/fixed_substrate/hotpotqa/seed_43/weighted_kg_ppr.metrics.json",
+      "sha256": "6799fa40ffaf51a1615a2087736cd664c7683e555dbe00b5885969ce44cc0c22",
+      "size_bytes": 396,
+      "class": "result"
+    },
+    {
+      "path": "results/run_summaries/fixed_substrate/musique/seed_13/bm25.metrics.json",
+      "sha256": "84960ccb56f8156199c8903c217cf6706fbec0f4dba7d081bd018db683ee074f",
+      "size_bytes": 396,
+      "class": "result"
+    },
+    {
+      "path": "results/run_summaries/fixed_substrate/musique/seed_13/hyper_rag.metrics.json",
+      "sha256": "277dc4c0e81669aa6b3c4c052ab6c13b080280894462b881f487dae11ec7ca37",
+      "size_bytes": 398,
+      "class": "result"
+    },
+    {
+      "path": "results/run_summaries/fixed_substrate/musique/seed_13/kg_ppr.metrics.json",
+      "sha256": "a535dcad6717774aff0552d3ce221f2fbbd2e71fa7ba1573719d6d6f72e61d0f",
+      "size_bytes": 397,
+      "class": "result"
+    },
+    {
+      "path": "results/run_summaries/fixed_substrate/musique/seed_13/seed_13.extraction_audit.json",
+      "sha256": "512ba99ca17894734752af167af6dd9d9330706387e697aada179646057e6a64",
+      "size_bytes": 3330,
+      "class": "result"
+    },
+    {
+      "path": "results/run_summaries/fixed_substrate/musique/seed_13/static_hg.metrics.json",
+      "sha256": "142f85fe5c1ae4acd74176c1caf768985f0422c1a7eb0f3158e122cee3a78b39",
+      "size_bytes": 397,
+      "class": "result"
+    },
+    {
+      "path": "results/run_summaries/fixed_substrate/musique/seed_13/weighted_hg_kv.metrics.json",
+      "sha256": "47a4efaeff6ee2023723976e4e233967b8c024b264401771ca0467f8c79045d9",
+      "size_bytes": 393,
+      "class": "result"
+    },
+    {
+      "path": "results/run_summaries/fixed_substrate/musique/seed_13/weighted_kg_ppr.metrics.json",
+      "sha256": "5c5358078ad3fd26583ca112f68cf7ce216d878313a41e96661e7505947c9bea",
+      "size_bytes": 401,
+      "class": "result"
+    },
+    {
+      "path": "results/run_summaries/fixed_substrate/musique/seed_29/bm25.metrics.json",
+      "sha256": "74f9fbc96165af55204ee02ff626f0962d558de9a44723486f5da01aaf7f42cd",
+      "size_bytes": 395,
+      "class": "result"
+    },
+    {
+      "path": "results/run_summaries/fixed_substrate/musique/seed_29/hyper_rag.metrics.json",
+      "sha256": "17ba4035d05cbd79f6a237f755bcf291d8a881dad96ea62642789a208b512344",
+      "size_bytes": 398,
+      "class": "result"
+    },
+    {
+      "path": "results/run_summaries/fixed_substrate/musique/seed_29/kg_ppr.metrics.json",
+      "sha256": "c4c409e7972864301cd9d65e871e1e9b267a1a81180cfc1c0598cae010a3559c",
+      "size_bytes": 396,
+      "class": "result"
+    },
+    {
+      "path": "results/run_summaries/fixed_substrate/musique/seed_29/seed_29.extraction_audit.json",
+      "sha256": "512ba99ca17894734752af167af6dd9d9330706387e697aada179646057e6a64",
+      "size_bytes": 3330,
+      "class": "result"
+    },
+    {
+      "path": "results/run_summaries/fixed_substrate/musique/seed_29/static_hg.metrics.json",
+      "sha256": "9caa7e1382b98cf44247ed562755b37b16830bf76a389711c8c3aca6e7219994",
+      "size_bytes": 396,
+      "class": "result"
+    },
+    {
+      "path": "results/run_summaries/fixed_substrate/musique/seed_29/weighted_hg_kv.metrics.json",
+      "sha256": "d24b7753767b5fef98c5f3da62108ac12c6883a721ac7eee3b69f56983af5ab6",
+      "size_bytes": 393,
+      "class": "result"
+    },
+    {
+      "path": "results/run_summaries/fixed_substrate/musique/seed_29/weighted_kg_ppr.metrics.json",
+      "sha256": "b6510035d997e423a00c048ef0ae07c690cc09f35fd91e7d5d11c1e46437f91e",
+      "size_bytes": 401,
+      "class": "result"
+    },
+    {
+      "path": "results/run_summaries/fixed_substrate/musique/seed_43/bm25.metrics.json",
+      "sha256": "52618c0aba9ed6fe432c6f001eeb2028a5e144c70d363bf7c178f8d9a0715094",
+      "size_bytes": 396,
+      "class": "result"
+    },
+    {
+      "path": "results/run_summaries/fixed_substrate/musique/seed_43/hyper_rag.metrics.json",
+      "sha256": "c9c210daa19f1bc4ce5d6fa147f97ac0c89e589f3cb749d99932d758f39d48cf",
+      "size_bytes": 399,
+      "class": "result"
+    },
+    {
+      "path": "results/run_summaries/fixed_substrate/musique/seed_43/kg_ppr.metrics.json",
+      "sha256": "7851d91e387d89fa5f83541b346ee662d36c75668b1d32df6e04aa4531a3f82e",
+      "size_bytes": 396,
+      "class": "result"
+    },
+    {
+      "path": "results/run_summaries/fixed_substrate/musique/seed_43/seed_43.extraction_audit.json",
+      "sha256": "512ba99ca17894734752af167af6dd9d9330706387e697aada179646057e6a64",
+      "size_bytes": 3330,
+      "class": "result"
+    },
+    {
+      "path": "results/run_summaries/fixed_substrate/musique/seed_43/static_hg.metrics.json",
+      "sha256": "5bcab604456053443a4f5e36f92e308f89cc531008395bb40470c5ee10e31ccd",
+      "size_bytes": 397,
+      "class": "result"
+    },
+    {
+      "path": "results/run_summaries/fixed_substrate/musique/seed_43/weighted_hg_kv.metrics.json",
+      "sha256": "bbdfec196316b0ecb2baa06fae7fafe24732ff98176c11645aa5b78bcdecc26a",
+      "size_bytes": 393,
+      "class": "result"
+    },
+    {
+      "path": "results/run_summaries/fixed_substrate/musique/seed_43/weighted_kg_ppr.metrics.json",
+      "sha256": "8f7cfb19b9fefebbf135428cdaa4c244b5f43ac8ffe164de60d704330cf5b321",
+      "size_bytes": 400,
+      "class": "result"
+    },
+    {
+      "path": "scripts/build_release_manifest.py",
+      "sha256": "5e3a347c1f77153a5a148fb1620a80cbe316f5efb5485c0594bcd8758a6779b4",
+      "size_bytes": 3112,
+      "class": "packaging_script"
+    },
+    {
+      "path": "scripts/reproduce_fixed_substrate.py",
+      "sha256": "a03b7569f24d0036583906c31ec9d3bc2308e7d16490aed818054e616e7c2505",
+      "size_bytes": 2237,
+      "class": "packaging_script"
+    },
+    {
+      "path": "scripts/rsync_excludes.txt",
+      "sha256": "6a0bf76cf1d846728fffa25b0760ebf3b430fde180774239261689703491b1da",
+      "size_bytes": 153,
+      "class": "packaging_script"
+    },
+    {
+      "path": "scripts/verify_paper_evidence.py",
+      "sha256": "27496eff426383ee2c815ebe5212af631d33b277131c5e73b6ac52e0e64d5ed9",
+      "size_bytes": 7836,
+      "class": "packaging_script"
+    }
+  ]
+}

@@ -1,0 +1,12 @@
+{
+  "datasets": {
+    "hotpotqa": {
+      "colbertv2": {
+        "latency_seconds_mean": 0.06168876522269512,
+        "latency_seconds_std": 0.02607414053683776,
+        "avg_retrieval_tokens_mean": 438.21404456448346,
+        "avg_retrieval_tokens_std": 0.0
+      }
+    }
+  }
+}

@@ -1,0 +1,31 @@
+{
+  "enabled": true,
+  "samples": 1000,
+  "alpha": 0.05,
+  "comparisons": [
+    {
+      "dataset": "hotpotqa",
+      "reference": "kg_ppr",
+      "candidate": "weighted_hg_kv",
+      "missing": [
+        "hotpotqa/seed_13",
+        "hotpotqa/seed_29",
+        "hotpotqa/seed_43"
+      ],
+      "metrics": {
+        "all_recall@10": {
+          "n": 0
+        },
+        "all_recall@5": {
+          "n": 0
+        },
+        "f1": {
+          "n": 0
+        },
+        "em": {
+          "n": 0
+        }
+      }
+    }
+  ]
+}

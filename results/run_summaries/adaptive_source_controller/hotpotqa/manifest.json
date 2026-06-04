@@ -1,0 +1,130 @@
+{
+  "status": "completed",
+  "created_at": "2026-06-02T06:23:14Z",
+  "ended_at": "2026-06-02T06:27:52Z",
+  "script": "tools/run_phase1d_dense_aware_controller.py",
+  "protocol": "train_to_dev",
+  "run_label": "hotpotqa_oof_train_hkvm_lr001_confirmation",
+  "dataset": "hotpotqa",
+  "dataset_paths": {
+    "train": "{REMOTE_RUN_ROOT}/phase1c_validation_hotpotqa10k_20260602/mlp_base_only/seed_13/merged_train_subsets/hotpotqa_train_merged_10000.jsonl",
+    "dev": "{REMOTE_DATA_ROOT}/hotpotqa/dev_distractor.jsonl"
+  },
+  "seeds": [
+    13,
+    29,
+    43
+  ],
+  "dense_name": "colbertv2",
+  "structured_source_name": "weighted_hg_kv",
+  "structured_source_note": "The controller code keeps the legacy internal name 'hkvm' for the second prediction source, but this manifest field records the semantic source.",
+  "llm_api_calls": 0,
+  "note": "dev_hash uses a deterministic hash split of dev predictions; train_to_dev trains on train predictions and evaluates on dev predictions only.",
+  "prediction_templates": {
+    "dense": {
+      "train": "{REMOTE_RUN_ROOT}/phase1d_input_prep_colbert_train_hotpotqa10k_20260602/runs/{dataset}/seed_{seed}/colbertv2.predictions.jsonl",
+      "dev": "{REMOTE_RUN_ROOT}/icde2027_hotpotqa_colbertv2_full_20260518/runs/{dataset}/seed_{seed}/colbertv2.predictions.jsonl"
+    },
+    "hkvm": {
+      "train": "{REMOTE_RUN_ROOT}/phase1d_hkvm_train_oof_hotpotqa10k_20260602/{dataset}/seed_{seed}/{dataset}/seed_{seed}/runs/{dataset}/seed_{seed}/train_oof/mlp_base_only_topk_4/weighted_hg_kv.predictions.jsonl",
+      "dev": "{REMOTE_RUN_ROOT}/phase1c_validation_hotpotqa10k_20260602/mlp_base_only/seed_{seed}/runs/hotpotqa/seed_{seed}/train_to_dev/mlp_base_only_topk_4/weighted_hg_kv.predictions.jsonl"
+    },
+    "bm25": {
+      "train": null,
+      "dev": null
+    }
+  },
+  "controller_training_config": {
+    "epochs": 80,
+    "learning_rate": 0.01,
+    "l2": 0.0001,
+    "negative_ratio": 8,
+    "max_train_rows": 220000,
+    "available_feature_variants": {
+      "controller_dense_only": "dense",
+      "controller_hkvm_only": "hkvm",
+      "controller_dense_bm25": "dense_bm25",
+      "controller_dense_hkvm": "dense_hkvm",
+      "controller_dense_hkvm_bm25": "dense_hkvm_bm25",
+      "controller_dense_hkvm_no_interaction": "dense_hkvm_no_interaction",
+      "controller_dense_hkvm_rank_only": "dense_hkvm_rank_only",
+      "controller_dense_hkvm_score_only": "dense_hkvm_score_only",
+      "controller_dense_hkvm_interaction_only": "dense_hkvm_interaction_only"
+    },
+    "selected_feature_variants": {
+      "controller_dense_only": "dense",
+      "controller_hkvm_only": "hkvm",
+      "controller_dense_bm25": "dense_bm25",
+      "controller_dense_hkvm": "dense_hkvm",
+      "controller_dense_hkvm_bm25": "dense_hkvm_bm25"
+    }
+  },
+  "retrieval_config": {
+    "candidate_top_k": 10,
+    "retrieval_top_k": 10,
+    "generation_top_k": 5,
+    "max_context_tokens": 3000,
+    "rrf_k": 60.0,
+    "no_bm25": true
+  },
+  "bootstrap_config": {
+    "bootstrap_samples": 1000,
+    "bootstrap_seed": 13
+  },
+  "train_hkvm_stacking_risk": {
+    "requested": "no",
+    "may_have_in_sample_stacking_risk": false,
+    "note": "true means the HKVM train-side predictions may already reflect in-sample stacking or otherwise trained-on-train evidence features."
+  },
+  "args": {
+    "out_dir": "{REMOTE_RUN_ROOT}/phase1d_train_to_dev_hotpotqa_oof_colbert_hkvm_lr001_20260602/hotpotqa",
+    "protocol": "train_to_dev",
+    "dataset": "hotpotqa",
+    "dataset_path": null,
+    "train_dataset_path": "{REMOTE_RUN_ROOT}/phase1c_validation_hotpotqa10k_20260602/mlp_base_only/seed_13/merged_train_subsets/hotpotqa_train_merged_10000.jsonl",
+    "dev_dataset_path": "{REMOTE_DATA_ROOT}/hotpotqa/dev_distractor.jsonl",
+    "seeds": "13,29,43",
+    "dense_name": "colbertv2",
+    "structured_source_name": null,
+    "dense_pred_template": "{REMOTE_RUN_ROOT}/p1_colbertv2_only_dev_full_20260515/runs/{dataset}/seed_{seed}/colbertv2.predictions.jsonl",
+    "hkvm_pred_template": null,
+    "bm25_pred_template": "{REMOTE_RUN_ROOT}/p2_deepseek_dev_full_20260516_factbridge/runs/{dataset}/seed_{seed}/bm25.predictions.jsonl",
+    "train_dense_pred_template": "{REMOTE_RUN_ROOT}/phase1d_input_prep_colbert_train_hotpotqa10k_20260602/runs/{dataset}/seed_{seed}/colbertv2.predictions.jsonl",
+    "dev_dense_pred_template": "{REMOTE_RUN_ROOT}/icde2027_hotpotqa_colbertv2_full_20260518/runs/{dataset}/seed_{seed}/colbertv2.predictions.jsonl",
+    "train_hkvm_pred_template": "{REMOTE_RUN_ROOT}/phase1d_hkvm_train_oof_hotpotqa10k_20260602/{dataset}/seed_{seed}/{dataset}/seed_{seed}/runs/{dataset}/seed_{seed}/train_oof/mlp_base_only_topk_4/weighted_hg_kv.predictions.jsonl",
+    "dev_hkvm_pred_template": "{REMOTE_RUN_ROOT}/phase1c_validation_hotpotqa10k_20260602/mlp_base_only/seed_{seed}/runs/hotpotqa/seed_{seed}/train_to_dev/mlp_base_only_topk_4/weighted_hg_kv.predictions.jsonl",
+    "train_bm25_pred_template": null,
+    "dev_bm25_pred_template": null,
+    "train_hkvm_stacking_risk": "no",
+    "no_bm25": true,
+    "split_salt": "phase1d_dense_aware_controller_20260524",
+    "train_percent": 60,
+    "candidate_top_k": 10,
+    "retrieval_top_k": 10,
+    "generation_top_k": 5,
+    "max_context_tokens": 3000,
+    "rrf_k": 60.0,
+    "epochs": 80,
+    "learning_rate": 0.01,
+    "l2": 0.0001,
+    "negative_ratio": 8,
+    "max_train_rows": 220000,
+    "bootstrap_samples": 1000,
+    "bootstrap_seed": 13,
+    "controller_variants": "controller_dense_only,controller_hkvm_only,controller_dense_bm25,controller_dense_hkvm,controller_dense_hkvm_bm25",
+    "run_label": "hotpotqa_oof_train_hkvm_lr001_confirmation",
+    "dry_run": false,
+    "selected_controller_variants": {
+      "controller_dense_only": "dense",
+      "controller_hkvm_only": "hkvm",
+      "controller_dense_bm25": "dense_bm25",
+      "controller_dense_hkvm": "dense_hkvm",
+      "controller_dense_hkvm_bm25": "dense_hkvm_bm25"
+    }
+  },
+  "outputs": {
+    "summary": "{REMOTE_RUN_ROOT}/phase1d_train_to_dev_hotpotqa_oof_colbert_hkvm_lr001_20260602/hotpotqa/phase1d_summary.json",
+    "seed_metrics": "{REMOTE_RUN_ROOT}/phase1d_train_to_dev_hotpotqa_oof_colbert_hkvm_lr001_20260602/hotpotqa/phase1d_seed_metrics.csv",
+    "aggregate_metrics": "{REMOTE_RUN_ROOT}/phase1d_train_to_dev_hotpotqa_oof_colbert_hkvm_lr001_20260602/hotpotqa/phase1d_aggregate_metrics.csv"
+  }
+}

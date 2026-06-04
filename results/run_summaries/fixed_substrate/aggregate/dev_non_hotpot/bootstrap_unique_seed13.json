@@ -1,0 +1,70 @@
+{
+  "samples": 2000,
+  "seed": 13,
+  "comparisons": [
+    {
+      "dataset": "2wiki",
+      "n": 12576,
+      "reference": "kg_ppr",
+      "candidate": "weighted_hg_kv",
+      "metrics": {
+        "all_recall@10": {
+          "mean_diff": 1.5426208651399491,
+          "ci_low": 1.3358778625954197,
+          "ci_high": 1.7493638676844783,
+          "p_diff_le_0": 0.0
+        },
+        "all_recall@5": {
+          "mean_diff": 5.80470737913486,
+          "ci_low": 5.049300254452926,
+          "ci_high": 6.568264949109413,
+          "p_diff_le_0": 0.0
+        },
+        "f1": {
+          "mean_diff": 3.426093860113842,
+          "ci_low": 2.9053814398176554,
+          "ci_high": 3.9630559152109304,
+          "p_diff_le_0": 0.0
+        },
+        "em": {
+          "mean_diff": 3.2919847328244276,
+          "ci_low": 2.743320610687023,
+          "ci_high": 3.856552162849873,
+          "p_diff_le_0": 0.0
+        }
+      }
+    },
+    {
+      "dataset": "musique",
+      "n": 2417,
+      "reference": "kg_ppr",
+      "candidate": "weighted_hg_kv",
+      "metrics": {
+        "all_recall@10": {
+          "mean_diff": 6.164666942490691,
+          "ci_low": 4.59247000413736,
+          "ci_high": 7.655151013653284,
+          "p_diff_le_0": 0.0
+        },
+        "all_recall@5": {
+          "mean_diff": 4.716590815059992,
+          "ci_low": 3.392635498551924,
+          "ci_high": 6.0819197352089365,
+          "p_diff_le_0": 0.0
+        },
+        "f1": {
+          "mean_diff": 3.5924239875419026,
+          "ci_low": 2.0933486105445147,
+          "ci_high": 5.18852703231582,
+          "p_diff_le_0": 0.0
+        },
+        "em": {
+          "mean_diff": 3.6822507240380635,
+          "ci_low": 2.110053785684733,
+          "ci_high": 5.337194869673149,
+          "p_diff_le_0": 0.0
+        }
+      }
+    }
+  ]
+}

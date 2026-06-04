@@ -1,0 +1,20 @@
+{
+  "seed": 29,
+  "protocol": "train_to_dev",
+  "train_alignment": {
+    "examples": 10000,
+    "aligned_examples": 10000,
+    "missing_examples": 0,
+    "missing_rate": 0.0
+  },
+  "dev_alignment": {
+    "examples": 7405,
+    "aligned_examples": 7405,
+    "missing_examples": 0,
+    "missing_rate": 0.0
+  },
+  "train_examples": 10000,
+  "heldout_examples": 7405,
+  "train_percent": 60,
+  "split_salt": "phase1d_dense_aware_controller_20260524"
+}

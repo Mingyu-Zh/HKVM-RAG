@@ -1,0 +1,45 @@
+{
+  "status": "completed",
+  "created_at": "2026-06-02T06:55:10Z",
+  "script": "tools/run_phase1d_paired_bootstrap.py",
+  "llm_api_calls": 0,
+  "run_root": "{REMOTE_RUN_ROOT}/phase1d_train_to_dev_hotpotqa_oof_colbert_hkvm_lr001_20260602",
+  "datasets": [
+    "hotpotqa"
+  ],
+  "seeds": [
+    13,
+    29,
+    43
+  ],
+  "reference_variants": [
+    "colbertv2",
+    "phase1c_mlp_topk_4"
+  ],
+  "candidate_variant": "controller_dense_hkvm",
+  "metrics": [
+    "f1",
+    "em",
+    "all_recall@10",
+    "all_recall@5",
+    "answer_support_rate",
+    "recall@5",
+    "recall@10",
+    "mrr"
+  ],
+  "samples": 5000,
+  "alpha": 0.05,
+  "bootstrap_seed": 20260525,
+  "missing": [],
+  "outputs": {
+    "summary_csv": "{REMOTE_RUN_ROOT}/phase1d_hotpot_oof_paired_bootstrap_20260602/phase1d_paired_bootstrap_summary.csv",
+    "seed_level_csv": "{REMOTE_RUN_ROOT}/phase1d_hotpot_oof_paired_bootstrap_20260602/phase1d_seed_level_diffs.csv",
+    "summary_md": "{REMOTE_RUN_ROOT}/phase1d_hotpot_oof_paired_bootstrap_20260602/phase1d_paired_bootstrap_summary.md",
+    "manifest_json": "{REMOTE_RUN_ROOT}/phase1d_hotpot_oof_paired_bootstrap_20260602/phase1d_paired_bootstrap_manifest.json"
+  },
+  "interpretation_boundary": [
+    "seed_example bootstrap pools matched example-level differences across completed seeds",
+    "seed_mean bootstrap resamples only three seed means and is included as a conservative robustness view",
+    "this is train-to-dev validation significance, not hidden-test significance"
+  ]
+}

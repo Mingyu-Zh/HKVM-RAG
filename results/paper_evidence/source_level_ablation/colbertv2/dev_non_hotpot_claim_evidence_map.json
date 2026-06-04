@@ -1,0 +1,244 @@
+{
+  "safe_claims": [
+    {
+      "claim": "The experiment directly compares structured-source complements to ColBERTv2 under the same train-to-dev controller protocol.",
+      "status": "supported",
+      "evidence": [
+        {
+          "dataset": "musique",
+          "source": "hyper_rag",
+          "f1": 56.398636113965225,
+          "delta_vs_colbertv2": -1.9106858779117104
+        },
+        {
+          "dataset": "musique",
+          "source": "static_hg",
+          "f1": 55.25845084868117,
+          "delta_vs_colbertv2": -3.0508711431957636
+        },
+        {
+          "dataset": "musique",
+          "source": "weighted_kg_ppr",
+          "f1": 56.853252625799,
+          "delta_vs_colbertv2": -1.4560693660779336
+        },
+        {
+          "dataset": "musique",
+          "source": "weighted_hg_kv",
+          "f1": 65.07268965687213,
+          "delta_vs_colbertv2": 6.763367664995194
+        },
+        {
+          "dataset": "2wiki",
+          "source": "hyper_rag",
+          "f1": 77.34324680639938,
+          "delta_vs_colbertv2": -0.4193512884233712
+        },
+        {
+          "dataset": "2wiki",
+          "source": "static_hg",
+          "f1": 80.15280670652788,
+          "delta_vs_colbertv2": 2.390208611705134
+        },
+        {
+          "dataset": "2wiki",
+          "source": "weighted_kg_ppr",
+          "f1": 80.7693429475176,
+          "delta_vs_colbertv2": 3.006744852694851
+        },
+        {
+          "dataset": "2wiki",
+          "source": "weighted_hg_kv",
+          "f1": 88.84614548665355,
+          "delta_vs_colbertv2": 11.083547391830805
+        }
+      ]
+    },
+    {
+      "claim": "WHG-KV is the strongest source-level complement only for datasets where its controller row exceeds all alternative source rows with positive paired diffs.",
+      "status": "conditional_on_exported_bootstrap",
+      "dataset_winners": {
+        "musique": {
+          "dataset": "musique",
+          "source": "weighted_hg_kv",
+          "source_label": "ColBERTv2 + WHG-KV",
+          "variant": "controller_dense_hkvm",
+          "row_type": "dense_plus_source_controller",
+          "metric": "f1",
+          "metric_label": "F1",
+          "mean": 65.07268965687213,
+          "std": 0.377665834328344,
+          "seeds": "3",
+          "delta_vs_colbertv2": 6.763367664995194,
+          "source_only_mean": 56.75365088248034,
+          "source_only_delta_vs_colbertv2": -1.5556711093965916,
+          "delta_vs_whg_kv_controller": 0.0
+        },
+        "2wiki": {
+          "dataset": "2wiki",
+          "source": "weighted_hg_kv",
+          "source_label": "ColBERTv2 + WHG-KV",
+          "variant": "controller_dense_hkvm",
+          "row_type": "dense_plus_source_controller",
+          "metric": "f1",
+          "metric_label": "F1",
+          "mean": 88.84614548665355,
+          "std": 0.11046067182009019,
+          "seeds": "3",
+          "delta_vs_colbertv2": 11.083547391830805,
+          "source_only_mean": 88.39122632467331,
+          "source_only_delta_vs_colbertv2": 10.628628229850563,
+          "delta_vs_whg_kv_controller": 0.0
+        }
+      },
+      "whg_vs_alternatives_f1_bootstrap": [
+        {
+          "dataset": "musique",
+          "comparison_type": "whg_kv_controller_vs_source_controller",
+          "reference_source": "hyper_rag",
+          "reference_variant": "controller_dense_hkvm",
+          "reference_label": "ColBERTv2 + Hyper-RAG / co-occurrence-HG",
+          "candidate_source": "weighted_hg_kv",
+          "candidate_variant": "controller_dense_hkvm",
+          "candidate_label": "ColBERTv2 + WHG-KV",
+          "metric": "f1",
+          "metric_label": "F1",
+          "pooled_mean_diff": 8.674053542906906,
+          "pooled_ci_low": 7.736541778941397,
+          "pooled_ci_high": 9.646886790497389,
+          "pooled_p_diff_le_0": 0.0,
+          "seed_mean_diff": 8.674053542906906,
+          "seed_ci_low": 7.308956013097601,
+          "seed_ci_high": 10.632948707372519,
+          "seed_p_diff_le_0": 0.0,
+          "n_seed_diffs": 3,
+          "seed_sd_diff": 1.7397352043028926
+        },
+        {
+          "dataset": "musique",
+          "comparison_type": "whg_kv_controller_vs_source_controller",
+          "reference_source": "static_hg",
+          "reference_variant": "controller_dense_hkvm",
+          "reference_label": "ColBERTv2 + Static-HG",
+          "candidate_source": "weighted_hg_kv",
+          "candidate_variant": "controller_dense_hkvm",
+          "candidate_label": "ColBERTv2 + WHG-KV",
+          "metric": "f1",
+          "metric_label": "F1",
+          "pooled_mean_diff": 9.814238808190963,
+          "pooled_ci_low": 8.88027616653283,
+          "pooled_ci_high": 10.73647692748912,
+          "pooled_p_diff_le_0": 0.0,
+          "seed_mean_diff": 9.814238808190963,
+          "seed_ci_low": 9.277426787100909,
+          "seed_ci_high": 10.287311869852209,
+          "seed_p_diff_le_0": 0.0,
+          "n_seed_diffs": 3,
+          "seed_sd_diff": 0.5079507469260183
+        },
+        {
+          "dataset": "musique",
+          "comparison_type": "whg_kv_controller_vs_source_controller",
+          "reference_source": "weighted_kg_ppr",
+          "reference_variant": "controller_dense_hkvm",
+          "reference_label": "ColBERTv2 + Weighted-KG-PPR",
+          "candidate_source": "weighted_hg_kv",
+          "candidate_variant": "controller_dense_hkvm",
+          "candidate_label": "ColBERTv2 + WHG-KV",
+          "metric": "f1",
+          "metric_label": "F1",
+          "pooled_mean_diff": 8.219437031073133,
+          "pooled_ci_low": 7.271673389263446,
+          "pooled_ci_high": 9.18304000129588,
+          "pooled_p_diff_le_0": 0.0,
+          "seed_mean_diff": 8.219437031073133,
+          "seed_ci_low": 6.319941417643325,
+          "seed_ci_high": 10.613578338395198,
+          "seed_p_diff_le_0": 0.0,
+          "n_seed_diffs": 3,
+          "seed_sd_diff": 2.1891403047030864
+        },
+        {
+          "dataset": "2wiki",
+          "comparison_type": "whg_kv_controller_vs_source_controller",
+          "reference_source": "hyper_rag",
+          "reference_variant": "controller_dense_hkvm",
+          "reference_label": "ColBERTv2 + Hyper-RAG / co-occurrence-HG",
+          "candidate_source": "weighted_hg_kv",
+          "candidate_variant": "controller_dense_hkvm",
+          "candidate_label": "ColBERTv2 + WHG-KV",
+          "metric": "f1",
+          "metric_label": "F1",
+          "pooled_mean_diff": 11.502898680254168,
+          "pooled_ci_low": 11.141808551869314,
+          "pooled_ci_high": 11.867830746155793,
+          "pooled_p_diff_le_0": 0.0,
+          "seed_mean_diff": 11.502898680254168,
+          "seed_ci_low": 11.142212703475643,
+          "seed_ci_high": 12.119620057604173,
+          "seed_p_diff_le_0": 0.0,
+          "n_seed_diffs": 3,
+          "seed_sd_diff": 0.5366534065255554
+        },
+        {
+          "dataset": "2wiki",
+          "comparison_type": "whg_kv_controller_vs_source_controller",
+          "reference_source": "static_hg",
+          "reference_variant": "controller_dense_hkvm",
+          "reference_label": "ColBERTv2 + Static-HG",
+          "candidate_source": "weighted_hg_kv",
+          "candidate_variant": "controller_dense_hkvm",
+          "candidate_label": "ColBERTv2 + WHG-KV",
+          "metric": "f1",
+          "metric_label": "F1",
+          "pooled_mean_diff": 8.693338780125668,
+          "pooled_ci_low": 8.38530033653651,
+          "pooled_ci_high": 8.99586514917624,
+          "pooled_p_diff_le_0": 0.0,
+          "seed_mean_diff": 8.693338780125666,
+          "seed_ci_low": 8.530014210757644,
+          "seed_ci_high": 9.008438623110829,
+          "seed_p_diff_le_0": 0.0,
+          "n_seed_diffs": 3,
+          "seed_sd_diff": 0.2729455620541217
+        },
+        {
+          "dataset": "2wiki",
+          "comparison_type": "whg_kv_controller_vs_source_controller",
+          "reference_source": "weighted_kg_ppr",
+          "reference_variant": "controller_dense_hkvm",
+          "reference_label": "ColBERTv2 + Weighted-KG-PPR",
+          "candidate_source": "weighted_hg_kv",
+          "candidate_variant": "controller_dense_hkvm",
+          "candidate_label": "ColBERTv2 + WHG-KV",
+          "metric": "f1",
+          "metric_label": "F1",
+          "pooled_mean_diff": 8.076802539135949,
+          "pooled_ci_low": 7.772155195445123,
+          "pooled_ci_high": 8.385661024566327,
+          "pooled_p_diff_le_0": 0.0,
+          "seed_mean_diff": 8.076802539135949,
+          "seed_ci_low": 7.687039287733076,
+          "seed_ci_high": 8.697844559324409,
+          "seed_p_diff_le_0": 0.0,
+          "n_seed_diffs": 3,
+          "seed_sd_diff": 0.5436443929053625
+        }
+      ]
+    }
+  ],
+  "unsafe_claims": [
+    {
+      "claim": "The earlier WHG-KV feature-form ablation proves source-level superiority.",
+      "reason": "That ablation only varies feature forms inside the WHG-KV controller, not alternative structured sources."
+    },
+    {
+      "claim": "Alternative structured sources received learned Phase1C calibration.",
+      "reason": "hyper_rag, static_hg, and weighted_kg_ppr train-side inputs are direct cache-derived retrieval predictions; WHG-KV uses the existing OOF learned calibration row."
+    },
+    {
+      "claim": "No source-level superiority should be stated if WHG-KV does not beat alternatives with a positive matched bootstrap interval.",
+      "reason": "The source-level claim depends on this export, not on prior Phase1D rows alone."
+    }
+  ]
+}

@@ -1,0 +1,79 @@
+{
+  "enabled": true,
+  "samples": 1000,
+  "alpha": 0.05,
+  "comparisons": [
+    {
+      "dataset": "2wiki",
+      "reference": "kg_ppr",
+      "candidate": "weighted_hg_kv",
+      "missing": [],
+      "metrics": {
+        "all_recall@10": {
+          "n": 37728,
+          "mean_diff": 1.5426208651399491,
+          "ci_low": 1.423279792196777,
+          "ci_high": 1.6699135920271415,
+          "p_diff_le_0": 0.0
+        },
+        "all_recall@5": {
+          "n": 37728,
+          "mean_diff": 5.80470737913486,
+          "ci_low": 5.364583333333333,
+          "ci_high": 6.226277565733672,
+          "p_diff_le_0": 0.0
+        },
+        "f1": {
+          "n": 37728,
+          "mean_diff": 3.426093860113842,
+          "ci_low": 3.09252224764206,
+          "ci_high": 3.7369249227752466,
+          "p_diff_le_0": 0.0
+        },
+        "em": {
+          "n": 37728,
+          "mean_diff": 3.2919847328244276,
+          "ci_low": 2.957816475826972,
+          "ci_high": 3.6048160517387613,
+          "p_diff_le_0": 0.0
+        }
+      }
+    },
+    {
+      "dataset": "musique",
+      "reference": "kg_ppr",
+      "candidate": "weighted_hg_kv",
+      "missing": [],
+      "metrics": {
+        "all_recall@10": {
+          "n": 7251,
+          "mean_diff": 6.164666942490691,
+          "ci_low": 5.267894083574679,
+          "ci_high": 7.13005102744449,
+          "p_diff_le_0": 0.0
+        },
+        "all_recall@5": {
+          "n": 7251,
+          "mean_diff": 4.716590815059992,
+          "ci_low": 3.944283547096952,
+          "ci_high": 5.530271686663909,
+          "p_diff_le_0": 0.0
+        },
+        "f1": {
+          "n": 7251,
+          "mean_diff": 3.592423987541902,
+          "ci_low": 2.7319456964678315,
+          "ci_high": 4.474507081664716,
+          "p_diff_le_0": 0.0
+        },
+        "em": {
+          "n": 7251,
+          "mean_diff": 3.6822507240380635,
+          "ci_low": 2.7444490415115155,
+          "ci_high": 4.5928147841677,
+          "p_diff_le_0": 0.0
+        }
+      }
+    }
+  ]
+}

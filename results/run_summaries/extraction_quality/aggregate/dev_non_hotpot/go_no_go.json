@@ -1,0 +1,27 @@
+{
+  "passed_all": true,
+  "checks": [
+    {
+      "dataset": "2wiki",
+      "ceiling_effect": true,
+      "ceiling_rule_used": true,
+      "all_recall@10_gain": 1.5426208651399378,
+      "all_recall@5_gain": 5.804707379134854,
+      "f1_gain": 3.4260938601138378,
+      "em_gain": 3.2919847328244174,
+      "latency_ratio": 0.3060685654733736,
+      "status": "go"
+    },
+    {
+      "dataset": "musique",
+      "ceiling_effect": false,
+      "ceiling_rule_used": false,
+      "all_recall@10_gain": 6.16466694249069,
+      "all_recall@5_gain": 4.716590815059989,
+      "f1_gain": 3.592423987541906,
+      "em_gain": 3.682250724038063,
+      "latency_ratio": 0.2712446354662677,
+      "status": "go"
+    }
+  ]
+}

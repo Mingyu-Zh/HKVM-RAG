@@ -1,0 +1,43 @@
+{
+  "enabled": true,
+  "samples": 1000,
+  "alpha": 0.05,
+  "comparisons": [
+    {
+      "dataset": "hotpotqa",
+      "reference": "kg_ppr",
+      "candidate": "weighted_hg_kv",
+      "missing": [],
+      "metrics": {
+        "all_recall@10": {
+          "n": 22215,
+          "mean_diff": 2.8089128966914245,
+          "ci_low": 2.6018455998199417,
+          "ci_high": 3.0205941931127613,
+          "p_diff_le_0": 0.0
+        },
+        "all_recall@5": {
+          "n": 22215,
+          "mean_diff": -5.820391627278866,
+          "ci_low": -6.437204591492234,
+          "ci_high": -5.1986270537924835,
+          "p_diff_le_0": 1.0
+        },
+        "f1": {
+          "n": 22215,
+          "mean_diff": -0.6889869546253651,
+          "ci_low": -1.102653643739387,
+          "ci_high": -0.23817411434711394,
+          "p_diff_le_0": 0.998
+        },
+        "em": {
+          "n": 22215,
+          "mean_diff": -0.7292370020256583,
+          "ci_low": -1.1838847625478282,
+          "ci_high": -0.260972316002701,
+          "p_diff_le_0": 0.999
+        }
+      }
+    }
+  ]
+}

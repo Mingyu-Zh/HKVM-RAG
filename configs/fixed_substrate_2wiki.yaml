@@ -1,0 +1,141 @@
+project:
+  name: fixed_substrate_2wiki
+  output_dir: runs/fixed_substrate_2wiki
+
+datasets:
+  2wiki:
+    loader: jsonl
+    path: data/benchmarks/2wiki/dev.jsonl
+    hf_name: null
+    hf_config: null
+    split: validation
+    limit: null
+matched_budget:
+  chunk_size_tokens: 1200
+  chunk_overlap_tokens: 100
+  top_k: 10
+  generation_top_k: 5
+  max_context_tokens: 3000
+  shared_openie_cache: true
+  shared_gold_support_annotations: false
+  shared_generator: extractive
+  prompt_template: "Answer the question using only the retrieved context.\n\nQuestion: {question}\n\nContext:\n{context}\n\nAnswer:"
+
+openie:
+  backend: deepseek_v4
+  provider: deepseek
+  model: deepseek-v4-flash
+  base_url: https://api.deepseek.com
+  api_key_env: DEEPSEEK_API_KEY
+  env_file: .env
+  api_key: ""
+  cache_dir: data/llm_extraction_caches/deepseek_v4_openie
+  cache_index_path: data/llm_extraction_caches/deepseek_v4_openie/cache_index.json
+  cache_split: dev
+  seed_invariant_cache: true
+  use_gold_answer_path: false
+  use_llm_hyperedges: true
+  include_question: false
+  request_scope: passage
+  schema_version: p2_triples_only_v1_global48
+  parallel_requests: 4
+  thinking: disabled
+  temperature: 0.0
+  max_tokens: 2048
+  timeout_seconds: 120
+  retries: 3
+  retry_sleep_seconds: 2.0
+  save_every: 10
+  max_passage_chars: 2200
+  max_triples_per_passage: 5
+  max_high_order_per_passage: 2
+  fail_on_error: true
+  max_entities_per_passage: 12
+  min_entity_len: 2
+
+reproducibility:
+  run_manifest: true
+  fingerprint_cache: true
+  validate_cache_manifest: true
+  fail_on_cache_mismatch: true
+
+evaluation:
+  bootstrap_samples: 1000
+  bootstrap_alpha: 0.05
+  bootstrap_seed: 13
+
+dense:
+  backend: contriever
+  model_name: facebook/contriever
+  cache_dir: .cache/huggingface
+  device: auto
+  batch_size: 32
+  max_length: 512
+  normalize: true
+  local_files_only: false
+  fallback_on_error: false
+
+colbertv2:
+  model_name: colbert-ir/colbertv2.0
+  cache_dir: .cache/huggingface
+  device: auto
+  batch_size: 16
+  query_max_length: 32
+  doc_max_length: 180
+  local_files_only: false
+
+retrieval:
+  top_k: 10
+  ppr_alpha: 0.50
+  ppr_iterations: 40
+  ppr_tolerance: 1.0e-7
+  hg_lambda: 0.35
+  hg_steps: 1
+  random_hyperedge_count: 128
+  random_hyperedge_size: 3
+
+weighting:
+  supervision_source: llm_confidence
+  supervised_boost: 2.0
+  triple_factual_weight: 0.25
+  triple_salience_weight: 0.55
+  triple_bridge_weight: 0.20
+  hyperedge_factual_weight: 0.20
+  hyperedge_salience_weight: 0.40
+  hyperedge_bridge_weight: 0.40
+  relation_boost: 1.5
+  contrastive_epochs: 0
+  learning_rate: 0.08
+  temperature: 0.10
+  negative_samples: 12
+
+methods:
+  - bm25
+  - kg_ppr
+  - hyper_rag
+  - static_hg
+  - weighted_kg_ppr
+  - weighted_hg_kv
+
+runs:
+  seeds: [13, 29, 43]
+
+ablations:
+  cooccurrence_hg: false
+  answer_path_hg: true
+  low_order_only: false
+  high_order_only: false
+  all_hyperedges: false
+  gold_hyperedges: false
+  llm_extracted_hyperedges: true
+  random_hyperedges: false
+  diffusion_steps_1: true
+  diffusion_steps_2: false
+
+go_no_go:
+  reference_method: kg_ppr
+  candidate_method: weighted_hg_kv
+  all_recall_at_10_gain: 3.0
+  qa_f1_gain: 1.0
+  em_gain: 1.0
+  latency_multiplier: 1.5

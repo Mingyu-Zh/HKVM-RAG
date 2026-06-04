@@ -1,0 +1,12 @@
+.DS_Store
+__pycache__/
+*.py[cod]
+.env
+.cache/
+runs/
+logs/
+tmp/
+
+# Hosted on Hugging Face Dataset (not GitHub)
+data/
+frozen_outputs/

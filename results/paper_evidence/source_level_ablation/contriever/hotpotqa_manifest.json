@@ -1,0 +1,141 @@
+{
+  "status": "completed",
+  "created_at": "2026-06-02T08:12:47Z",
+  "script": "tools/export_phase1d_source_level_ablation.py",
+  "run_root": "{REMOTE_RUN_ROOT}/phase1d_contriever_source_level_ablation_hotpotqa10k_20260602",
+  "structured_train_root": "{REMOTE_RUN_ROOT}/phase1d_structured_train_predictions_hotpotqa10k_20260602",
+  "dense_variant": "contriever",
+  "dense_label": "Contriever",
+  "source_only_variant": "phase1c_mlp_topk_4",
+  "output_prefix": "phase1d_hotpot_contriever_source_level_ablation",
+  "datasets": [
+    "hotpotqa"
+  ],
+  "sources": [
+    "hyper_rag",
+    "static_hg",
+    "weighted_kg_ppr",
+    "weighted_hg_kv"
+  ],
+  "seeds": [
+    13,
+    29,
+    43
+  ],
+  "metrics": [
+    "f1",
+    "em",
+    "all_recall@10",
+    "all_recall@5"
+  ],
+  "samples": 5000,
+  "alpha": 0.05,
+  "bootstrap_seed": 13,
+  "missing": [],
+  "llm_api_calls": 0,
+  "source_manifests": {
+    "hotpotqa/hyper_rag": {
+      "protocol": "train_to_dev",
+      "run_label": "hotpotqa_source_level_contriever_hyper_rag_20260602",
+      "structured_source_name": "hyper_rag",
+      "prediction_templates": {
+        "dense": {
+          "train": "{REMOTE_RUN_ROOT}/phase1d_input_prep_contriever_train_hotpotqa10k_20260602/runs/{dataset}/seed_{seed}/contriever.predictions.jsonl",
+          "dev": "{REMOTE_RUN_ROOT}/icde2027_hotpotqa_contriever_full_20260518/runs/{dataset}/seed_{seed}/contriever.predictions.jsonl"
+        },
+        "hkvm": {
+          "train": "{REMOTE_RUN_ROOT}/phase1d_structured_train_predictions_hotpotqa10k_20260602/runs/{dataset}/seed_{seed}/hyper_rag.predictions.jsonl",
+          "dev": "{REMOTE_RUN_ROOT}/icde2027_hotpotqa_structured_3seed_20260518/runs/{dataset}/seed_{seed}/hyper_rag.predictions.jsonl"
+        },
+        "bm25": {
+          "train": null,
+          "dev": null
+        }
+      },
+      "train_hkvm_stacking_risk": {
+        "requested": "no",
+        "may_have_in_sample_stacking_risk": false,
+        "note": "true means the HKVM train-side predictions may already reflect in-sample stacking or otherwise trained-on-train evidence features."
+      }
+    },
+    "hotpotqa/static_hg": {
+      "protocol": "train_to_dev",
+      "run_label": "hotpotqa_source_level_contriever_static_hg_20260602",
+      "structured_source_name": "static_hg",
+      "prediction_templates": {
+        "dense": {
+          "train": "{REMOTE_RUN_ROOT}/phase1d_input_prep_contriever_train_hotpotqa10k_20260602/runs/{dataset}/seed_{seed}/contriever.predictions.jsonl",
+          "dev": "{REMOTE_RUN_ROOT}/icde2027_hotpotqa_contriever_full_20260518/runs/{dataset}/seed_{seed}/contriever.predictions.jsonl"
+        },
+        "hkvm": {
+          "train": "{REMOTE_RUN_ROOT}/phase1d_structured_train_predictions_hotpotqa10k_20260602/runs/{dataset}/seed_{seed}/static_hg.predictions.jsonl",
+          "dev": "{REMOTE_RUN_ROOT}/icde2027_hotpotqa_structured_3seed_20260518/runs/{dataset}/seed_{seed}/static_hg.predictions.jsonl"
+        },
+        "bm25": {
+          "train": null,
+          "dev": null
+        }
+      },
+      "train_hkvm_stacking_risk": {
+        "requested": "no",
+        "may_have_in_sample_stacking_risk": false,
+        "note": "true means the HKVM train-side predictions may already reflect in-sample stacking or otherwise trained-on-train evidence features."
+      }
+    },
+    "hotpotqa/weighted_kg_ppr": {
+      "protocol": "train_to_dev",
+      "run_label": "hotpotqa_source_level_contriever_weighted_kg_ppr_20260602",
+      "structured_source_name": "weighted_kg_ppr",
+      "prediction_templates": {
+        "dense": {
+          "train": "{REMOTE_RUN_ROOT}/phase1d_input_prep_contriever_train_hotpotqa10k_20260602/runs/{dataset}/seed_{seed}/contriever.predictions.jsonl",
+          "dev": "{REMOTE_RUN_ROOT}/icde2027_hotpotqa_contriever_full_20260518/runs/{dataset}/seed_{seed}/contriever.predictions.jsonl"
+        },
+        "hkvm": {
+          "train": "{REMOTE_RUN_ROOT}/phase1d_structured_train_predictions_hotpotqa10k_20260602/runs/{dataset}/seed_{seed}/weighted_kg_ppr.predictions.jsonl",
+          "dev": "{REMOTE_RUN_ROOT}/icde2027_hotpotqa_structured_3seed_20260518/runs/{dataset}/seed_{seed}/weighted_kg_ppr.predictions.jsonl"
+        },
+        "bm25": {
+          "train": null,
+          "dev": null
+        }
+      },
+      "train_hkvm_stacking_risk": {
+        "requested": "no",
+        "may_have_in_sample_stacking_risk": false,
+        "note": "true means the HKVM train-side predictions may already reflect in-sample stacking or otherwise trained-on-train evidence features."
+      }
+    },
+    "hotpotqa/weighted_hg_kv": {
+      "protocol": "train_to_dev",
+      "run_label": "hotpotqa_source_level_contriever_weighted_hg_kv_20260602",
+      "structured_source_name": "weighted_hg_kv",
+      "prediction_templates": {
+        "dense": {
+          "train": "{REMOTE_RUN_ROOT}/phase1d_input_prep_contriever_train_hotpotqa10k_20260602/runs/{dataset}/seed_{seed}/contriever.predictions.jsonl",
+          "dev": "{REMOTE_RUN_ROOT}/icde2027_hotpotqa_contriever_full_20260518/runs/{dataset}/seed_{seed}/contriever.predictions.jsonl"
+        },
+        "hkvm": {
+          "train": "{REMOTE_RUN_ROOT}/phase1d_hkvm_train_oof_hotpotqa10k_20260602/{dataset}/seed_{seed}/{dataset}/seed_{seed}/runs/{dataset}/seed_{seed}/train_oof/mlp_base_only_topk_4/weighted_hg_kv.predictions.jsonl",
+          "dev": "{REMOTE_RUN_ROOT}/phase1c_validation_hotpotqa10k_20260602/mlp_base_only/seed_{seed}/runs/hotpotqa/seed_{seed}/train_to_dev/mlp_base_only_topk_4/weighted_hg_kv.predictions.jsonl"
+        },
+        "bm25": {
+          "train": null,
+          "dev": null
+        }
+      },
+      "train_hkvm_stacking_risk": {
+        "requested": "no",
+        "may_have_in_sample_stacking_risk": false,
+        "note": "true means the HKVM train-side predictions may already reflect in-sample stacking or otherwise trained-on-train evidence features."
+      }
+    }
+  },
+  "outputs": {
+    "table_csv": "{REMOTE_RUN_ROOT}/phase1d_contriever_source_level_ablation_hotpotqa10k_20260602/paper_export/phase1d_hotpot_contriever_source_level_ablation_table.csv",
+    "table_md": "{REMOTE_RUN_ROOT}/phase1d_contriever_source_level_ablation_hotpotqa10k_20260602/paper_export/phase1d_hotpot_contriever_source_level_ablation_table.md",
+    "bootstrap_csv": "{REMOTE_RUN_ROOT}/phase1d_contriever_source_level_ablation_hotpotqa10k_20260602/paper_export/phase1d_hotpot_contriever_source_level_ablation_bootstrap.csv",
+    "claim_evidence_map": "{REMOTE_RUN_ROOT}/phase1d_contriever_source_level_ablation_hotpotqa10k_20260602/paper_export/phase1d_hotpot_contriever_source_level_ablation_claim_evidence_map.json"
+  },
+  "note": "Reads saved predictions only; no retrieval, extraction, controller training, or LLM calls in export."
+}
