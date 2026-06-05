@@ -1,6 +1,6 @@
 # HKVM-RAG: Key-Value-Separated Hypergraph Evidence Organization for Multi-Hop RAG
 
-[![ICDE](https://img.shields.io/badge/ICDE-2027-blue)](https://icde2027.github.io/)
+[![Paper](https://img.shields.io/badge/paper-under_review-orange)](https://github.com/Mingyu-Zh/HKVM-RAG)
 [![License](https://img.shields.io/badge/license-MIT-green)](LICENSE)
 [![Python](https://img.shields.io/badge/python-3.10+-blue)](https://www.python.org/)
 [![Artifact](https://img.shields.io/badge/artifact-available-brightgreen)](https://github.com/Mingyu-Zh/HKVM-RAG)
@@ -115,12 +115,14 @@ Full reruns: `--setting 2wiki`, `musique`, or `hotpotqa`.
 
 ## Citation
 
+If you use this code or data in your research, please cite the accompanying paper:
+
 ```bibtex
-@inproceedings{zhang2027hkvmrag,
-  title     = {{HKVM-RAG}: Key-Value-Separated Hypergraph Evidence Organization for Multi-Hop {RAG}},
-  author    = {Zhang, Mingyu and Ma, Ying},
-  booktitle = {Proceedings of the IEEE International Conference on Data Engineering (ICDE)},
-  year      = {2027},
+@misc{zhang2025hkvmrag,
+  title        = {{HKVM-RAG}: Key-Value-Separated Hypergraph Evidence Organization for Multi-Hop {RAG}},
+  author       = {Zhang, Mingyu and Ma, Ying},
+  year         = {2025},
+  howpublished = {\url{https://github.com/Mingyu-Zh/HKVM-RAG}},
 }
 ```
 
