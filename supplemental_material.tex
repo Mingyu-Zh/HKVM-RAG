@@ -197,6 +197,46 @@ The main finding is that explicit dense-HKVM interaction features are not necess
 
 The shared LLM-triple cache is a controlled extraction substrate, not a claim that LLM triples dominate all OpenIE alternatives. In extraction-quality diagnostics, LLM triples were much sparser than heuristic OpenIE: objects per passage changed from 34.814 to 4.249 on 2Wiki and from 47.056 to 4.878 on MuSiQue. Pairwise KG-PPR with the sparse LLM tuple cache did not dominate heuristic OpenIE KG-PPR in that diagnostic. The paper therefore treats cache changes as new manifests rather than mixing them into the frozen result matrix.
 
+\subsection{Hyperparameter Sensitivity}
+
+Table~\ref{tab:supp_hyperparam_sensitivity} reports WHG-KV sensitivity to the three main hyperparameter groups: the confidence-weight coefficients $\lambda=(\lambda_f,\lambda_s,\lambda_b)$, the weight-scale parameter $\beta$, and the diffusion parameter $\rho$. Each variant changes only one parameter from the default $(\lambda_f{=}0.20,\lambda_s{=}0.40,\lambda_b{=}0.40,\;\beta{=}2.0,\;\rho{=}0.35)$, reuses the existing DeepSeek evidence tuple cache, and evaluates on the MuSiQue dev answerable subset with seed 13.
+
+\begin{table}[t]
+\caption{WHG-KV hyperparameter sensitivity on MuSiQue (seed 13). Default row uses the paper-facing configuration. All variants reuse the frozen DeepSeek evidence tuple cache; F1 values are single-seed point estimates.}
+\label{tab:supp_hyperparam_sensitivity}
+\centering
+\scriptsize
+\begin{tabular}{llrrr}
+\toprule
+Group & Variant & AR@10 & F1 & EM \\
+\midrule
+\multicolumn{5}{@{}l}{\emph{Default}} \\
+& $(\lambda_f{=}0.20,\lambda_s{=}0.40,\lambda_b{=}0.40),\;\beta{=}2.0,\;\rho{=}0.35$ & 37.815 & 38.946 & 38.229 \\
+\midrule
+\multicolumn{5}{@{}l}{\emph{$\beta$ (weight scale)}} \\
+& $\beta=1.5$ & 37.360 & 38.693 & 37.940 \\
+& $\beta=2.5$ & 38.395 & 39.482 & 38.767 \\
+& $\beta=3.0$ & 38.395 & 39.834 & 39.139 \\
+& $\beta=4.0$ & 39.015 & 39.918 & 39.222 \\
+\midrule
+\multicolumn{5}{@{}l}{\emph{$\rho$ (diffusion)}} \\
+& $\rho=0.15$ & 38.477 & 39.383 & 38.726 \\
+& $\rho=0.25$ & 37.857 & 39.292 & 38.602 \\
+& $\rho=0.45$ & 37.650 & 38.937 & 38.146 \\
+& $\rho=0.55$ & 36.947 & 38.471 & 37.650 \\
+\midrule
+\multicolumn{5}{@{}l}{\emph{$\lambda$ (confidence weights)}} \\
+& Uniform $(0.33,0.33,0.33)$ & 37.940 & 38.988 & 38.271 \\
+& Factual-only $(1,0,0)$ & 38.188 & 39.200 & 38.477 \\
+& Salience-only $(0,1,0)$ & 37.898 & 38.936 & 38.229 \\
+& Bridge-only $(0,0,1)$ & 37.940 & 39.022 & 38.271 \\
+& Factual+Bridge $(0.5,0,0.5)$ & 38.022 & 38.943 & 38.229 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+Across all 14 variants, WHG-KV F1 ranges from 38.471 to 39.918 (range 1.447), and all variants exceed the pairwise KG-PPR baseline (36.332 F1, Table~1 in the main paper). The default configuration is conservative: higher $\beta$ and lower $\rho$ modestly improve F1, but the paper's qualitative conclusions are robust to all tested hyperparameter perturbations. The default was chosen to avoid dev-set over-tuning rather than to maximize single-seed MuSiQue F1.
+
 \section{Run and Artifact Provenance}
 
 The public artifact is split across two hosting platforms:
