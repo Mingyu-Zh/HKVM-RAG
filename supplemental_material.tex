@@ -199,7 +199,7 @@ The shared LLM-triple cache is a controlled extraction substrate, not a claim th
 
 \subsection{Hyperparameter Sensitivity}
 
-Table~\ref{tab:supp_hyperparam_sensitivity} reports WHG-KV sensitivity to the three main hyperparameter groups: the confidence-weight coefficients $\lambda=(\lambda_f,\lambda_s,\lambda_b)$, the weight-scale parameter $\beta$, and the diffusion parameter $\rho$. Each variant changes only one parameter from the default $(\lambda_f{=}0.20,\lambda_s{=}0.40,\lambda_b{=}0.40,\;\beta{=}2.0,\;\rho{=}0.35)$, reuses the existing DeepSeek evidence tuple cache, and evaluates on the MuSiQue dev answerable subset with seed 13.
+Table~\ref{tab:supp_hyperparam_sensitivity} reports WHG-KV sensitivity to the three main hyperparameter groups: the confidence-weight coefficients $\lambda=(\lambda_f,\lambda_s,\lambda_b)$, the weight-scale parameter $\beta$, and the diffusion parameter $\rho$. Each variant varies one parameter while holding the others at their default values $(\lambda_f{=}0.20,\lambda_s{=}0.40,\lambda_b{=}0.40,\;\beta{=}2.0,\;\rho{=}0.35)$. All runs reuse the existing DeepSeek evidence tuple cache and evaluate on the MuSiQue dev answerable subset with seed 13.
 
 \begin{table}[t]
 \caption{WHG-KV hyperparameter sensitivity on MuSiQue (seed 13). Default row uses the paper-facing configuration. All variants reuse the frozen DeepSeek evidence tuple cache; F1 values are single-seed point estimates.}
@@ -235,7 +235,7 @@ Group & Variant & AR@10 & F1 & EM \\
 \end{tabular}
 \end{table}
 
-Across all 14 variants, WHG-KV F1 ranges from 38.471 to 39.918 (range 1.447), and all variants exceed the pairwise KG-PPR baseline (36.332 F1, Table~1 in the main paper). The default configuration is conservative: higher $\beta$ and lower $\rho$ modestly improve F1, but the paper's qualitative conclusions are robust to all tested hyperparameter perturbations. The default was chosen to avoid dev-set over-tuning rather than to maximize single-seed MuSiQue F1.
+Across all 14 variants, WHG-KV F1 spans 38.471--39.918 ($\Delta{=}1.447$), and all variants exceed the pairwise KG-PPR baseline (36.332 F1, Table~1 in the main paper). The default configuration is conservative: higher $\beta$ and lower $\rho$ modestly improve F1, but the paper's qualitative conclusions are robust to all tested hyperparameter perturbations. The default was chosen to avoid dev-set over-tuning rather than to maximize single-seed MuSiQue F1.
 
 \section{Run and Artifact Provenance}
 
