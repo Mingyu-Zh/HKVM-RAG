@@ -239,7 +239,7 @@ Across all 14 variants, WHG-KV F1 spans 38.471--39.918 ($\Delta{=}1.447$), and a
 
 \subsection{Enhanced Pairwise KG Baselines}
 
-To test whether the WHG-KV advantage reflects a weak pairwise reference rather than a genuine key-space effect, we implement two topological enhancements from HippoRAG~2 \cite{hipporag2} within the same fixed substrate: passage nodes (adding passages as graph vertices connected to their contained entity nodes) and query-to-triple linking (seeding PPR from query--triple token overlap in addition to entity matching). These enhancements improve the pairwise graph topology without changing the evidence tuple cache, candidate passages, or retrieval algorithm (PPR). Table~\ref{tab:supp_enhanced_kg} reports the four variants across all three benchmarks.
+To determine whether the WHG-KV advantage is an artifact of a weak pairwise reference, we implement two topological enhancements from HippoRAG~2 \cite{hipporag2} within the same fixed substrate. The first adds passage nodes: each passage becomes a graph vertex connected to the entity nodes it contains, allowing PPR to flow through passage-level context. The second adds query-to-triple linking: PPR seeds are drawn from query--triple token overlap in addition to entity matching. Both enhancements change only the graph topology; the evidence tuple cache, candidate passages, and retrieval algorithm (PPR) remain identical to the original KG-PPR baseline. Table~\ref{tab:supp_enhanced_kg} reports four variant combinations across all three benchmarks.
 
 \begin{table}[t]
 \caption{Enhanced pairwise KG-PPR baselines with passage nodes (PN) and query-to-triple linking (QT). All variants reuse the shared DeepSeek evidence tuple cache; no new LLM extraction calls. WHG-KV from the main paper is included for reference.}
@@ -263,7 +263,7 @@ WHG-KV (reference) & 79.299 & 39.925 & 72.957 \\
 \end{tabular}
 \end{table}
 
-Passage nodes alone produce marginal changes from the original pairwise baselines ($|\Delta\mathrm{F1}|<0.7$ across all datasets). Query-to-triple linking helps on 2WikiMultiHopQA (+2.1 F1) but degrades performance on MuSiQue ($-$1.3 to $-$1.5 F1), where token-overlap matching against complex compositional questions introduces noise. The strongest enhanced pairwise variant (Weighted-KG-PPR + PN + QT, 78.041 F1 on 2Wiki) remains below WHG-KV (79.299). On MuSiQue, no enhancement narrows the gap below $+3.2$ F1. These results indicate that the hypergraph key-space advantage is not an artifact of a weak pairwise reference: even the best available pairwise topology improvements do not replicate the evidence-organization gain of answer-path hyperedges under the shared extraction substrate.
+Passage nodes alone shift F1 by less than 0.7 points relative to the original pairwise baselines across all three datasets. Query-to-triple linking improves 2WikiMultiHopQA (+2.1 F1) but degrades MuSiQue ($-$1.3 to $-$1.5 F1), where token-overlap matching against compositional questions introduces noise. The strongest enhanced pairwise variant reaches 78.041 F1 on 2WikiMultiHopQA, which remains below WHG-KV (79.299). On MuSiQue the smallest gap is $+3.2$ F1. These results show that the hypergraph advantage is not an artifact of a weak pairwise reference: even the best pairwise topology improvements available do not reproduce the evidence-organization gain of answer-path hyperedges under the shared extraction substrate.
 
 \section{Run and Artifact Provenance}
 
