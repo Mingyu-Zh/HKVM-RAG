@@ -164,6 +164,35 @@ This boundary is compatible with the dense-aware controller result: raw structur
 
 MuSiQue contains genuine ColBERTv2--WHG complementarity, but simple fixed-budget fusion and shallow single-feature gates did not reliably exceed ColBERTv2. RRF fusion of ColBERTv2 and HKVM predictions improved F1 over ColBERTv2 by only +0.110 on MuSiQue, far below the learned controller's +6.763. On 2WikiMultiHopQA and HotpotQA, RRF improved by +8.800 and +3.379 F1 respectively, but remained below the learned controller (+11.084 and +5.966). Three additional fixed-budget quota mixtures (dense3+hkvm2, dense4+hkvm1) were evaluated on MuSiQue and produced F1 values of 58.237, 58.309, and 57.923, none reliably exceeding ColBERTv2 (58.309). This motivates the learned passage-level controller used in the main paper, and blocks the simpler claim that generic RRF or quota fusion is enough.
 
+\subsection{Controller Feature Ablation}
+
+The dense-aware controller uses per-passage feature vectors containing ColBERTv2 and HKVM rank/score signals. Table~\ref{tab:supp_controller_ablation} decomposes the full feature set to identify which signal groups carry the controller gain. The ablation keeps the controller protocol, train-to-dev split, and hyperparameters fixed while varying the feature subset supplied to the logistic ranker.
+
+\begin{table}[t]
+\caption{Dense-aware controller feature ablation. Full uses both source signals plus explicit dense-HKVM interaction features; no-interaction drops the explicit interaction terms; score-only and rank-only keep only those feature groups; interaction-only uses only the explicit cross-source features. ColBERTv2 and learned HKVM calibration rows are reference predictors included in the main paper.}
+\label{tab:supp_controller_ablation}
+\centering
+\scriptsize
+\begin{tabular}{lrr}
+\toprule
+Variant & MuSiQue F1 & 2Wiki F1 \\
+\midrule
+ColBERTv2 (reference) & 58.309 & 77.763 \\
+Learned HKVM calibration (reference) & 56.754 & 88.391 \\
+\midrule
+Controller dense-only & 58.247 & 77.679 \\
+Controller HKVM-only & 56.760 & 88.415 \\
+Controller interaction-only & 60.295 & 88.769 \\
+Controller rank-only & 64.474 & 88.637 \\
+Controller score-only & 65.254 & 88.696 \\
+Controller no-interaction & 65.738 & 88.581 \\
+Controller full & 65.073 & 88.846 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+The main finding is that explicit dense-HKVM interaction features are not necessary for the MuSiQue gain. The no-interaction variant reaches 65.738 F1 on MuSiQue, marginally exceeding the full controller (65.073). Score-only (65.254) also approaches full performance. Interaction-only (60.295) is far below full, confirming that interaction features alone are insufficient. On 2Wiki, HKVM calibration is already strong (88.391), so all dense+HKVM variants cluster within 0.7 F1 of each other. The safe mechanism claim is that dense and WHG-KV rank/score signals jointly carry useful passage-reordering information; explicit interaction features help on 2Wiki but are not the primary driver of the MuSiQue gain. This ablation uses out-of-fold HKVM training signals, seeds 13/29/43, 5,000-sample paired bootstrap, and no new LLM extraction calls.
+
 \subsection{Extraction Substrate}
 
 The shared LLM-triple cache is a controlled extraction substrate, not a claim that LLM triples dominate all OpenIE alternatives. In extraction-quality diagnostics, LLM triples were much sparser than heuristic OpenIE: objects per passage changed from 34.814 to 4.249 on 2Wiki and from 47.056 to 4.878 on MuSiQue. Pairwise KG-PPR with the sparse LLM tuple cache did not dominate heuristic OpenIE KG-PPR in that diagnostic. The paper therefore treats cache changes as new manifests rather than mixing them into the frozen result matrix.
