@@ -1,0 +1,208 @@
+{
+  "purpose": "Audit whether true train-internal held-out controller reruns can be reconstructed from current files.",
+  "datasets": {
+    "musique": {
+      "manifest_path": "/home/zzz/hkvm_runs/phase1d_train_to_dev_oof_hkvm_lr001_20260525/musique/phase1d_dense_aware_manifest.json",
+      "manifest_exists": true,
+      "required_inputs": [
+        {
+          "label": "train_dataset_path",
+          "path": "/home/zzz/hkvm_runs/phase1c_validation_musique10k_20260523/mlp_base_only/seed_13/merged_train_subsets/musique_train_merged_10000.jsonl"
+        },
+        {
+          "label": "train_dense_seed_13",
+          "path": "/home/zzz/hkvm_runs/phase1d_input_prep_colbert_train_20260524/runs/musique/seed_13/colbertv2.predictions.jsonl"
+        },
+        {
+          "label": "train_dense_seed_29",
+          "path": "/home/zzz/hkvm_runs/phase1d_input_prep_colbert_train_20260524/runs/musique/seed_29/colbertv2.predictions.jsonl"
+        },
+        {
+          "label": "train_dense_seed_43",
+          "path": "/home/zzz/hkvm_runs/phase1d_input_prep_colbert_train_20260524/runs/musique/seed_43/colbertv2.predictions.jsonl"
+        },
+        {
+          "label": "train_hkvm_seed_13",
+          "path": "/home/zzz/hkvm_runs/phase1d_hkvm_train_oof_20260525/musique/seed_13/musique/seed_13/runs/musique/seed_13/train_oof/mlp_base_only_topk_4/weighted_hg_kv.predictions.jsonl"
+        },
+        {
+          "label": "train_hkvm_seed_29",
+          "path": "/home/zzz/hkvm_runs/phase1d_hkvm_train_oof_20260525/musique/seed_29/musique/seed_29/runs/musique/seed_29/train_oof/mlp_base_only_topk_4/weighted_hg_kv.predictions.jsonl"
+        },
+        {
+          "label": "train_hkvm_seed_43",
+          "path": "/home/zzz/hkvm_runs/phase1d_hkvm_train_oof_20260525/musique/seed_43/musique/seed_43/runs/musique/seed_43/train_oof/mlp_base_only_topk_4/weighted_hg_kv.predictions.jsonl"
+        }
+      ],
+      "found_inputs": [],
+      "missing_inputs": [
+        {
+          "label": "train_dataset_path",
+          "path": "/home/zzz/hkvm_runs/phase1c_validation_musique10k_20260523/mlp_base_only/seed_13/merged_train_subsets/musique_train_merged_10000.jsonl"
+        },
+        {
+          "label": "train_dense_seed_13",
+          "path": "/home/zzz/hkvm_runs/phase1d_input_prep_colbert_train_20260524/runs/musique/seed_13/colbertv2.predictions.jsonl"
+        },
+        {
+          "label": "train_dense_seed_29",
+          "path": "/home/zzz/hkvm_runs/phase1d_input_prep_colbert_train_20260524/runs/musique/seed_29/colbertv2.predictions.jsonl"
+        },
+        {
+          "label": "train_dense_seed_43",
+          "path": "/home/zzz/hkvm_runs/phase1d_input_prep_colbert_train_20260524/runs/musique/seed_43/colbertv2.predictions.jsonl"
+        },
+        {
+          "label": "train_hkvm_seed_13",
+          "path": "/home/zzz/hkvm_runs/phase1d_hkvm_train_oof_20260525/musique/seed_13/musique/seed_13/runs/musique/seed_13/train_oof/mlp_base_only_topk_4/weighted_hg_kv.predictions.jsonl"
+        },
+        {
+          "label": "train_hkvm_seed_29",
+          "path": "/home/zzz/hkvm_runs/phase1d_hkvm_train_oof_20260525/musique/seed_29/musique/seed_29/runs/musique/seed_29/train_oof/mlp_base_only_topk_4/weighted_hg_kv.predictions.jsonl"
+        },
+        {
+          "label": "train_hkvm_seed_43",
+          "path": "/home/zzz/hkvm_runs/phase1d_hkvm_train_oof_20260525/musique/seed_43/musique/seed_43/runs/musique/seed_43/train_oof/mlp_base_only_topk_4/weighted_hg_kv.predictions.jsonl"
+        }
+      ],
+      "can_attempt_rerun_without_rebuilding_inputs": false
+    },
+    "2wiki": {
+      "manifest_path": "/home/zzz/hkvm_runs/phase1d_train_to_dev_oof_hkvm_lr001_20260525/2wiki/phase1d_dense_aware_manifest.json",
+      "manifest_exists": true,
+      "required_inputs": [
+        {
+          "label": "train_dataset_path",
+          "path": "/home/zzz/hkvm_runs/phase1c_validation_2wiki10k_20260524/mlp_base_only/seed_13/merged_train_subsets/2wiki_train_merged_10000.jsonl"
+        },
+        {
+          "label": "train_dense_seed_13",
+          "path": "/home/zzz/hkvm_runs/phase1d_input_prep_colbert_train_20260524/runs/2wiki/seed_13/colbertv2.predictions.jsonl"
+        },
+        {
+          "label": "train_dense_seed_29",
+          "path": "/home/zzz/hkvm_runs/phase1d_input_prep_colbert_train_20260524/runs/2wiki/seed_29/colbertv2.predictions.jsonl"
+        },
+        {
+          "label": "train_dense_seed_43",
+          "path": "/home/zzz/hkvm_runs/phase1d_input_prep_colbert_train_20260524/runs/2wiki/seed_43/colbertv2.predictions.jsonl"
+        },
+        {
+          "label": "train_hkvm_seed_13",
+          "path": "/home/zzz/hkvm_runs/phase1d_hkvm_train_oof_20260525/2wiki/seed_13/2wiki/seed_13/runs/2wiki/seed_13/train_oof/mlp_base_only_topk_4/weighted_hg_kv.predictions.jsonl"
+        },
+        {
+          "label": "train_hkvm_seed_29",
+          "path": "/home/zzz/hkvm_runs/phase1d_hkvm_train_oof_20260525/2wiki/seed_29/2wiki/seed_29/runs/2wiki/seed_29/train_oof/mlp_base_only_topk_4/weighted_hg_kv.predictions.jsonl"
+        },
+        {
+          "label": "train_hkvm_seed_43",
+          "path": "/home/zzz/hkvm_runs/phase1d_hkvm_train_oof_20260525/2wiki/seed_43/2wiki/seed_43/runs/2wiki/seed_43/train_oof/mlp_base_only_topk_4/weighted_hg_kv.predictions.jsonl"
+        }
+      ],
+      "found_inputs": [],
+      "missing_inputs": [
+        {
+          "label": "train_dataset_path",
+          "path": "/home/zzz/hkvm_runs/phase1c_validation_2wiki10k_20260524/mlp_base_only/seed_13/merged_train_subsets/2wiki_train_merged_10000.jsonl"
+        },
+        {
+          "label": "train_dense_seed_13",
+          "path": "/home/zzz/hkvm_runs/phase1d_input_prep_colbert_train_20260524/runs/2wiki/seed_13/colbertv2.predictions.jsonl"
+        },
+        {
+          "label": "train_dense_seed_29",
+          "path": "/home/zzz/hkvm_runs/phase1d_input_prep_colbert_train_20260524/runs/2wiki/seed_29/colbertv2.predictions.jsonl"
+        },
+        {
+          "label": "train_dense_seed_43",
+          "path": "/home/zzz/hkvm_runs/phase1d_input_prep_colbert_train_20260524/runs/2wiki/seed_43/colbertv2.predictions.jsonl"
+        },
+        {
+          "label": "train_hkvm_seed_13",
+          "path": "/home/zzz/hkvm_runs/phase1d_hkvm_train_oof_20260525/2wiki/seed_13/2wiki/seed_13/runs/2wiki/seed_13/train_oof/mlp_base_only_topk_4/weighted_hg_kv.predictions.jsonl"
+        },
+        {
+          "label": "train_hkvm_seed_29",
+          "path": "/home/zzz/hkvm_runs/phase1d_hkvm_train_oof_20260525/2wiki/seed_29/2wiki/seed_29/runs/2wiki/seed_29/train_oof/mlp_base_only_topk_4/weighted_hg_kv.predictions.jsonl"
+        },
+        {
+          "label": "train_hkvm_seed_43",
+          "path": "/home/zzz/hkvm_runs/phase1d_hkvm_train_oof_20260525/2wiki/seed_43/2wiki/seed_43/runs/2wiki/seed_43/train_oof/mlp_base_only_topk_4/weighted_hg_kv.predictions.jsonl"
+        }
+      ],
+      "can_attempt_rerun_without_rebuilding_inputs": false
+    },
+    "hotpotqa": {
+      "manifest_path": "/home/zzz/hkvm_runs/phase1d_train_to_dev_hotpotqa_oof_colbert_hkvm_lr001_20260602/hotpotqa/phase1d_dense_aware_manifest.json",
+      "manifest_exists": true,
+      "required_inputs": [
+        {
+          "label": "train_dataset_path",
+          "path": "/home/zzz/hkvm_runs/phase1c_validation_hotpotqa10k_20260602/mlp_base_only/seed_13/merged_train_subsets/hotpotqa_train_merged_10000.jsonl"
+        },
+        {
+          "label": "train_dense_seed_13",
+          "path": "/home/zzz/hkvm_runs/phase1d_input_prep_colbert_train_hotpotqa10k_20260602/runs/hotpotqa/seed_13/colbertv2.predictions.jsonl"
+        },
+        {
+          "label": "train_dense_seed_29",
+          "path": "/home/zzz/hkvm_runs/phase1d_input_prep_colbert_train_hotpotqa10k_20260602/runs/hotpotqa/seed_29/colbertv2.predictions.jsonl"
+        },
+        {
+          "label": "train_dense_seed_43",
+          "path": "/home/zzz/hkvm_runs/phase1d_input_prep_colbert_train_hotpotqa10k_20260602/runs/hotpotqa/seed_43/colbertv2.predictions.jsonl"
+        },
+        {
+          "label": "train_hkvm_seed_13",
+          "path": "/home/zzz/hkvm_runs/phase1d_hkvm_train_oof_hotpotqa10k_20260602/hotpotqa/seed_13/hotpotqa/seed_13/runs/hotpotqa/seed_13/train_oof/mlp_base_only_topk_4/weighted_hg_kv.predictions.jsonl"
+        },
+        {
+          "label": "train_hkvm_seed_29",
+          "path": "/home/zzz/hkvm_runs/phase1d_hkvm_train_oof_hotpotqa10k_20260602/hotpotqa/seed_29/hotpotqa/seed_29/runs/hotpotqa/seed_29/train_oof/mlp_base_only_topk_4/weighted_hg_kv.predictions.jsonl"
+        },
+        {
+          "label": "train_hkvm_seed_43",
+          "path": "/home/zzz/hkvm_runs/phase1d_hkvm_train_oof_hotpotqa10k_20260602/hotpotqa/seed_43/hotpotqa/seed_43/runs/hotpotqa/seed_43/train_oof/mlp_base_only_topk_4/weighted_hg_kv.predictions.jsonl"
+        }
+      ],
+      "found_inputs": [],
+      "missing_inputs": [
+        {
+          "label": "train_dataset_path",
+          "path": "/home/zzz/hkvm_runs/phase1c_validation_hotpotqa10k_20260602/mlp_base_only/seed_13/merged_train_subsets/hotpotqa_train_merged_10000.jsonl"
+        },
+        {
+          "label": "train_dense_seed_13",
+          "path": "/home/zzz/hkvm_runs/phase1d_input_prep_colbert_train_hotpotqa10k_20260602/runs/hotpotqa/seed_13/colbertv2.predictions.jsonl"
+        },
+        {
+          "label": "train_dense_seed_29",
+          "path": "/home/zzz/hkvm_runs/phase1d_input_prep_colbert_train_hotpotqa10k_20260602/runs/hotpotqa/seed_29/colbertv2.predictions.jsonl"
+        },
+        {
+          "label": "train_dense_seed_43",
+          "path": "/home/zzz/hkvm_runs/phase1d_input_prep_colbert_train_hotpotqa10k_20260602/runs/hotpotqa/seed_43/colbertv2.predictions.jsonl"
+        },
+        {
+          "label": "train_hkvm_seed_13",
+          "path": "/home/zzz/hkvm_runs/phase1d_hkvm_train_oof_hotpotqa10k_20260602/hotpotqa/seed_13/hotpotqa/seed_13/runs/hotpotqa/seed_13/train_oof/mlp_base_only_topk_4/weighted_hg_kv.predictions.jsonl"
+        },
+        {
+          "label": "train_hkvm_seed_29",
+          "path": "/home/zzz/hkvm_runs/phase1d_hkvm_train_oof_hotpotqa10k_20260602/hotpotqa/seed_29/hotpotqa/seed_29/runs/hotpotqa/seed_29/train_oof/mlp_base_only_topk_4/weighted_hg_kv.predictions.jsonl"
+        },
+        {
+          "label": "train_hkvm_seed_43",
+          "path": "/home/zzz/hkvm_runs/phase1d_hkvm_train_oof_hotpotqa10k_20260602/hotpotqa/seed_43/hotpotqa/seed_43/runs/hotpotqa/seed_43/train_oof/mlp_base_only_topk_4/weighted_hg_kv.predictions.jsonl"
+        }
+      ],
+      "can_attempt_rerun_without_rebuilding_inputs": false
+    }
+  },
+  "can_attempt_all_datasets_without_rebuilding_inputs": false,
+  "next_steps_if_missing": [
+    "Do not rerun train-internal held-out training until missing train prediction files or train subsets are restored.",
+    "If restoration is approved, regenerate only cached-prediction inputs; do not change extraction endpoint, prompt, schema, or LLM cache."
+  ]
+}

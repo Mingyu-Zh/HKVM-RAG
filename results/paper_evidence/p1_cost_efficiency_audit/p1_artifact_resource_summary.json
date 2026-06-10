@@ -1,0 +1,43 @@
+{
+  "artifact_release_manifest": "/home/zzz/hkvm_runs/p1_cost_efficiency_inputs/artifact_release_manifest.json",
+  "classes": {
+    "benchmark_data": {
+      "files": 9,
+      "size_bytes": 355293085
+    },
+    "data_documentation": {
+      "files": 1,
+      "size_bytes": 253
+    },
+    "documentation": {
+      "files": 4,
+      "size_bytes": 4987
+    },
+    "frozen_output": {
+      "files": 143,
+      "size_bytes": 1200203334
+    },
+    "llm_cache": {
+      "files": 13,
+      "size_bytes": 734269603
+    },
+    "other": {
+      "files": 28,
+      "size_bytes": 144699
+    },
+    "packaging_script": {
+      "files": 4,
+      "size_bytes": 13338
+    },
+    "result": {
+      "files": 296,
+      "size_bytes": 1538964
+    }
+  },
+  "created_at": "2026-06-04T13:18:57.447137+00:00",
+  "exists": true,
+  "file_count": 498,
+  "root_name": "hkvm_rag_icde2027_artifact",
+  "source": "artifact_release_manifest_summary",
+  "total_size_bytes": 2291468263
+}

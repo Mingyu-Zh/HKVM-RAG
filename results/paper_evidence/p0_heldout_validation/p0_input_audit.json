@@ -1,0 +1,647 @@
+{
+  "datasets": {
+    "musique": {
+      "run_root": "/home/zzz/hkvm_runs/phase1d_train_to_dev_oof_hkvm_lr001_20260525",
+      "manifest": {
+        "path": "/home/zzz/hkvm_runs/phase1d_train_to_dev_oof_hkvm_lr001_20260525/musique/phase1d_dense_aware_manifest.json",
+        "exists": true,
+        "status": "completed",
+        "protocol": "train_to_dev",
+        "run_label": "oof_train_hkvm_lr001_confirmation",
+        "dataset": "musique",
+        "seeds": [
+          13,
+          29,
+          43
+        ],
+        "dense_name": "colbertv2",
+        "structured_source_name": null,
+        "train_hkvm_stacking_risk": {
+          "requested": "no",
+          "may_have_in_sample_stacking_risk": false,
+          "note": "true means the HKVM train-side predictions may already reflect in-sample stacking or otherwise trained-on-train evidence features."
+        },
+        "dataset_paths": {
+          "train": "/home/zzz/hkvm_runs/phase1c_validation_musique10k_20260523/mlp_base_only/seed_13/merged_train_subsets/musique_train_merged_10000.jsonl",
+          "dev": "/home/zzz/data/hkvm_rag_mvp/musique/dev.jsonl"
+        },
+        "prediction_templates": {
+          "dense": {
+            "train": "/home/zzz/hkvm_runs/phase1d_input_prep_colbert_train_20260524/runs/{dataset}/seed_{seed}/colbertv2.predictions.jsonl",
+            "dev": "/home/zzz/hkvm_runs/p1_colbertv2_only_dev_full_20260515/runs/{dataset}/seed_{seed}/colbertv2.predictions.jsonl"
+          },
+          "hkvm": {
+            "train": "/home/zzz/hkvm_runs/phase1d_hkvm_train_oof_20260525/{dataset}/seed_{seed}/{dataset}/seed_{seed}/runs/{dataset}/seed_{seed}/train_oof/mlp_base_only_topk_4/weighted_hg_kv.predictions.jsonl",
+            "dev": "/home/zzz/hkvm_runs/phase1c_validation_musique10k_20260523/mlp_base_only/seed_{seed}/runs/musique/seed_{seed}/train_to_dev/mlp_base_only_topk_4/weighted_hg_kv.predictions.jsonl"
+          },
+          "bm25": {
+            "train": null,
+            "dev": null
+          }
+        },
+        "controller_training_config": {
+          "epochs": 80,
+          "learning_rate": 0.01,
+          "l2": 0.0001,
+          "negative_ratio": 8,
+          "max_train_rows": 220000,
+          "feature_variants": {
+            "controller_dense_only": "dense",
+            "controller_hkvm_only": "hkvm",
+            "controller_dense_bm25": "dense_bm25",
+            "controller_dense_hkvm": "dense_hkvm",
+            "controller_dense_hkvm_bm25": "dense_hkvm_bm25"
+          }
+        }
+      },
+      "prediction_files": {
+        "13": {
+          "colbertv2": {
+            "path": "/home/zzz/hkvm_runs/phase1d_train_to_dev_oof_hkvm_lr001_20260525/musique/seed_13/colbertv2/colbertv2.predictions.jsonl",
+            "exists": true,
+            "line_count": 2417,
+            "sha256": "6daa38e780201f25433273e1216f8f9f984c86b8beea25b1bd8e659289f5d5a0",
+            "size_bytes": 2130188
+          },
+          "phase1c_mlp_topk_4": {
+            "path": "/home/zzz/hkvm_runs/phase1d_train_to_dev_oof_hkvm_lr001_20260525/musique/seed_13/phase1c_mlp_topk_4/phase1c_mlp_topk_4.predictions.jsonl",
+            "exists": true,
+            "line_count": 2417,
+            "sha256": "0806ca4de4670c65e20e735ca95ae3ddf14d360f9dc4193b20d97e5527f3783a",
+            "size_bytes": 2109286
+          },
+          "controller_dense_only": {
+            "path": "/home/zzz/hkvm_runs/phase1d_train_to_dev_oof_hkvm_lr001_20260525/musique/seed_13/controller_dense_only/controller_dense_only.predictions.jsonl",
+            "exists": true,
+            "line_count": 2417,
+            "sha256": "8eaca16c1dfd3e79ece7165d4b32df474ce2353a3220fc9f1df8227a5af716d8",
+            "size_bytes": 2181799
+          },
+          "controller_hkvm_only": {
+            "path": "/home/zzz/hkvm_runs/phase1d_train_to_dev_oof_hkvm_lr001_20260525/musique/seed_13/controller_hkvm_only/controller_hkvm_only.predictions.jsonl",
+            "exists": true,
+            "line_count": 2417,
+            "sha256": "9e6f8563881bc927ae0078799ca65b84777e5b326e4e204f514616b1418b1adb",
+            "size_bytes": 2182002
+          },
+          "quota_dense3_hkvm2": {
+            "path": "/home/zzz/hkvm_runs/phase1d_train_to_dev_oof_hkvm_lr001_20260525/musique/seed_13/quota_dense3_hkvm2/quota_dense3_hkvm2.predictions.jsonl",
+            "exists": true,
+            "line_count": 2417,
+            "sha256": "be78927f6c68b5eb6c08211b2f3a4fec1ba2fc416352850cee3f8cc7a45e5613",
+            "size_bytes": 1805210
+          },
+          "rrf_dense_hkvm": {
+            "path": "/home/zzz/hkvm_runs/phase1d_train_to_dev_oof_hkvm_lr001_20260525/musique/seed_13/rrf_dense_hkvm/rrf_dense_hkvm.predictions.jsonl",
+            "exists": true,
+            "line_count": 2417,
+            "sha256": "acf76a48db6f823af1a93b3cbef8d1dfdce73b316f5831338e81cb9d592fe290",
+            "size_bytes": 2172963
+          },
+          "controller_dense_hkvm": {
+            "path": "/home/zzz/hkvm_runs/phase1d_train_to_dev_oof_hkvm_lr001_20260525/musique/seed_13/controller_dense_hkvm/controller_dense_hkvm.predictions.jsonl",
+            "exists": true,
+            "line_count": 2417,
+            "sha256": "3d379542bb03f3d7a66b4d0a66c5d27314e034449f76ad24e7fa64267b9bfa69",
+            "size_bytes": 2179704
+          }
+        },
+        "29": {
+          "colbertv2": {
+            "path": "/home/zzz/hkvm_runs/phase1d_train_to_dev_oof_hkvm_lr001_20260525/musique/seed_29/colbertv2/colbertv2.predictions.jsonl",
+            "exists": true,
+            "line_count": 2417,
+            "sha256": "6daa38e780201f25433273e1216f8f9f984c86b8beea25b1bd8e659289f5d5a0",
+            "size_bytes": 2130188
+          },
+          "phase1c_mlp_topk_4": {
+            "path": "/home/zzz/hkvm_runs/phase1d_train_to_dev_oof_hkvm_lr001_20260525/musique/seed_29/phase1c_mlp_topk_4/phase1c_mlp_topk_4.predictions.jsonl",
+            "exists": true,
+            "line_count": 2417,
+            "sha256": "e761b31b94d65a47d03b1dc7ae24533a697ec548693e27bc61749850e86ba66b",
+            "size_bytes": 2108969
+          },
+          "controller_dense_only": {
+            "path": "/home/zzz/hkvm_runs/phase1d_train_to_dev_oof_hkvm_lr001_20260525/musique/seed_29/controller_dense_only/controller_dense_only.predictions.jsonl",
+            "exists": true,
+            "line_count": 2417,
+            "sha256": "a83fb0fa87280b17e1315f6f80722d20877003606314800e37409926b165c759",
+            "size_bytes": 2192738
+          },
+          "controller_hkvm_only": {
+            "path": "/home/zzz/hkvm_runs/phase1d_train_to_dev_oof_hkvm_lr001_20260525/musique/seed_29/controller_hkvm_only/controller_hkvm_only.predictions.jsonl",
+            "exists": true,
+            "line_count": 2417,
+            "sha256": "d63dcea292c22cc9d8776b7965e6de8e614ed854a27efd71c222ebbe2b91c051",
+            "size_bytes": 2191341
+          },
+          "quota_dense3_hkvm2": {
+            "path": "/home/zzz/hkvm_runs/phase1d_train_to_dev_oof_hkvm_lr001_20260525/musique/seed_29/quota_dense3_hkvm2/quota_dense3_hkvm2.predictions.jsonl",
+            "exists": true,
+            "line_count": 2417,
+            "sha256": "33d3ac41654fdbb7ad10214da02b808e634ca55a11a9207fdd1b407dfc5b3f6d",
+            "size_bytes": 1805301
+          },
+          "rrf_dense_hkvm": {
+            "path": "/home/zzz/hkvm_runs/phase1d_train_to_dev_oof_hkvm_lr001_20260525/musique/seed_29/rrf_dense_hkvm/rrf_dense_hkvm.predictions.jsonl",
+            "exists": true,
+            "line_count": 2417,
+            "sha256": "1ed04de15991a5c7025bce3d8606c66b4ef292783c176408ad88e18b21c8fe41",
+            "size_bytes": 2172744
+          },
+          "controller_dense_hkvm": {
+            "path": "/home/zzz/hkvm_runs/phase1d_train_to_dev_oof_hkvm_lr001_20260525/musique/seed_29/controller_dense_hkvm/controller_dense_hkvm.predictions.jsonl",
+            "exists": true,
+            "line_count": 2417,
+            "sha256": "42d42eb4cd5314e9f6a2b212a66336b9e96417fde3ff4efd18d4a98ec36167e7",
+            "size_bytes": 2181273
+          }
+        },
+        "43": {
+          "colbertv2": {
+            "path": "/home/zzz/hkvm_runs/phase1d_train_to_dev_oof_hkvm_lr001_20260525/musique/seed_43/colbertv2/colbertv2.predictions.jsonl",
+            "exists": true,
+            "line_count": 2417,
+            "sha256": "6daa38e780201f25433273e1216f8f9f984c86b8beea25b1bd8e659289f5d5a0",
+            "size_bytes": 2130188
+          },
+          "phase1c_mlp_topk_4": {
+            "path": "/home/zzz/hkvm_runs/phase1d_train_to_dev_oof_hkvm_lr001_20260525/musique/seed_43/phase1c_mlp_topk_4/phase1c_mlp_topk_4.predictions.jsonl",
+            "exists": true,
+            "line_count": 2417,
+            "sha256": "6243265a48c3008e9baa1697a11e4b3175ca395e2767b76ac0e5a2083688741c",
+            "size_bytes": 2108733
+          },
+          "controller_dense_only": {
+            "path": "/home/zzz/hkvm_runs/phase1d_train_to_dev_oof_hkvm_lr001_20260525/musique/seed_43/controller_dense_only/controller_dense_only.predictions.jsonl",
+            "exists": true,
+            "line_count": 2417,
+            "sha256": "d7fcc944ca83f4d6f8b19d50028bba98171f9625aa79d90c846cc01de67060f0",
+            "size_bytes": 2183891
+          },
+          "controller_hkvm_only": {
+            "path": "/home/zzz/hkvm_runs/phase1d_train_to_dev_oof_hkvm_lr001_20260525/musique/seed_43/controller_hkvm_only/controller_hkvm_only.predictions.jsonl",
+            "exists": true,
+            "line_count": 2417,
+            "sha256": "d9ae95571ada2ee6cc3520dd6bdc79db5fbdbe22d5b7365c867ca5677170b693",
+            "size_bytes": 2189873
+          },
+          "quota_dense3_hkvm2": {
+            "path": "/home/zzz/hkvm_runs/phase1d_train_to_dev_oof_hkvm_lr001_20260525/musique/seed_43/quota_dense3_hkvm2/quota_dense3_hkvm2.predictions.jsonl",
+            "exists": true,
+            "line_count": 2417,
+            "sha256": "9c3d04ec1fce02b7da3de4c1f3e892be93cfb97bdf91ab3c63bd2a3e82b722dd",
+            "size_bytes": 1805520
+          },
+          "rrf_dense_hkvm": {
+            "path": "/home/zzz/hkvm_runs/phase1d_train_to_dev_oof_hkvm_lr001_20260525/musique/seed_43/rrf_dense_hkvm/rrf_dense_hkvm.predictions.jsonl",
+            "exists": true,
+            "line_count": 2417,
+            "sha256": "31ebd7d7972b25a68e5c2cb2591d2e10dbb6a98c47671b35c4db9fa991940de9",
+            "size_bytes": 2172629
+          },
+          "controller_dense_hkvm": {
+            "path": "/home/zzz/hkvm_runs/phase1d_train_to_dev_oof_hkvm_lr001_20260525/musique/seed_43/controller_dense_hkvm/controller_dense_hkvm.predictions.jsonl",
+            "exists": true,
+            "line_count": 2417,
+            "sha256": "fbc6e09dc2d3fe61b5feb1ba21815cc728d873fc3fa4a88a309b7ca52802e52f",
+            "size_bytes": 2181468
+          }
+        }
+      }
+    },
+    "2wiki": {
+      "run_root": "/home/zzz/hkvm_runs/phase1d_train_to_dev_oof_hkvm_lr001_20260525",
+      "manifest": {
+        "path": "/home/zzz/hkvm_runs/phase1d_train_to_dev_oof_hkvm_lr001_20260525/2wiki/phase1d_dense_aware_manifest.json",
+        "exists": true,
+        "status": "completed",
+        "protocol": "train_to_dev",
+        "run_label": "oof_train_hkvm_lr001_confirmation",
+        "dataset": "2wiki",
+        "seeds": [
+          13,
+          29,
+          43
+        ],
+        "dense_name": "colbertv2",
+        "structured_source_name": null,
+        "train_hkvm_stacking_risk": {
+          "requested": "no",
+          "may_have_in_sample_stacking_risk": false,
+          "note": "true means the HKVM train-side predictions may already reflect in-sample stacking or otherwise trained-on-train evidence features."
+        },
+        "dataset_paths": {
+          "train": "/home/zzz/hkvm_runs/phase1c_validation_2wiki10k_20260524/mlp_base_only/seed_13/merged_train_subsets/2wiki_train_merged_10000.jsonl",
+          "dev": "/home/zzz/data/hkvm_rag_mvp/2wiki/dev.jsonl"
+        },
+        "prediction_templates": {
+          "dense": {
+            "train": "/home/zzz/hkvm_runs/phase1d_input_prep_colbert_train_20260524/runs/{dataset}/seed_{seed}/colbertv2.predictions.jsonl",
+            "dev": "/home/zzz/hkvm_runs/p1_colbertv2_only_dev_full_20260515/runs/{dataset}/seed_{seed}/colbertv2.predictions.jsonl"
+          },
+          "hkvm": {
+            "train": "/home/zzz/hkvm_runs/phase1d_hkvm_train_oof_20260525/{dataset}/seed_{seed}/{dataset}/seed_{seed}/runs/{dataset}/seed_{seed}/train_oof/mlp_base_only_topk_4/weighted_hg_kv.predictions.jsonl",
+            "dev": "/home/zzz/hkvm_runs/phase1c_validation_2wiki10k_20260524/mlp_base_only/seed_{seed}/runs/2wiki/seed_{seed}/train_to_dev/mlp_base_only_topk_4/weighted_hg_kv.predictions.jsonl"
+          },
+          "bm25": {
+            "train": null,
+            "dev": null
+          }
+        },
+        "controller_training_config": {
+          "epochs": 80,
+          "learning_rate": 0.01,
+          "l2": 0.0001,
+          "negative_ratio": 8,
+          "max_train_rows": 220000,
+          "feature_variants": {
+            "controller_dense_only": "dense",
+            "controller_hkvm_only": "hkvm",
+            "controller_dense_bm25": "dense_bm25",
+            "controller_dense_hkvm": "dense_hkvm",
+            "controller_dense_hkvm_bm25": "dense_hkvm_bm25"
+          }
+        }
+      },
+      "prediction_files": {
+        "13": {
+          "colbertv2": {
+            "path": "/home/zzz/hkvm_runs/phase1d_train_to_dev_oof_hkvm_lr001_20260525/2wiki/seed_13/colbertv2/colbertv2.predictions.jsonl",
+            "exists": true,
+            "line_count": 12576,
+            "sha256": "b8b3c88169a5ae102f29ff859439164921eef36aa751e8586101b82289a95404",
+            "size_bytes": 15079438
+          },
+          "phase1c_mlp_topk_4": {
+            "path": "/home/zzz/hkvm_runs/phase1d_train_to_dev_oof_hkvm_lr001_20260525/2wiki/seed_13/phase1c_mlp_topk_4/phase1c_mlp_topk_4.predictions.jsonl",
+            "exists": true,
+            "line_count": 12576,
+            "sha256": "83444911caf849a5fcb955cda3896c006785183f74d185052d01d07204a5f5fb",
+            "size_bytes": 13731343
+          },
+          "controller_dense_only": {
+            "path": "/home/zzz/hkvm_runs/phase1d_train_to_dev_oof_hkvm_lr001_20260525/2wiki/seed_13/controller_dense_only/controller_dense_only.predictions.jsonl",
+            "exists": true,
+            "line_count": 12576,
+            "sha256": "cbeec305ec49b084aca6599d550a584635262faff07b43e7361a4916ede089b6",
+            "size_bytes": 15389000
+          },
+          "controller_hkvm_only": {
+            "path": "/home/zzz/hkvm_runs/phase1d_train_to_dev_oof_hkvm_lr001_20260525/2wiki/seed_13/controller_hkvm_only/controller_hkvm_only.predictions.jsonl",
+            "exists": true,
+            "line_count": 12576,
+            "sha256": "851039dffa0a9da9313f8e34be7657abc9b5110c5563adbf6b57598caf093aad",
+            "size_bytes": 15309933
+          },
+          "quota_dense3_hkvm2": {
+            "path": "/home/zzz/hkvm_runs/phase1d_train_to_dev_oof_hkvm_lr001_20260525/2wiki/seed_13/quota_dense3_hkvm2/quota_dense3_hkvm2.predictions.jsonl",
+            "exists": true,
+            "line_count": 12576,
+            "sha256": "fbf4bdec35823a1faa8d290c508a4b64ab4b048c77af2de2a18472ab283a2ca1",
+            "size_bytes": 13420887
+          },
+          "rrf_dense_hkvm": {
+            "path": "/home/zzz/hkvm_runs/phase1d_train_to_dev_oof_hkvm_lr001_20260525/2wiki/seed_13/rrf_dense_hkvm/rrf_dense_hkvm.predictions.jsonl",
+            "exists": true,
+            "line_count": 12576,
+            "sha256": "4b22fac6dfea0960f3259bdf93c32bb813ce41cb62ca0df84aa37f3815c4a329",
+            "size_bytes": 15370719
+          },
+          "controller_dense_hkvm": {
+            "path": "/home/zzz/hkvm_runs/phase1d_train_to_dev_oof_hkvm_lr001_20260525/2wiki/seed_13/controller_dense_hkvm/controller_dense_hkvm.predictions.jsonl",
+            "exists": true,
+            "line_count": 12576,
+            "sha256": "de837fce03d9b2f8c4406a584bbdbfed68399d1c053eccacb6d5dfbf7f808656",
+            "size_bytes": 15314258
+          }
+        },
+        "29": {
+          "colbertv2": {
+            "path": "/home/zzz/hkvm_runs/phase1d_train_to_dev_oof_hkvm_lr001_20260525/2wiki/seed_29/colbertv2/colbertv2.predictions.jsonl",
+            "exists": true,
+            "line_count": 12576,
+            "sha256": "b8b3c88169a5ae102f29ff859439164921eef36aa751e8586101b82289a95404",
+            "size_bytes": 15079438
+          },
+          "phase1c_mlp_topk_4": {
+            "path": "/home/zzz/hkvm_runs/phase1d_train_to_dev_oof_hkvm_lr001_20260525/2wiki/seed_29/phase1c_mlp_topk_4/phase1c_mlp_topk_4.predictions.jsonl",
+            "exists": true,
+            "line_count": 12576,
+            "sha256": "eb153b26b7d7e845bf3d63f667c735c435cf0b656c84063f1cb40183f055ece8",
+            "size_bytes": 13755457
+          },
+          "controller_dense_only": {
+            "path": "/home/zzz/hkvm_runs/phase1d_train_to_dev_oof_hkvm_lr001_20260525/2wiki/seed_29/controller_dense_only/controller_dense_only.predictions.jsonl",
+            "exists": true,
+            "line_count": 12576,
+            "sha256": "f788612475702d2b10bfb6723af125cfe18e618a22c254e937326cae3c0e53fa",
+            "size_bytes": 15401963
+          },
+          "controller_hkvm_only": {
+            "path": "/home/zzz/hkvm_runs/phase1d_train_to_dev_oof_hkvm_lr001_20260525/2wiki/seed_29/controller_hkvm_only/controller_hkvm_only.predictions.jsonl",
+            "exists": true,
+            "line_count": 12576,
+            "sha256": "e02646975f707341a33acf974f8accc83c47986279be7685bca01d37c15dc61b",
+            "size_bytes": 15307976
+          },
+          "quota_dense3_hkvm2": {
+            "path": "/home/zzz/hkvm_runs/phase1d_train_to_dev_oof_hkvm_lr001_20260525/2wiki/seed_29/quota_dense3_hkvm2/quota_dense3_hkvm2.predictions.jsonl",
+            "exists": true,
+            "line_count": 12576,
+            "sha256": "0b328d7c807c0335a8f4729059c0453caea1f67407d898738c5715625a5a3715",
+            "size_bytes": 13421014
+          },
+          "rrf_dense_hkvm": {
+            "path": "/home/zzz/hkvm_runs/phase1d_train_to_dev_oof_hkvm_lr001_20260525/2wiki/seed_29/rrf_dense_hkvm/rrf_dense_hkvm.predictions.jsonl",
+            "exists": true,
+            "line_count": 12576,
+            "sha256": "23e82e6bc66318a34b76f0d9da2609234bebc9893ed6ae1131a56f2abe69c6a1",
+            "size_bytes": 15371216
+          },
+          "controller_dense_hkvm": {
+            "path": "/home/zzz/hkvm_runs/phase1d_train_to_dev_oof_hkvm_lr001_20260525/2wiki/seed_29/controller_dense_hkvm/controller_dense_hkvm.predictions.jsonl",
+            "exists": true,
+            "line_count": 12576,
+            "sha256": "67f411214a99e507134c2aebedc95b68d8358743d65333cb67f23050d0ed54eb",
+            "size_bytes": 15311989
+          }
+        },
+        "43": {
+          "colbertv2": {
+            "path": "/home/zzz/hkvm_runs/phase1d_train_to_dev_oof_hkvm_lr001_20260525/2wiki/seed_43/colbertv2/colbertv2.predictions.jsonl",
+            "exists": true,
+            "line_count": 12576,
+            "sha256": "b8b3c88169a5ae102f29ff859439164921eef36aa751e8586101b82289a95404",
+            "size_bytes": 15079438
+          },
+          "phase1c_mlp_topk_4": {
+            "path": "/home/zzz/hkvm_runs/phase1d_train_to_dev_oof_hkvm_lr001_20260525/2wiki/seed_43/phase1c_mlp_topk_4/phase1c_mlp_topk_4.predictions.jsonl",
+            "exists": true,
+            "line_count": 12576,
+            "sha256": "b1b9f5cfd0e1bdbeb55b18fc4c2427d6db2b823558841be167f7dd2001344786",
+            "size_bytes": 13737634
+          },
+          "controller_dense_only": {
+            "path": "/home/zzz/hkvm_runs/phase1d_train_to_dev_oof_hkvm_lr001_20260525/2wiki/seed_43/controller_dense_only/controller_dense_only.predictions.jsonl",
+            "exists": true,
+            "line_count": 12576,
+            "sha256": "e11af73aa0dac2374b194e4226a1874d77ecd23c177a5ab16535887bff474638",
+            "size_bytes": 15400342
+          },
+          "controller_hkvm_only": {
+            "path": "/home/zzz/hkvm_runs/phase1d_train_to_dev_oof_hkvm_lr001_20260525/2wiki/seed_43/controller_hkvm_only/controller_hkvm_only.predictions.jsonl",
+            "exists": true,
+            "line_count": 12576,
+            "sha256": "2af4759fc8b763ca75139561a6a8a61c0fcda6c5933fb683a7cbe490db3d862e",
+            "size_bytes": 15294668
+          },
+          "quota_dense3_hkvm2": {
+            "path": "/home/zzz/hkvm_runs/phase1d_train_to_dev_oof_hkvm_lr001_20260525/2wiki/seed_43/quota_dense3_hkvm2/quota_dense3_hkvm2.predictions.jsonl",
+            "exists": true,
+            "line_count": 12576,
+            "sha256": "de5ea7bb899f176a9e92addf5ac7509812b30409bdfb36ff5d24141e26aa5fc8",
+            "size_bytes": 13420873
+          },
+          "rrf_dense_hkvm": {
+            "path": "/home/zzz/hkvm_runs/phase1d_train_to_dev_oof_hkvm_lr001_20260525/2wiki/seed_43/rrf_dense_hkvm/rrf_dense_hkvm.predictions.jsonl",
+            "exists": true,
+            "line_count": 12576,
+            "sha256": "c0526179fd1549c6dc18e05fcf1ddf4dc1e79743d6aa067be23cfcae11f11c9f",
+            "size_bytes": 15371096
+          },
+          "controller_dense_hkvm": {
+            "path": "/home/zzz/hkvm_runs/phase1d_train_to_dev_oof_hkvm_lr001_20260525/2wiki/seed_43/controller_dense_hkvm/controller_dense_hkvm.predictions.jsonl",
+            "exists": true,
+            "line_count": 12576,
+            "sha256": "af3d75b8ee7c8cccdbaf21633f661e4d88e6d995d166b01ad24de26f788bfe79",
+            "size_bytes": 15328118
+          }
+        }
+      }
+    },
+    "hotpotqa": {
+      "run_root": "/home/zzz/hkvm_runs/phase1d_train_to_dev_hotpotqa_oof_colbert_hkvm_lr001_20260602",
+      "manifest": {
+        "path": "/home/zzz/hkvm_runs/phase1d_train_to_dev_hotpotqa_oof_colbert_hkvm_lr001_20260602/hotpotqa/phase1d_dense_aware_manifest.json",
+        "exists": true,
+        "status": "completed",
+        "protocol": "train_to_dev",
+        "run_label": "hotpotqa_oof_train_hkvm_lr001_confirmation",
+        "dataset": "hotpotqa",
+        "seeds": [
+          13,
+          29,
+          43
+        ],
+        "dense_name": "colbertv2",
+        "structured_source_name": "weighted_hg_kv",
+        "train_hkvm_stacking_risk": {
+          "requested": "no",
+          "may_have_in_sample_stacking_risk": false,
+          "note": "true means the HKVM train-side predictions may already reflect in-sample stacking or otherwise trained-on-train evidence features."
+        },
+        "dataset_paths": {
+          "train": "/home/zzz/hkvm_runs/phase1c_validation_hotpotqa10k_20260602/mlp_base_only/seed_13/merged_train_subsets/hotpotqa_train_merged_10000.jsonl",
+          "dev": "/home/zzz/data/hkvm_rag_mvp/hotpotqa/dev_distractor.jsonl"
+        },
+        "prediction_templates": {
+          "dense": {
+            "train": "/home/zzz/hkvm_runs/phase1d_input_prep_colbert_train_hotpotqa10k_20260602/runs/{dataset}/seed_{seed}/colbertv2.predictions.jsonl",
+            "dev": "/home/zzz/hkvm_runs/icde2027_hotpotqa_colbertv2_full_20260518/runs/{dataset}/seed_{seed}/colbertv2.predictions.jsonl"
+          },
+          "hkvm": {
+            "train": "/home/zzz/hkvm_runs/phase1d_hkvm_train_oof_hotpotqa10k_20260602/{dataset}/seed_{seed}/{dataset}/seed_{seed}/runs/{dataset}/seed_{seed}/train_oof/mlp_base_only_topk_4/weighted_hg_kv.predictions.jsonl",
+            "dev": "/home/zzz/hkvm_runs/phase1c_validation_hotpotqa10k_20260602/mlp_base_only/seed_{seed}/runs/hotpotqa/seed_{seed}/train_to_dev/mlp_base_only_topk_4/weighted_hg_kv.predictions.jsonl"
+          },
+          "bm25": {
+            "train": null,
+            "dev": null
+          }
+        },
+        "controller_training_config": {
+          "epochs": 80,
+          "learning_rate": 0.01,
+          "l2": 0.0001,
+          "negative_ratio": 8,
+          "max_train_rows": 220000,
+          "available_feature_variants": {
+            "controller_dense_only": "dense",
+            "controller_hkvm_only": "hkvm",
+            "controller_dense_bm25": "dense_bm25",
+            "controller_dense_hkvm": "dense_hkvm",
+            "controller_dense_hkvm_bm25": "dense_hkvm_bm25",
+            "controller_dense_hkvm_no_interaction": "dense_hkvm_no_interaction",
+            "controller_dense_hkvm_rank_only": "dense_hkvm_rank_only",
+            "controller_dense_hkvm_score_only": "dense_hkvm_score_only",
+            "controller_dense_hkvm_interaction_only": "dense_hkvm_interaction_only"
+          },
+          "selected_feature_variants": {
+            "controller_dense_only": "dense",
+            "controller_hkvm_only": "hkvm",
+            "controller_dense_bm25": "dense_bm25",
+            "controller_dense_hkvm": "dense_hkvm",
+            "controller_dense_hkvm_bm25": "dense_hkvm_bm25"
+          }
+        }
+      },
+      "prediction_files": {
+        "13": {
+          "colbertv2": {
+            "path": "/home/zzz/hkvm_runs/phase1d_train_to_dev_hotpotqa_oof_colbert_hkvm_lr001_20260602/hotpotqa/seed_13/colbertv2/colbertv2.predictions.jsonl",
+            "exists": true,
+            "line_count": 7405,
+            "sha256": "87d7ff268209ae562dfc9f96f0436cef689aee82e75209bb32db6c995c9d7d86",
+            "size_bytes": 9054434
+          },
+          "phase1c_mlp_topk_4": {
+            "path": "/home/zzz/hkvm_runs/phase1d_train_to_dev_hotpotqa_oof_colbert_hkvm_lr001_20260602/hotpotqa/seed_13/phase1c_mlp_topk_4/phase1c_mlp_topk_4.predictions.jsonl",
+            "exists": true,
+            "line_count": 7405,
+            "sha256": "00e32960d530aaacb1357a4ffccc9123cb7a92b8b66c3b15d0a00a01d9a52720",
+            "size_bytes": 8666701
+          },
+          "controller_dense_only": {
+            "path": "/home/zzz/hkvm_runs/phase1d_train_to_dev_hotpotqa_oof_colbert_hkvm_lr001_20260602/hotpotqa/seed_13/controller_dense_only/controller_dense_only.predictions.jsonl",
+            "exists": true,
+            "line_count": 7405,
+            "sha256": "8a432c163569808bd8b2abf8ac1e7a980b1f1b462a4834073e9d0b1f646cbd89",
+            "size_bytes": 9226807
+          },
+          "controller_hkvm_only": {
+            "path": "/home/zzz/hkvm_runs/phase1d_train_to_dev_hotpotqa_oof_colbert_hkvm_lr001_20260602/hotpotqa/seed_13/controller_hkvm_only/controller_hkvm_only.predictions.jsonl",
+            "exists": true,
+            "line_count": 7405,
+            "sha256": "dd17f9f61021b17f635e15e6803f2ea4647e4f6251ebb57ea9c7a2941ba6c950",
+            "size_bytes": 9226651
+          },
+          "quota_dense3_hkvm2": {
+            "path": "/home/zzz/hkvm_runs/phase1d_train_to_dev_hotpotqa_oof_colbert_hkvm_lr001_20260602/hotpotqa/seed_13/quota_dense3_hkvm2/quota_dense3_hkvm2.predictions.jsonl",
+            "exists": true,
+            "line_count": 7405,
+            "sha256": "625985652d19b414ac3368157ec042f9e60302d1f025ae0de8636cac44f9ed29",
+            "size_bytes": 8067177
+          },
+          "rrf_dense_hkvm": {
+            "path": "/home/zzz/hkvm_runs/phase1d_train_to_dev_hotpotqa_oof_colbert_hkvm_lr001_20260602/hotpotqa/seed_13/rrf_dense_hkvm/rrf_dense_hkvm.predictions.jsonl",
+            "exists": true,
+            "line_count": 7405,
+            "sha256": "cc16f0fbdfa7296d03e0d1d332c9a436d8f2102f41002993c4e5389c8a16cfcb",
+            "size_bytes": 9230679
+          },
+          "controller_dense_hkvm": {
+            "path": "/home/zzz/hkvm_runs/phase1d_train_to_dev_hotpotqa_oof_colbert_hkvm_lr001_20260602/hotpotqa/seed_13/controller_dense_hkvm/controller_dense_hkvm.predictions.jsonl",
+            "exists": true,
+            "line_count": 7405,
+            "sha256": "79f44a6518bed15a4d2bbb5bb8287119994f20c14f617c8d6eb512a3aa7b22a2",
+            "size_bytes": 9215397
+          }
+        },
+        "29": {
+          "colbertv2": {
+            "path": "/home/zzz/hkvm_runs/phase1d_train_to_dev_hotpotqa_oof_colbert_hkvm_lr001_20260602/hotpotqa/seed_29/colbertv2/colbertv2.predictions.jsonl",
+            "exists": true,
+            "line_count": 7405,
+            "sha256": "87d7ff268209ae562dfc9f96f0436cef689aee82e75209bb32db6c995c9d7d86",
+            "size_bytes": 9054434
+          },
+          "phase1c_mlp_topk_4": {
+            "path": "/home/zzz/hkvm_runs/phase1d_train_to_dev_hotpotqa_oof_colbert_hkvm_lr001_20260602/hotpotqa/seed_29/phase1c_mlp_topk_4/phase1c_mlp_topk_4.predictions.jsonl",
+            "exists": true,
+            "line_count": 7405,
+            "sha256": "1fa2f29038df0aab3b70ae2c3fb6fb666bb5d69b7c89ae2d5a174ec911848056",
+            "size_bytes": 8665468
+          },
+          "controller_dense_only": {
+            "path": "/home/zzz/hkvm_runs/phase1d_train_to_dev_hotpotqa_oof_colbert_hkvm_lr001_20260602/hotpotqa/seed_29/controller_dense_only/controller_dense_only.predictions.jsonl",
+            "exists": true,
+            "line_count": 7405,
+            "sha256": "06df11f330fbc7b25374d141df86d62c2fc333cd994667629a33ed2bceb03fae",
+            "size_bytes": 9228331
+          },
+          "controller_hkvm_only": {
+            "path": "/home/zzz/hkvm_runs/phase1d_train_to_dev_hotpotqa_oof_colbert_hkvm_lr001_20260602/hotpotqa/seed_29/controller_hkvm_only/controller_hkvm_only.predictions.jsonl",
+            "exists": true,
+            "line_count": 7405,
+            "sha256": "79aa011eaf3c621ef7d3fe90b56f8e30a318dfeed96403e56045daf0b4b4a99d",
+            "size_bytes": 9221200
+          },
+          "quota_dense3_hkvm2": {
+            "path": "/home/zzz/hkvm_runs/phase1d_train_to_dev_hotpotqa_oof_colbert_hkvm_lr001_20260602/hotpotqa/seed_29/quota_dense3_hkvm2/quota_dense3_hkvm2.predictions.jsonl",
+            "exists": true,
+            "line_count": 7405,
+            "sha256": "50fdd812245b590cee8ef0febc1f28bde22d32cfe732ccd68cd8394b05aa8a5c",
+            "size_bytes": 8067198
+          },
+          "rrf_dense_hkvm": {
+            "path": "/home/zzz/hkvm_runs/phase1d_train_to_dev_hotpotqa_oof_colbert_hkvm_lr001_20260602/hotpotqa/seed_29/rrf_dense_hkvm/rrf_dense_hkvm.predictions.jsonl",
+            "exists": true,
+            "line_count": 7405,
+            "sha256": "2649a0715aefb65fb9e5af4beff99c35d237a0d336dd9311a727f33b3047ba42",
+            "size_bytes": 9230771
+          },
+          "controller_dense_hkvm": {
+            "path": "/home/zzz/hkvm_runs/phase1d_train_to_dev_hotpotqa_oof_colbert_hkvm_lr001_20260602/hotpotqa/seed_29/controller_dense_hkvm/controller_dense_hkvm.predictions.jsonl",
+            "exists": true,
+            "line_count": 7405,
+            "sha256": "cd280c89800a00985fc2f7e739e5c356783b3738e57edf000539408a70a41157",
+            "size_bytes": 9220172
+          }
+        },
+        "43": {
+          "colbertv2": {
+            "path": "/home/zzz/hkvm_runs/phase1d_train_to_dev_hotpotqa_oof_colbert_hkvm_lr001_20260602/hotpotqa/seed_43/colbertv2/colbertv2.predictions.jsonl",
+            "exists": true,
+            "line_count": 7405,
+            "sha256": "87d7ff268209ae562dfc9f96f0436cef689aee82e75209bb32db6c995c9d7d86",
+            "size_bytes": 9054434
+          },
+          "phase1c_mlp_topk_4": {
+            "path": "/home/zzz/hkvm_runs/phase1d_train_to_dev_hotpotqa_oof_colbert_hkvm_lr001_20260602/hotpotqa/seed_43/phase1c_mlp_topk_4/phase1c_mlp_topk_4.predictions.jsonl",
+            "exists": true,
+            "line_count": 7405,
+            "sha256": "6d81a72cb7306e7ac13c898e2c144ee3c09d539ecc26e101df81fcdbfc2d3d1d",
+            "size_bytes": 8666885
+          },
+          "controller_dense_only": {
+            "path": "/home/zzz/hkvm_runs/phase1d_train_to_dev_hotpotqa_oof_colbert_hkvm_lr001_20260602/hotpotqa/seed_43/controller_dense_only/controller_dense_only.predictions.jsonl",
+            "exists": true,
+            "line_count": 7405,
+            "sha256": "d6bce3b7e58c77a35b708154e20981edbd673c7be62bb9912aff9e42d72997e6",
+            "size_bytes": 9227040
+          },
+          "controller_hkvm_only": {
+            "path": "/home/zzz/hkvm_runs/phase1d_train_to_dev_hotpotqa_oof_colbert_hkvm_lr001_20260602/hotpotqa/seed_43/controller_hkvm_only/controller_hkvm_only.predictions.jsonl",
+            "exists": true,
+            "line_count": 7405,
+            "sha256": "3aa1c9beb1ebb13882980eb34dcfd997c128925d7838edf30d12a616ab4e61b1",
+            "size_bytes": 9220422
+          },
+          "quota_dense3_hkvm2": {
+            "path": "/home/zzz/hkvm_runs/phase1d_train_to_dev_hotpotqa_oof_colbert_hkvm_lr001_20260602/hotpotqa/seed_43/quota_dense3_hkvm2/quota_dense3_hkvm2.predictions.jsonl",
+            "exists": true,
+            "line_count": 7405,
+            "sha256": "b5f25a41c0586d4bc6fb8fa84e91c839a97523fc90b764a51af4c6b836cc0535",
+            "size_bytes": 8067108
+          },
+          "rrf_dense_hkvm": {
+            "path": "/home/zzz/hkvm_runs/phase1d_train_to_dev_hotpotqa_oof_colbert_hkvm_lr001_20260602/hotpotqa/seed_43/rrf_dense_hkvm/rrf_dense_hkvm.predictions.jsonl",
+            "exists": true,
+            "line_count": 7405,
+            "sha256": "58ac7de0230dbe38994cdd05f75d6ac88bc147cb9e461517def8016dcc17da7b",
+            "size_bytes": 9230483
+          },
+          "controller_dense_hkvm": {
+            "path": "/home/zzz/hkvm_runs/phase1d_train_to_dev_hotpotqa_oof_colbert_hkvm_lr001_20260602/hotpotqa/seed_43/controller_dense_hkvm/controller_dense_hkvm.predictions.jsonl",
+            "exists": true,
+            "line_count": 7405,
+            "sha256": "6f101a10401a76f91a46f7e0c5e02b58adfc4e2a071432a725239774c6dc553c",
+            "size_bytes": 9218202
+          }
+        }
+      }
+    }
+  },
+  "missing": [],
+  "strict": false
+}

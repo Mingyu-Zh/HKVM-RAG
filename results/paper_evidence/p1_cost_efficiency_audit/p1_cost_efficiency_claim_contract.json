@@ -1,0 +1,33 @@
+{
+  "safe_claims": [
+    {
+      "claim": "Dense-aware controller inference has measurable CPU-side overhead over frozen prediction files.",
+      "evidence": "controller_replay_timing.csv and controller_replay_aggregate.csv",
+      "status": "supported"
+    },
+    {
+      "claim": "Paper-facing fixed-substrate method rows include per-example retrieval-scoring latency diagnostics.",
+      "evidence": "fixed_substrate_latency.csv",
+      "status": "supported"
+    },
+    {
+      "claim": "Supplementary cost analyses introduce no new LLM extraction calls.",
+      "evidence": "script is read-only and does not import or call extraction providers",
+      "status": "supported"
+    }
+  ],
+  "unsafe_claims": [
+    {
+      "claim": "HKVM-RAG has superior deployment throughput.",
+      "reason": "The audit does not measure online serving, full-corpus indexing, API latency, or reader latency."
+    },
+    {
+      "claim": "The reported LLM extraction cost is an online latency benchmark.",
+      "reason": "Extraction scope is a cached-input/resource disclosure, not a fresh API timing run."
+    },
+    {
+      "claim": "Dense retriever model-loading or corpus-indexing cost is included.",
+      "reason": "The audit reads saved prediction files and P3 run summaries only."
+    }
+  ]
+}

@@ -1,0 +1,9 @@
+use,dataset,split,examples,passage_units
+Main,2wiki,dev full,12576,125760
+Main,musique,dev answerable,2417,48325
+Main,hotpotqa,dev distractor,7405,28091
+Train,2wiki,train subset,10000,100000
+Train,musique,train answerable,10000,199987
+Train,hotpotqa,train subset,10000,99504
+Main total,all,,22398,202176
+Train total,all,,30000,399491

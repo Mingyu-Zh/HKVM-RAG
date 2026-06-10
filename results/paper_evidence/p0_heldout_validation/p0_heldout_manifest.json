@@ -1,0 +1,41 @@
+{
+  "status": "completed",
+  "created_at": "2026-06-09T08:39:15Z",
+  "ended_at": "2026-06-09T08:41:41Z",
+  "script": "tools/export_p0_heldout_validation.py",
+  "llm_api_calls": 0,
+  "args": {
+    "out_dir": "/home/zzz/hkvm_runs/p0_heldout_validation_20260609",
+    "dataset_roots": "musique=/home/zzz/hkvm_runs/phase1d_train_to_dev_oof_hkvm_lr001_20260525,2wiki=/home/zzz/hkvm_runs/phase1d_train_to_dev_oof_hkvm_lr001_20260525,hotpotqa=/home/zzz/hkvm_runs/phase1d_train_to_dev_hotpotqa_oof_colbert_hkvm_lr001_20260602",
+    "datasets": "musique,2wiki,hotpotqa",
+    "seeds": "13,29,43",
+    "variants": "colbertv2,phase1c_mlp_topk_4,controller_dense_only,controller_hkvm_only,quota_dense3_hkvm2,rrf_dense_hkvm,controller_dense_hkvm",
+    "candidate": "controller_dense_hkvm",
+    "references": "colbertv2,phase1c_mlp_topk_4,controller_dense_only,controller_hkvm_only",
+    "metrics": "f1,em,all_recall@10,all_recall@5,answer_support_rate,recall@5,recall@10,mrr",
+    "split_salt": "p0_heldout_validation_20260609",
+    "heldout_percent": 30,
+    "bootstrap_samples": 5000,
+    "alpha": 0.05,
+    "bootstrap_seed": 20260609,
+    "strict": false
+  },
+  "interpretation_boundary": [
+    "Frozen prediction held-out-slice audit only.",
+    "No controller training, retrieval, answer generation, or LLM extraction is performed.",
+    "This is not a hidden-test, official-server, or deployment-throughput claim."
+  ],
+  "missing_inputs": [],
+  "skipped_predictions": [],
+  "outputs": {
+    "input_audit_json": "/home/zzz/hkvm_runs/p0_heldout_validation_20260609/p0_input_audit.json",
+    "train_internal_feasibility_json": "/home/zzz/hkvm_runs/p0_heldout_validation_20260609/p0_train_internal_heldout_feasibility.json",
+    "metrics_csv": "/home/zzz/hkvm_runs/p0_heldout_validation_20260609/p0_heldout_metrics.csv",
+    "aggregate_csv": "/home/zzz/hkvm_runs/p0_heldout_validation_20260609/p0_heldout_aggregate.csv",
+    "bootstrap_summary_csv": "/home/zzz/hkvm_runs/p0_heldout_validation_20260609/p0_heldout_bootstrap_summary.csv",
+    "seed_level_diffs_csv": "/home/zzz/hkvm_runs/p0_heldout_validation_20260609/p0_heldout_seed_level_diffs.csv",
+    "summary_md": "/home/zzz/hkvm_runs/p0_heldout_validation_20260609/p0_heldout_summary.md",
+    "claim_contract_json": "/home/zzz/hkvm_runs/p0_heldout_validation_20260609/p0_heldout_claim_contract.json",
+    "manifest_json": "/home/zzz/hkvm_runs/p0_heldout_validation_20260609/p0_heldout_manifest.json"
+  }
+}

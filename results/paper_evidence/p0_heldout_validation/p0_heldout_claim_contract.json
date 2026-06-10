@@ -1,0 +1,184 @@
+{
+  "safe_claims": [
+    {
+      "claim": "On the deterministic held-out slice of frozen musique predictions, controller_dense_hkvm can be compared against fixed references without new training.",
+      "status": "audit_completed",
+      "evidence": [
+        {
+          "reference": "colbertv2",
+          "delta_f1": 7.251319949041129,
+          "ci": [
+            5.423396209589239,
+            9.10921867205379
+          ],
+          "p_diff_le_0": 0.0,
+          "seed_min_diff": 6.951562735745041,
+          "seed_max_diff": 7.832471743329652,
+          "all_seed_means_positive": true
+        },
+        {
+          "reference": "phase1c_mlp_topk_4",
+          "delta_f1": 8.373267100991434,
+          "ci": [
+            6.688977944990404,
+            10.13801111629234
+          ],
+          "p_diff_le_0": 0.0,
+          "seed_min_diff": 7.892391978695401,
+          "seed_max_diff": 8.614906357375999,
+          "all_seed_means_positive": true
+        },
+        {
+          "reference": "controller_dense_only",
+          "delta_f1": 7.483908543284036,
+          "ci": [
+            5.757403872024989,
+            9.24925046460983
+          ],
+          "p_diff_le_0": 0.0,
+          "seed_min_diff": 6.972956296012597,
+          "seed_max_diff": 8.379801610364613,
+          "all_seed_means_positive": true
+        },
+        {
+          "reference": "controller_hkvm_only",
+          "delta_f1": 8.405183352746828,
+          "ci": [
+            6.731578257022784,
+            10.118465912026668
+          ],
+          "p_diff_le_0": 0.0,
+          "seed_min_diff": 7.892391978695401,
+          "seed_max_diff": 8.708251722169086,
+          "all_seed_means_positive": true
+        }
+      ]
+    },
+    {
+      "claim": "On the deterministic held-out slice of frozen 2wiki predictions, controller_dense_hkvm can be compared against fixed references without new training.",
+      "status": "audit_completed",
+      "evidence": [
+        {
+          "reference": "colbertv2",
+          "delta_f1": 11.195557385313899,
+          "ci": [
+            10.557550795551586,
+            11.836866420749526
+          ],
+          "p_diff_le_0": 0.0,
+          "seed_min_diff": 11.054601755101215,
+          "seed_max_diff": 11.353201033120632,
+          "all_seed_means_positive": true
+        },
+        {
+          "reference": "phase1c_mlp_topk_4",
+          "delta_f1": 0.4539315489354319,
+          "ci": [
+            0.30244098668898045,
+            0.6133912826897554
+          ],
+          "p_diff_le_0": 0.0,
+          "seed_min_diff": 0.43384176441385863,
+          "seed_max_diff": 0.48362371945079685,
+          "all_seed_means_positive": true
+        },
+        {
+          "reference": "controller_dense_only",
+          "delta_f1": 11.31790636929892,
+          "ci": [
+            10.668501196044746,
+            11.955295250539725
+          ],
+          "p_diff_le_0": 0.0,
+          "seed_min_diff": 11.230642600958266,
+          "seed_max_diff": 11.395762090437062,
+          "all_seed_means_positive": true
+        },
+        {
+          "reference": "controller_hkvm_only",
+          "delta_f1": 0.42804493231622404,
+          "ci": [
+            0.26720969369170244,
+            0.5883683506644934
+          ],
+          "p_diff_le_0": 0.0,
+          "seed_min_diff": 0.40795514779465075,
+          "seed_max_diff": 0.45773710283158897,
+          "all_seed_means_positive": true
+        }
+      ]
+    },
+    {
+      "claim": "On the deterministic held-out slice of frozen hotpotqa predictions, controller_dense_hkvm can be compared against fixed references without new training.",
+      "status": "audit_completed",
+      "evidence": [
+        {
+          "reference": "colbertv2",
+          "delta_f1": 5.770794714440875,
+          "ci": [
+            4.909064218224524,
+            6.63941257357288
+          ],
+          "p_diff_le_0": 0.0,
+          "seed_min_diff": 5.617748763235966,
+          "seed_max_diff": 6.035350918601929,
+          "all_seed_means_positive": true
+        },
+        {
+          "reference": "phase1c_mlp_topk_4",
+          "delta_f1": 3.3512326204288487,
+          "ci": [
+            2.7406729076857053,
+            3.9576762908880103
+          ],
+          "p_diff_le_0": 0.0,
+          "seed_min_diff": 3.297217799912007,
+          "seed_max_diff": 3.438859698401683,
+          "all_seed_means_positive": true
+        },
+        {
+          "reference": "controller_dense_only",
+          "delta_f1": 5.45219412364609,
+          "ci": [
+            4.613219743429865,
+            6.324538673190909
+          ],
+          "p_diff_le_0": 0.0,
+          "seed_min_diff": 5.302015875657546,
+          "seed_max_diff": 5.642159566721758,
+          "all_seed_means_positive": true
+        },
+        {
+          "reference": "controller_hkvm_only",
+          "delta_f1": 3.3512326204288487,
+          "ci": [
+            2.7206512086675985,
+            3.9835556745637573
+          ],
+          "p_diff_le_0": 0.0,
+          "seed_min_diff": 3.297217799912007,
+          "seed_max_diff": 3.438859698401683,
+          "all_seed_means_positive": true
+        }
+      ]
+    }
+  ],
+  "unsafe_claims": [
+    {
+      "claim": "This is a hidden-test or official-server result.",
+      "status": "unsafe",
+      "reason": "The split is a deterministic audit slice of already generated dev predictions."
+    },
+    {
+      "claim": "The audit removes all dev-set model-selection risk.",
+      "status": "unsafe",
+      "reason": "The underlying controller configuration was selected before this audit; the audit only checks robustness of frozen outputs."
+    },
+    {
+      "claim": "The audit establishes deployment throughput.",
+      "status": "unsafe",
+      "reason": "No retrieval, answer generation, or serving-time measurement is run."
+    }
+  ],
+  "recommended_paper_use": "Use as supplementary robustness evidence if held-out deltas align with the main result. Do not promote it to a hidden-test claim."
+}

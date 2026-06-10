@@ -1,0 +1,59 @@
+{
+  "answer_generation_runs": 0,
+  "argv": [
+    "tools/export_p1_cost_efficiency_audit.py",
+    "--out_dir",
+    "/home/zzz/hkvm_runs/p1_cost_efficiency_audit_20260609",
+    "--timing_repeats",
+    "7",
+    "--warmup_repeats",
+    "1",
+    "--strict_replay"
+  ],
+  "artifact_release_manifest": "/home/zzz/hkvm_runs/p1_cost_efficiency_inputs/artifact_release_manifest.json",
+  "artifact_root": "/home/zzz/hkvm_runs/HKVM-RAG_ICDE_2027_artifact",
+  "controller_variant": "controller_dense_hkvm",
+  "cwd": "/home/zzz/hkvm_rag_mvp",
+  "datasets": [
+    "musique",
+    "2wiki",
+    "hotpotqa"
+  ],
+  "dense_variant": "colbertv2",
+  "ended_at": "2026-06-09T09:23:56Z",
+  "hkvm_variant": "phase1c_mlp_topk_4",
+  "llm_api_calls": 0,
+  "outputs": {
+    "artifact_file_inventory": "/home/zzz/hkvm_runs/p1_cost_efficiency_audit_20260609/p1_artifact_file_inventory.csv",
+    "artifact_resource_summary": "/home/zzz/hkvm_runs/p1_cost_efficiency_audit_20260609/p1_artifact_resource_summary.json",
+    "claim_contract": "/home/zzz/hkvm_runs/p1_cost_efficiency_audit_20260609/p1_cost_efficiency_claim_contract.json",
+    "controller_replay_aggregate": "/home/zzz/hkvm_runs/p1_cost_efficiency_audit_20260609/p1_controller_replay_aggregate.csv",
+    "controller_replay_repeats": "/home/zzz/hkvm_runs/p1_cost_efficiency_audit_20260609/p1_controller_replay_repeats.csv",
+    "controller_replay_timing": "/home/zzz/hkvm_runs/p1_cost_efficiency_audit_20260609/p1_controller_replay_timing.csv",
+    "extraction_scope": "/home/zzz/hkvm_runs/p1_cost_efficiency_audit_20260609/p1_extraction_scope.csv",
+    "fixed_substrate_latency": "/home/zzz/hkvm_runs/p1_cost_efficiency_audit_20260609/p1_fixed_substrate_latency.csv",
+    "input_file_audit": "/home/zzz/hkvm_runs/p1_cost_efficiency_audit_20260609/p1_input_file_audit.csv",
+    "manifest": "/home/zzz/hkvm_runs/p1_cost_efficiency_audit_20260609/p1_cost_efficiency_manifest.json",
+    "summary": "/home/zzz/hkvm_runs/p1_cost_efficiency_audit_20260609/p1_cost_efficiency_summary.md"
+  },
+  "p3_unified_summary": "/home/zzz/hkvm_runs/icde2027_p3_unified_export_20260518/unified_summary.json",
+  "phase1d_roots": {
+    "2wiki": "/home/zzz/hkvm_runs/phase1d_train_to_dev_oof_hkvm_lr001_20260525",
+    "hotpotqa": "/home/zzz/hkvm_runs/phase1d_train_to_dev_hotpotqa_oof_colbert_hkvm_lr001_20260602",
+    "musique": "/home/zzz/hkvm_runs/phase1d_train_to_dev_oof_hkvm_lr001_20260525"
+  },
+  "platform": "Linux-6.17.0-29-generic-x86_64-with-glibc2.39",
+  "python": "3.11.15 | packaged by conda-forge | (main, Mar  5 2026, 16:45:40) [GCC 14.3.0]",
+  "retrieval_runs": 0,
+  "script": "tools/export_p1_cost_efficiency_audit.py",
+  "seeds": [
+    13,
+    29,
+    43
+  ],
+  "started_at": "2026-06-09T09:22:00Z",
+  "status": "completed",
+  "timing_repeats": 7,
+  "training_runs": 0,
+  "warmup_repeats": 1
+}
