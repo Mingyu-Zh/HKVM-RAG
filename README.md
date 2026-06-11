@@ -128,8 +128,8 @@ Full reruns: `--setting 2wiki`, `musique`, or `hotpotqa`.
 | `scripts/build_release_manifest.py` | Generate SHA-256 file manifest |
 | `docs/` | Release, attribution, and reproduction notes |
 | `results/paper_evidence/` | Tables, bootstrap summaries, claim-evidence maps |
-| `results/paper_evidence/p0_heldout_validation/` | Deterministic 30% held-out slice audit |
-| `results/paper_evidence/p1_cost_efficiency_audit/` | Cost, latency, and resource footprint audit |
+| `results/paper_evidence/heldout_slice_audit/` | Deterministic 30% held-out slice audit |
+| `results/paper_evidence/cost_efficiency_audit/` | Cost, latency, and resource footprint audit |
 | `results/paper_evidence/source_level_ablation/` | BM25/Contriever first-stage source diagnostics |
 | `supplemental_material.pdf` | Supplementary material (8+ pages) |
 | `manifests/FILES.sha256` | SHA-256 manifest for integrity verification |
