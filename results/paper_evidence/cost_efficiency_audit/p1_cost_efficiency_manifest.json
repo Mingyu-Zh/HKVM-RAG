@@ -45,7 +45,7 @@
   "platform": "Linux-6.17.0-29-generic-x86_64-with-glibc2.39",
   "python": "3.11.15 | packaged by conda-forge | (main, Mar  5 2026, 16:45:40) [GCC 14.3.0]",
   "retrieval_runs": 0,
-  "script": "tools/export_p1_cost_efficiency_audit.py",
+  "script": "tools/export_cost_efficiency_audit.py",
   "seeds": [
     13,
     29,
