@@ -57,6 +57,12 @@ Multi-hop RAG depends not only on finding relevant passages, but also on organiz
 
 > WHG-KV improves F1 over the corresponding first-stage baseline by +4.971 to +23.119 across all nine dataset×first-stage rows. All nine paired-bootstrap F1 intervals are fully positive.
 
+<p align="center">
+  <img src="Fig_3.png" alt="Source-Effect Diagnostics" width="100%">
+</p>
+
+*Source-effect diagnostics for dense-aware evidence control. Left: ΔF1 trajectory across structured sources (ColBERTv2, BM25, Contriever first-stage). Right: WHG-KV margin over best non-WHG complement for F1, EM, and AR@10.*
+
 ### Transfer over Frozen Prediction Artifacts
 
 | Target | Pooled Transfer F1 | Target-Trained F1 | Δ vs ColBERTv2 |
@@ -66,6 +72,12 @@ Multi-hop RAG depends not only on finding relevant passages, but also on organiz
 | HotpotQA | 85.706 | 85.810 | +5.862 |
 
 > The dense/HKVM rank-score signal transfers across benchmarks, but target-domain calibration and sample composition still matter. See the [supplementary material](supplemental_material.pdf) for full bootstrap tables, held-out slice audit, hyperparameter sensitivity, enhanced KG baselines, and cost/resource disclosure.
+
+<p align="center">
+  <img src="Fig_4.png" alt="Transfer and Calibration Boundary" width="100%">
+</p>
+
+*Transfer and target-calibration boundary over frozen prediction artifacts. (a) Leave-one-target transfer. (b) Transfer feature ablation. (c) Target-domain calibration. (d) MuSiQue repeated random-subset audit.*
 
 ---
 
