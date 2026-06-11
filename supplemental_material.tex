@@ -16,45 +16,54 @@
 \title{Supplementary Material for \method: Key-Value-Separated Hypergraph Evidence Organization for Multi-Hop RAG}
 
 \author{
-    \IEEEauthorblockN{Mingyu Zhang}
-    \IEEEauthorblockA{\textit{Faculty of Computing} \\
-    \textit{Harbin Institute of Technology} \\
-    Harbin, China \\
-    25b903142@stu.hit.edu.cn}
-\and
-    \IEEEauthorblockN{Ying Ma\textsuperscript{*}\thanks{\textsuperscript{*}Corresponding author.}}
-    \IEEEauthorblockA{\textit{Faculty of Computing} \\
-    \textit{Harbin Institute of Technology} \\
-    Harbin, China \\
-    y.ma@hit.edu.cn}
+    \parbox{\dimexpr\linewidth-2em}{
+        \centering
+        Mingyu Zhang\textsuperscript{1}, Fanghui Sun\textsuperscript{1}, Chunjing Xiao\textsuperscript{2}, Ying Ma\textsuperscript{1,*} \\
+        \textsuperscript{1}Faculty of Computing, Harbin Institute of Technology, Harbin, China \\
+        \textsuperscript{2}School of Computer and Information Engineering, Henan University, Kaifeng, China \\
+        25b903142@stu.hit.edu.cn, Sunfanghui@hit.edu.cn, chunjingxiao@gmail.com, y.ma@hit.edu.cn
+    }%
+    \thanks{\textsuperscript{*}Corresponding author.}
 }
 
 \maketitle
 
-\section{Scope of the Supplementary Material}
+\section{Evidence Map and Claim Boundaries}
 
-This supplementary material contains reproducibility and diagnostic evidence that supports, but is not necessary to state, the main paper's claims. It follows the paper's bounded framing: \method{} is evaluated as a fixed-substrate evidence-indexing and dense-aware evidence-control method, not as a hidden-test benchmark, a standalone dense-retrieval replacement, or a full reproduction of every related RAG system. All tables below are derived from frozen prediction files and paper-facing exports. No new LLM extraction calls are introduced by these supplementary analyses.
+This supplementary material is organized as an audit trail for the main paper's claims. It follows the paper's bounded framing: \method{} is evaluated as a fixed-substrate evidence-indexing and dense-aware evidence-control method, not as a hidden-test benchmark, a standalone dense-retrieval replacement, or a full reproduction of every related RAG system. All tables below are derived from frozen prediction files and claim-specific result files. No supplementary analysis introduces new LLM extraction calls, new dense-retrieval runs, or new answer-generation calls.
 
 \begin{table*}[t]
-\caption{Supplementary evidence map. The supplement records statistical support, boundary diagnostics, and artifact provenance that would overburden the main paper; it does not introduce additional benchmark claims beyond the frozen result matrix.}
+\caption{Supplementary evidence map and claim boundary. This navigation table maps each evidence block to the paper-facing claim it supports and to the stronger interpretations it does not support; numerical evidence appears in the following sections.}
 \label{tab:supp_evidence_map}
 \centering
-\scriptsize
-\begin{tabular}{@{}L{0.18\textwidth}L{0.39\textwidth}L{0.36\textwidth}@{}}
+\small
+\setlength{\tabcolsep}{4pt}
+\begin{tabular}{@{}L{0.20\textwidth}L{0.37\textwidth}L{0.37\textwidth}@{}}
 \toprule
-Supplement section & Supports & Does not support \\
+Evidence block & Supports & Excluded interpretation \\
 \midrule
-Source-level significance & WHG-KV-specific complementarity under the tested first-stage sources & Generic benefit from arbitrary structured sources \\
-Controller significance & Dense-aware controller gains over ColBERTv2 and learned HKVM calibration & Hidden-test or deployment-throughput claims \\
-Evidence-selection trajectory & Support-selection bottleneck and learned recovery path & Treating oracle rows as deployable systems \\
-HotpotQA boundary & Separation of standalone failure and controller recovery & Standalone WHG-KV superiority on HotpotQA \\
-Negative diagnostics & Need for learned control and cache-manifest discipline & Claim that LLM triples dominate all OpenIE alternatives \\
-Artifact provenance & Audit path for paper-facing result families & Redistribution of non-redistributable provider or dataset artifacts \\
+Fixed-substrate protocol & Shared candidates, tuple caches, extraction scope, seeds, and manifests & Cross-extractor, cross-reader, or deployment generalization \\
+Statistical support & Controller gains and WHG-specific source diagnostics & Official hidden-test significance or production traffic evidence \\
+Evidence selection & Oracle headroom, learned recovery path, and HotpotQA standalone boundary & Deployable oracle systems or standalone WHG-KV superiority on HotpotQA \\
+Feature/source mechanism & Dense--HKVM rank-score calibration; limits of naive fusion and interaction-only features & Arbitrary structured-source gains or handcrafted interactions as the core mechanism \\
+Transfer and calibration & Leave-one-target transfer, feature ablation, target calibration, and subset stability & Target-data independence, monotonic sample efficiency, or hidden-test generalization \\
+Parameters and baselines & Hyperparameter sensitivity, extraction boundary, and enhanced pairwise KG baselines & LLM triples dominating all OpenIE variants or tuning fixing all standalone failures \\
+Cost and reproducibility & Fixed-output scoring cost, controller replay, artifact footprint, and provenance & Online serving throughput, fresh extraction latency, or unrestricted provider-artifact release \\
 \bottomrule
 \end{tabular}
 \end{table*}
 
-\section{Source-Level Significance}
+\section{Fixed-Substrate Protocol and Artifact Manifests}
+
+The fixed substrate is both a scientific control and an evaluation boundary. Structured methods share the same candidate-passage pools, deterministic DeepSeek evidence-tuple extraction schema, cached passage-level tuple files, top-10 retrieval budget, top-5 answer-context budget, train/dev splits, and seeds. The reported passage-unit counts are cached extractor-input counts, not retrieval budgets: 2WikiMultiHopQA, MuSiQue, and HotpotQA expose different numbers of candidate passages before the shared retrieval and answer-context budgets are applied. Changing the extractor endpoint, prompt, schema, tuple budget, candidate-passage source, or answer reader creates a new substrate and requires a new manifest rather than a direct extension of the frozen tables.
+
+The paper-facing dev structured matrix uses 202,176 cached dev passage-level extractor inputs: 125,760 for 2WikiMultiHopQA, 48,325 for MuSiQue, and 28,091 for HotpotQA. Train-side controller inputs use 399,491 additional cached passage-level extractor inputs. These train-side caches are used only for the train-derived support scorer, learned HKVM calibration, dense-aware controller, and transfer/calibration audits. Gold support is not sent to the extractor; support labels are used only after cache construction for supervised ranker/controller training.
+
+The released artifact records benchmark data, extraction caches, frozen prediction outputs, compact result summaries, SHA-256 file manifests, reproduction scripts, run summaries, and per-family provenance records. Dense model weights and API credentials are not redistributed. Rerunning dense retrieval requires downloading the upstream model weights, and regenerating LLM evidence tuples requires a new extraction manifest.
+
+\section{Statistical Support for Main Tables}
+
+\subsection{Source-Level Significance}
 
 Table~\ref{tab:supp_source_level_bootstrap} gives the paired-bootstrap support for the first-stage source diagnostics summarized in the main paper. The confidence interval tests WHG-KV against the corresponding first-stage baseline. The final column reports the point-estimate margin between WHG-KV and the strongest non-WHG structured complement in the same dataset--first-stage block.
 
@@ -62,8 +71,9 @@ Table~\ref{tab:supp_source_level_bootstrap} gives the paired-bootstrap support f
 \caption{Source-level baseline-vs-WHG paired-bootstrap support and non-WHG margins. The confidence interval tests WHG-KV against the corresponding first-stage baseline; the final column is a point-estimate margin over the strongest matched non-WHG source. The table does not imply that all structured sources help or that the diagnostics cover all retriever families.}
 \label{tab:supp_source_level_bootstrap}
 \centering
-\scriptsize
-\begin{tabular*}{1.0\textwidth}{@{\extracolsep{\fill}} llrrr @{}}
+\small
+\setlength{\tabcolsep}{4pt}
+\begin{tabular}{llrrr}
 \toprule
 Dataset & First-stage & WHG-KV $\Delta$F1 vs base & 95\% CI & Margin over best non-WHG \\
 \midrule
@@ -77,18 +87,37 @@ HotpotQA & ColBERTv2 & $+5.966$ & $[+5.479,+6.456]$ & $+5.397$ \\
 HotpotQA & BM25 & $+4.971$ & $[+4.554,+5.374]$ & $+4.188$ \\
 HotpotQA & Contriever & $+5.166$ & $[+4.683,+5.634]$ & $+5.522$ \\
 \bottomrule
-\end{tabular*}
+\end{tabular}
 \end{table*}
 
-The source-level exports use seeds 13, 29, and 43, 5,000 paper-export bootstrap samples per dataset--first-stage row, frozen train/dev prediction files, and no new LLM extraction calls. The artifact README records the ColBERTv2, BM25, Contriever, and HotpotQA source-level export roots, hashes, and redistributability notes.
+The source-level diagnostics use seeds 13, 29, and 43, 5,000 bootstrap samples per dataset--first-stage row, frozen train/dev prediction files, and no new LLM extraction calls. The artifact README records the ColBERTv2, BM25, Contriever, and HotpotQA source-level result roots, hashes, and redistributability notes.
 
-\section{Dense-Aware Controller Significance}
+\subsection{Dense-Aware Controller Significance}
 
-The main paper reports paired-bootstrap F1 differences for the dense-aware HKVM controller against ColBERTv2 and learned HKVM calibration. Table~\ref{tab:supp_controller_bootstrap} complements the main paper by reporting the corresponding EM differences with 95\% confidence intervals. The controller improves EM over both ColBERTv2 and learned HKVM calibration on all three benchmarks. The 2Wiki gain over learned HKVM is intentionally small but positive, because learned HKVM calibration and the HKVM-only controller are already strong on that dataset.
+The main paper summarizes the dense-aware controller bootstrap audit in prose. Table~\ref{tab:supp_controller_f1_bootstrap} reports the underlying paired-bootstrap F1 differences against ColBERTv2 and learned HKVM calibration, and Table~\ref{tab:supp_controller_em_bootstrap} reports the corresponding EM differences. The controller improves both F1 and EM over both comparators on all three benchmarks. The 2Wiki gain over learned HKVM is intentionally small but positive, because learned HKVM calibration and the HKVM-only controller are already strong on that dataset.
 
 \begin{table}[t]
-\caption{Dense-aware controller EM significance. This table supplements the F1 bootstrap table in the main paper with exact-match (EM) paired-bootstrap results.}
-\label{tab:supp_controller_bootstrap}
+\caption{Dense-aware controller F1 significance. Differences are dense-aware HKVM controller minus the listed comparator. Confidence intervals are 5,000-sample paired-bootstrap intervals over frozen prediction files.}
+\label{tab:supp_controller_f1_bootstrap}
+\centering
+\scriptsize
+\begin{tabular}{llrr}
+\toprule
+Dataset & Comparator & $\Delta$F1 & 95\% CI \\
+\midrule
+2Wiki & ColBERTv2 & $+11.084$ & $[+10.740,+11.437]$ \\
+2Wiki & Learned HKVM & $+0.455$ & $[+0.368,+0.542]$ \\
+MuSiQue & ColBERTv2 & $+6.763$ & $[+5.791,+7.726]$ \\
+MuSiQue & Learned HKVM & $+8.319$ & $[+7.327,+9.293]$ \\
+HotpotQA & ColBERTv2 & $+5.966$ & $[+5.491,+6.452]$ \\
+HotpotQA & Learned HKVM & $+2.881$ & $[+2.555,+3.201]$ \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\begin{table}[t]
+\caption{Dense-aware controller EM significance. Differences are dense-aware HKVM controller minus the listed comparator.}
+\label{tab:supp_controller_em_bootstrap}
 \centering
 \scriptsize
 \begin{tabular}{llrr}
@@ -105,9 +134,33 @@ HotpotQA & Learned HKVM & $+2.921$ & $[+2.579,+3.255]$ \\
 \end{tabular}
 \end{table}
 
-The F1 counterparts of these intervals appear in the main paper's controller bootstrap table. Controller bootstrap exports use 5,000 samples over frozen prediction files with out-of-fold HKVM training signals. The source-level HotpotQA ColBERTv2 row in Table~\ref{tab:supp_source_level_bootstrap} is a separate source-replacement export, which explains its slightly different confidence interval from the main controller-vs-ColBERTv2 interval.
+Controller bootstrap intervals use 5,000 samples over frozen prediction files with out-of-fold HKVM training signals. The source-level HotpotQA ColBERTv2 row in Table~\ref{tab:supp_source_level_bootstrap} comes from a separate source-replacement diagnostic, which explains its slightly different confidence interval from the main controller-vs-ColBERTv2 interval.
 
-\section{Evidence-Selection Trajectory}
+\section{Evidence-Selection and Standalone Boundaries}
+
+\subsection{Deterministic Held-Out Slice Audit}
+
+To check whether the controller gains are concentrated in a small subset of the development predictions, we run an additional audit over frozen dense-aware controller prediction files. The audit applies a deterministic SHA-256 split over example ids and holds out 30\% of the aligned frozen prediction rows. It then recomputes metrics and paired-bootstrap differences from saved per-example metrics only. No controller is trained, no retrieval or answer generation is rerun, and no LLM extraction calls are made. Table~\ref{tab:supp_heldout_slice} reports the held-out F1 results.
+
+\begin{table*}[t]
+\caption{Deterministic held-out slice audit over frozen dense-aware controller dev predictions. The split is an audit slice of saved predictions, not a hidden-test benchmark. Confidence intervals are 5,000-sample matched-example bootstrap intervals on the held-out slice.}
+\label{tab:supp_heldout_slice}
+\centering
+\scriptsize
+\begin{tabular*}{1.0\textwidth}{@{\extracolsep{\fill}} l r r r r r r @{}}
+\toprule
+Dataset & Held-out ex./seed & Controller F1 & $\Delta$F1 vs ColBERTv2 & 95\% CI & $\Delta$F1 vs learned HKVM & 95\% CI \\
+\midrule
+MuSiQue & 746 & 64.214 & $+7.251$ & $[+5.423,+9.109]$ & $+8.373$ & $[+6.689,+10.138]$ \\
+2WikiMultiHopQA & 3,863 & 88.959 & $+11.196$ & $[+10.558,+11.837]$ & $+0.454$ & $[+0.302,+0.613]$ \\
+HotpotQA & 2,227 & 84.377 & $+5.771$ & $[+4.909,+6.639]$ & $+3.351$ & $[+2.741,+3.958]$ \\
+\bottomrule
+\end{tabular*}
+\end{table*}
+
+The held-out deltas are consistent with the full-dev controller deltas: $+7.251$ vs $+6.763$ F1 on MuSiQue, $+11.196$ vs $+11.084$ on 2WikiMultiHopQA, and $+5.771$ vs $+5.966$ on HotpotQA when compared with ColBERTv2. All three seed-level held-out F1 deltas are positive for both ColBERTv2 and learned HKVM comparators. This audit reduces the concern that the dense-aware controller result is driven by a small unstable slice of the frozen dev predictions, but it does not change the evaluation boundary: the result remains a development-prediction robustness audit, not an official hidden-test result. A true train-internal held-out rerun was not attempted in this artifact pass because the old train-side dense-prediction inputs and merged train-subset files recorded in the historical manifests are no longer present in the working run directory.
+
+\subsection{Evidence-Selection Trajectory}
 
 Table~\ref{tab:supp_trajectory} records the trajectory from no-gold WHG retrieval to oracle answer-path selection, train-derived support scoring, learned HKVM calibration, and the dense-aware controller. This table is a diagnostic trajectory rather than a single deployed pipeline. The oracle rows use support information and serve only to measure headroom.
 
@@ -131,9 +184,9 @@ Dense-aware HKVM controller & 88.846 & 88.658 & 100.000 & 65.073 & 64.722 & 64.1
 \end{tabular*}
 \end{table*}
 
-The trajectory combines fixed-substrate dev outputs, oracle diagnostics, train-to-dev support-scoring outputs, learned HKVM calibration, and dense-aware controller exports. It should be read as a mechanism-oriented evidence path rather than as a single chronological production pipeline.
+The trajectory combines fixed-substrate dev outputs, oracle diagnostics, train-to-dev support-scoring outputs, learned HKVM calibration, and dense-aware controller predictions. It should be read as a mechanism-oriented evidence path rather than as a single chronological production pipeline.
 
-\section{Standalone Boundary on HotpotQA}
+\subsection{Standalone Boundary on HotpotQA}
 
 HotpotQA is included to prevent a standalone-retrieval overclaim. In the fixed-substrate standalone matrix, WHG-KV improves support coverage over KG-PPR but does not improve answer F1. Table~\ref{tab:supp_hotpot_boundary} separates that standalone boundary from the controller-mediated recovery reported in the main paper.
 
@@ -158,7 +211,7 @@ Static-HG & 98.190 & 73.340 & 73.018 \\
 
 This boundary is compatible with the dense-aware controller result: raw structured retrieval can underperform lexical and dense baselines on HotpotQA, while WHG-KV rank/score signals can still help a learned controller reorder answer-bearing passages.
 
-\section{Negative and Boundary Diagnostics}
+\section{Source Specificity and Feature Mechanism}
 
 \subsection{Naive Fusion}
 
@@ -193,6 +246,173 @@ Controller full & 65.073 & 88.846 \\
 
 The main finding is that explicit dense-HKVM interaction features are not necessary for the MuSiQue gain. The no-interaction variant reaches 65.738 F1 on MuSiQue, marginally exceeding the full controller (65.073). Score-only (65.254) also approaches full performance. Interaction-only (60.295) is far below full, confirming that interaction features alone are insufficient. On 2Wiki, HKVM calibration is already strong (88.391), so all dense+HKVM variants cluster within 0.7 F1 of each other. The safe mechanism claim is that dense and WHG-KV rank/score signals jointly carry useful passage-reordering information; explicit interaction features help on 2Wiki but are not the primary driver of the MuSiQue gain. This ablation uses out-of-fold HKVM training signals, seeds 13/29/43, 5,000-sample paired bootstrap, and no new LLM extraction calls.
 
+\section{Generalization and Calibration Boundary}
+
+The main paper visualizes the transfer/calibration audit as a compact boundary figure. This section gives the underlying tables and provenance. The audit first tests whether a controller trained without the target dataset transfers, then decomposes which feature sources carry that transfer, adds increasing amounts of target-domain training data, and finally repeats MuSiQue target subsets to check whether the deterministic-prefix anomaly is mainly a sampling artifact. All four analyses reuse saved ColBERTv2, learned-HKVM, RRF, and controller prediction files; they do not rerun extraction, retrieval, answer generation, or reader models.
+
+\subsection{Leave-One-Target Transfer}
+
+Table~\ref{tab:supp_p0_transfer} reports the leave-one-target pooled controller audit. The controller is trained on the two non-target datasets and evaluated on the held-out target benchmark. This is the cleanest transfer diagnostic because it avoids selecting a favorable source dataset after the fact.
+
+\begin{table*}[t]
+\caption{Leave-one-target pooled transfer over frozen prediction artifacts. The pooled controller is trained without the target dataset. It improves over ColBERTv2 and RRF on all three targets, while target-trained controllers remain strongest or near-strongest.}
+\label{tab:supp_p0_transfer}
+\centering
+\scriptsize
+\begin{tabular*}{1.0\textwidth}{@{\extracolsep{\fill}} l r r r r r r r r @{}}
+\toprule
+Target & ColBERTv2 & Learned HKVM & RRF & Pooled transfer & Target-trained & $\Delta$ vs ColBERTv2 & $\Delta$ vs HKVM & $\Delta$ vs target \\
+\midrule
+2WikiMultiHopQA & 77.763 & 88.391 & 86.563 & 88.555 & 88.846 & +10.793 & +0.164 & -0.291 \\
+MuSiQue & 58.309 & 56.754 & 58.420 & 63.645 & 65.073 & +5.335 & +6.891 & -1.428 \\
+HotpotQA & 79.844 & 82.929 & 83.223 & 85.706 & 85.810 & +5.862 & +2.777 & -0.104 \\
+\bottomrule
+\end{tabular*}
+\end{table*}
+
+Bootstrap diagnostics support the same bounded interpretation. Pooled transfer improves over ColBERTv2 with positive confidence intervals in all three seeds for all three targets. It also improves over learned HKVM in all seeds for MuSiQue and HotpotQA, but the 2Wiki learned-HKVM comparison is mixed because learned HKVM is already strong. Pooled transfer does not stably exceed target-trained controllers: 2Wiki is below target-trained in most seeds, MuSiQue is not stable, and HotpotQA is a near-tie with confidence intervals overlapping zero.
+
+\subsection{Transfer Feature Source}
+
+Table~\ref{tab:supp_p1_feature_transfer} decomposes the leave-one-target transfer controller. Dense-only transfer is insufficient on all targets; HKVM-only nearly matches full on 2Wiki but is insufficient on MuSiQue and HotpotQA. Explicit interaction features are not necessary: no-interaction, rank-only, score-only, or interaction-only variants can match the full controller by point estimate on some datasets. The transferable mechanism should therefore be described as learned calibration over dense and WHG-KV rank/score channels, not as a gain from explicit interaction terms.
+
+\begin{table*}[t]
+\caption{Transfer feature-source ablation. Values are mean F1 under the leave-one-target pooled-transfer protocol. Positive ``Full--variant'' values mean the full dense+HKVM controller outperforms the ablated feature set.}
+\label{tab:supp_p1_feature_transfer}
+\centering
+\small
+\setlength{\tabcolsep}{4pt}
+\begin{tabular}{lrrrrrr}
+\toprule
+Variant & 2Wiki F1 & Full--variant & MuSiQue F1 & Full--variant & HotpotQA F1 & Full--variant \\
+\midrule
+Full dense+HKVM & 88.555 & 0.000 & 63.645 & 0.000 & 85.706 & 0.000 \\
+Dense only & 77.270 & +11.285 & 57.657 & +5.988 & 79.844 & +5.862 \\
+HKVM only & 88.295 & +0.260 & 56.754 & +6.891 & 82.929 & +2.777 \\
+No interaction & 88.777 & -0.222 & 61.730 & +1.914 & 85.341 & +0.365 \\
+Rank only & 88.539 & +0.016 & 61.904 & +1.741 & 85.626 & +0.080 \\
+Score only & 86.567 & +1.988 & 64.235 & -0.591 & 84.787 & +0.919 \\
+Interaction only & 87.967 & +0.588 & 59.247 & +4.398 & 85.652 & +0.054 \\
+\bottomrule
+\end{tabular}
+\end{table*}
+
+Full-vs-ablation bootstrap gives three stable conclusions. First, full transfer is strictly above dense-only on all targets. Second, full transfer is strictly above HKVM-only on MuSiQue and HotpotQA, while 2Wiki is an HKVM-favorable boundary where HKVM-only is close to full. Third, interaction-only transfer is insufficient on MuSiQue and does not produce a stable improvement over full elsewhere. These signs are the basis for the main paper's narrowed mechanism wording.
+
+\subsection{Target-Domain Calibration Curve}
+
+The target-domain calibration audit starts from the pooled transfer controller and adds deterministic prefixes of target-dataset training examples. Table~\ref{tab:supp_p2_best_calibration} summarizes the best observed prefix point for each target. 2Wiki is saturated: pooled transfer is already within 0.186 F1 of target-trained, so the closure ratio is numerically unstable. HotpotQA shows the cleanest target-calibration benefit, reaching 53.7\% gap closure at 250 examples and 79.7\% at 10,000 examples. MuSiQue has the largest possible gain but a nonmonotonic prefix curve, motivating the repeated-subset stability audit.
+
+\begin{table}[t]
+\caption{Best observed target-domain calibration under deterministic-prefix sampling. Gap closure is measured from pooled transfer toward the target-trained controller.}
+\label{tab:supp_p2_best_calibration}
+\centering
+\scriptsize
+\begin{tabular}{lrrrrr}
+\toprule
+Target & Best $n$ & Best F1 & Pooled F1 & Target F1 & Closure \\
+\midrule
+2Wiki & 10000 & 88.753 & 88.660 & 88.846 & 0.498 \\
+HotpotQA & 10000 & 85.689 & 85.216 & 85.810 & 0.797 \\
+MuSiQue & 500 & 64.914 & 63.838 & 65.073 & 0.872 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+The full prefix curve is reported in Table~\ref{tab:supp_p2_curve}. The nonmonotonic rows are not a nuisance to hide: they block a sample-complexity claim and show that target calibration depends on dataset and sample composition.
+
+\begin{table*}[t]
+\caption{Target-domain calibration curve. $n=0$ is the leave-one-target pooled-transfer reference. The curve is an audit over deterministic target-prefix samples, not a repeated-random sample-complexity estimate.}
+\label{tab:supp_p2_curve}
+\centering
+\small
+\setlength{\tabcolsep}{4pt}
+\begin{tabular}{lrrrrr}
+\toprule
+Target & Target examples & F1 & $\Delta$ vs pooled & $\Delta$ vs target-trained & Gap closure \\
+\midrule
+2Wiki & 0 & 88.660 & +0.000 & -0.186 & 0.000 \\
+2Wiki & 50 & 88.606 & -0.053 & -0.240 & -0.286 \\
+2Wiki & 100 & 88.531 & -0.129 & -0.316 & -0.693 \\
+2Wiki & 250 & 88.543 & -0.117 & -0.303 & -0.626 \\
+2Wiki & 500 & 88.752 & +0.093 & -0.094 & 0.496 \\
+2Wiki & 1000 & 88.339 & -0.320 & -0.507 & -1.719 \\
+2Wiki & 2500 & 88.657 & -0.003 & -0.189 & -0.016 \\
+2Wiki & 5000 & 88.629 & -0.031 & -0.217 & -0.166 \\
+2Wiki & 10000 & 88.753 & +0.093 & -0.094 & 0.498 \\
+\midrule
+HotpotQA & 0 & 85.216 & +0.000 & -0.594 & 0.000 \\
+HotpotQA & 50 & 85.488 & +0.272 & -0.322 & 0.458 \\
+HotpotQA & 100 & 85.481 & +0.264 & -0.329 & 0.445 \\
+HotpotQA & 250 & 85.535 & +0.319 & -0.275 & 0.537 \\
+HotpotQA & 500 & 85.295 & +0.079 & -0.515 & 0.133 \\
+HotpotQA & 1000 & 85.455 & +0.238 & -0.355 & 0.401 \\
+HotpotQA & 2500 & 85.419 & +0.202 & -0.391 & 0.341 \\
+HotpotQA & 5000 & 85.378 & +0.161 & -0.432 & 0.272 \\
+HotpotQA & 10000 & 85.689 & +0.473 & -0.121 & 0.797 \\
+\midrule
+MuSiQue & 0 & 63.838 & +0.000 & -1.235 & 0.000 \\
+MuSiQue & 50 & 62.491 & -1.347 & -2.582 & -1.091 \\
+MuSiQue & 100 & 60.862 & -2.976 & -4.211 & -2.409 \\
+MuSiQue & 250 & 60.493 & -3.344 & -4.580 & -2.708 \\
+MuSiQue & 500 & 64.914 & +1.076 & -0.159 & 0.872 \\
+MuSiQue & 1000 & 60.752 & -3.086 & -4.321 & -2.498 \\
+MuSiQue & 2500 & 64.782 & +0.944 & -0.291 & 0.764 \\
+MuSiQue & 5000 & 63.488 & -0.350 & -1.585 & -0.283 \\
+MuSiQue & 10000 & 63.905 & +0.067 & -1.168 & 0.054 \\
+\bottomrule
+\end{tabular}
+\end{table*}
+
+\subsection{MuSiQue Target-Subset Stability}
+
+The repeated-subset audit focuses on MuSiQue, the dataset with the strongest deterministic-prefix anomaly. Each target size has 30 runs, corresponding to 3 seeds and 10 subset repeats. Table~\ref{tab:supp_p2b_random_subset} shows that larger random subsets become more reliable: mean F1 rises from 60.060 at 50 examples to 64.645 at 2,500 examples, while standard deviation drops from 6.465 to 1.090. At 2,500 examples, 27/30 runs beat their seed-specific pooled transfer baseline.
+
+\begin{table*}[t]
+\caption{MuSiQue repeated random target-subset audit. ``Positive/negative'' counts compare each run against its seed-specific pooled-transfer baseline.}
+\label{tab:supp_p2b_random_subset}
+\centering
+\scriptsize
+\setlength{\tabcolsep}{4pt}
+\begin{tabular}{rrrrrrrrr}
+\toprule
+Target examples & Runs & F1 mean & F1 std & F1 min & F1 median & F1 max & Mean $\Delta$ vs pooled & Pos./neg. \\
+\midrule
+50 & 30 & 60.060 & 6.465 & 37.396 & 62.411 & 62.919 & -3.778 & 0/30 \\
+100 & 30 & 61.548 & 2.850 & 47.158 & 62.283 & 63.282 & -2.289 & 0/30 \\
+250 & 30 & 61.963 & 2.549 & 54.330 & 62.560 & 65.260 & -1.875 & 5/25 \\
+500 & 30 & 63.258 & 2.309 & 53.971 & 64.315 & 65.653 & -0.579 & 16/14 \\
+1000 & 30 & 63.964 & 1.499 & 58.878 & 64.385 & 65.578 & +0.126 & 21/9 \\
+2500 & 30 & 64.645 & 1.090 & 60.209 & 64.956 & 65.834 & +0.807 & 27/3 \\
+\bottomrule
+\end{tabular}
+\end{table*}
+
+Table~\ref{tab:supp_p2b_prefix_random} compares deterministic prefixes against random-subset means. The largest correction is at 1,000 examples: the prefix result is 60.752 F1, but the random-subset mean is 63.964 F1. Thus the sharp deterministic-prefix nonmonotonicity is partly a prefix-sampling artifact. The audit still does not justify a monotonic sample-complexity claim, because small subsets remain unstable and the repeated-subset audit was run only for MuSiQue.
+
+\begin{table}[t]
+\caption{Deterministic prefixes versus random-subset means on MuSiQue. Positive differences mean the random-subset mean is above the prefix result.}
+\label{tab:supp_p2b_prefix_random}
+\centering
+\scriptsize
+\begin{tabular}{rrrr}
+\toprule
+Target examples & Prefix F1 & Random mean & Difference \\
+\midrule
+50 & 62.491 & 60.060 & -2.431 \\
+100 & 60.862 & 61.548 & +0.686 \\
+250 & 60.493 & 61.963 & +1.470 \\
+500 & 64.914 & 63.258 & -1.656 \\
+1000 & 60.752 & 63.964 & +3.212 \\
+2500 & 64.782 & 64.645 & -0.137 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+The resulting paper-safe synthesis is narrow but useful: dense/HKVM rank-score calibration transfers across the tested benchmarks under frozen prediction artifacts; the transferable signal benefits from target-domain calibration when enough target examples are available; and the benefit is dataset- and sample-composition-sensitive. The experiments do not support hidden-test generalization, target-data independence, or monotonic sample efficiency.
+
+\section{Parameter and Baseline Robustness}
+
 \subsection{Extraction Substrate}
 
 The shared LLM-triple cache is a controlled extraction substrate, not a claim that LLM triples dominate all OpenIE alternatives. In extraction-quality diagnostics, LLM triples were much sparser than heuristic OpenIE: objects per passage changed from 34.814 to 4.249 on 2Wiki and from 47.056 to 4.878 on MuSiQue. Pairwise KG-PPR with the sparse LLM tuple cache did not dominate heuristic OpenIE KG-PPR in that diagnostic. The paper therefore treats cache changes as new manifests rather than mixing them into the frozen result matrix.
@@ -211,7 +431,7 @@ Table~\ref{tab:supp_hyperparam_sensitivity} reports WHG-KV sensitivity to the th
 Group & Variant & AR@10 & F1 & EM \\
 \midrule
 \multicolumn{5}{@{}l}{\emph{Default}} \\
-& $(\lambda_f{=}0.20,\lambda_s{=}0.40,\lambda_b{=}0.40),\;\beta{=}2.0,\;\rho{=}0.35$ & 37.815 & 38.946 & 38.229 \\
+& Paper default & 37.815 & 38.946 & 38.229 \\
 \midrule
 \multicolumn{5}{@{}l}{\emph{$\beta$ (weight scale)}} \\
 & $\beta=1.5$ & 37.360 & 38.693 & 37.940 \\
@@ -263,7 +483,34 @@ WHG-KV (reference) & 79.299 & 39.925 & 72.957 \\
 \end{tabular}
 \end{table}
 
-Passage nodes alone shift F1 by less than 0.7 points relative to the original pairwise baselines across all three datasets. Query-to-triple linking improves 2WikiMultiHopQA (+2.1 F1) but degrades MuSiQue ($-$1.3 to $-$1.5 F1), where token-overlap matching against compositional questions introduces noise. The strongest enhanced pairwise variant reaches 78.041 F1 on 2WikiMultiHopQA, which remains below WHG-KV (79.299). On MuSiQue the smallest gap is $+3.2$ F1. These results show that the hypergraph advantage is not an artifact of a weak pairwise reference: even the best pairwise topology improvements available do not reproduce the evidence-organization gain of answer-path hyperedges under the shared extraction substrate.
+Passage nodes alone shift F1 by less than 0.7 points relative to the original pairwise baselines across all three datasets. Query-to-triple linking improves 2WikiMultiHopQA (+2.1 F1) but degrades MuSiQue ($-$1.3 to $-$1.5 F1), where token-overlap matching against compositional questions introduces noise. The strongest enhanced pairwise variant reaches 78.041 F1 on 2WikiMultiHopQA, which remains below WHG-KV (79.299). On MuSiQue the smallest gap is $+3.2$ F1. These results indicate that the hypergraph advantage is not an artifact of a weak pairwise reference: even the best pairwise topology improvements available do not reproduce the evidence-organization gain of answer-path hyperedges under the shared extraction substrate.
+
+\section{Cost and Resource Disclosure}
+
+The paper-facing artifact separates one-time extraction cost from frozen-output verification. The main structured matrix uses 202,176 cached dev passage-level extractor inputs: 125,760 for 2WikiMultiHopQA, 48,325 for MuSiQue, and 28,091 for HotpotQA. The train-side controller inputs use 399,491 additional cached passage-level extractor inputs. These counts are extraction-scope counts, not retrieval-budget counts; retrieval and answer assembly still use the shared top-10 retrieval and top-5 answer-context protocol described in the main paper. All supplementary tables are computed from frozen prediction files and therefore introduce no new LLM extraction calls.
+
+The released artifact records the resource footprint needed to verify the submitted evidence. In the staged release manifest, benchmark data occupy 355,293,085 bytes, LLM extraction caches occupy 734,269,603 bytes, frozen prediction outputs occupy 1,200,203,334 bytes, and compact result summaries occupy 1,538,964 bytes. The package also includes a SHA-256 file manifest, reproduction scripts, run summaries, and per-family provenance records. Dense model weights and API credentials are not redistributed; rerunning dense retrieval requires downloading the upstream model weights, and changing the LLM endpoint, prompt, schema, or extraction budget requires regenerating the extraction caches and recording a new cache manifest.
+
+Table~\ref{tab:supp_cost_efficiency} reports a read-only cost/efficiency audit over the submitted evidence artifacts. The \whg{} and ColBERTv2 columns are per-example scoring latencies recorded in the fixed-substrate run summaries. The controller-replay column measures a deterministic CPU-side replay of saved dense-aware controller models over frozen ColBERTv2 and learned-HKVM prediction files, using seven timing repeats after one warm-up repeat. The audit completed with zero LLM API calls, zero training runs, zero retrieval reruns, and zero answer-generation reruns.
+
+\begin{table*}[t]
+\caption{Fixed-substrate cost/efficiency audit. Latencies are milliseconds per example over frozen candidate-passage artifacts. Controller replay measures feature alignment, scoring, and reranking over saved prediction files; it is not a deployment-throughput benchmark.}
+\label{tab:supp_cost_efficiency}
+\centering
+\scriptsize
+\setlength{\tabcolsep}{3pt}
+\begin{tabular}{lrrrrr}
+\toprule
+Dataset & Ex./seed & Cand./seed & \whg{} ms/ex. & ColBERTv2 ms/ex. & Replay ms/ex. \\
+\midrule
+MuSiQue & 2,417 & 33,940 & 0.330 & 53.190 & 0.288 \\
+2WikiMultiHopQA & 12,576 & 125,237 & 0.157 & 29.771 & 0.207 \\
+HotpotQA & 7,405 & 73,700 & 0.264 & 61.689 & 0.200 \\
+\bottomrule
+\end{tabular}
+\end{table*}
+
+These diagnostics are bounded cost measurements for the fixed-substrate artifact, not deployment-throughput claims. They do not include full-corpus indexing, dense model loading, online serving queues, reader-model latency, or fresh LLM extraction latency. The experiments evaluate evidence organization over fixed candidate passages rather than a production RAG service, so the reported timings, artifact footprint, and cache manifests should be read as reproducibility and audit costs for the submitted evidence matrix.
 
 \section{Run and Artifact Provenance}
 
@@ -279,22 +526,32 @@ This supplement itself is hosted in the GitHub repository at \texttt{supplementa
 Table~\ref{tab:supp_artifacts} lists the paper-facing result families and the artifact records required to verify them. The artifact includes scripts (\texttt{scripts/verify\_paper\_evidence.py}, \texttt{scripts/reproduce\_fixed\_substrate.py}), configs (\texttt{configs/}), and a SHA-256 file manifest (\texttt{manifests/FILES.sha256}) for integrity verification.
 
 \begin{table*}[t]
-\caption{Paper-facing result provenance. The table identifies the protocol and artifact record for each result block; exact export roots, hashes, and redistributability constraints belong in the submitted artifact README.}
+\caption{Paper-facing result provenance. The table identifies the protocol and artifact record for each result block; exact result-file roots, hashes, and redistributability constraints belong in the submitted artifact README.}
 \label{tab:supp_artifacts}
 \centering
 \scriptsize
 \setlength{\tabcolsep}{2.5pt}
 \begin{tabular}{@{}L{0.16\textwidth}L{0.22\textwidth}L{0.19\textwidth}L{0.20\textwidth}L{0.17\textwidth}@{}}
 \toprule
-Result block & Verifies & Prediction protocol & Bootstrap/export & Artifact record \\
+Result block & Verifies & Prediction protocol & Statistical support & Artifact record \\
 \midrule
-P3 fixed-substrate matrix & Standalone WHG-vs-KG comparison and HotpotQA boundary & Frozen dev predictions; shared tuple cache; seeds 13/29/43 & Seed-13 1,000-sample WHG-minus-KG bootstrap; paper table export & \texttt{results/paper\_evidence/main\_fixed\_substrate/}, \texttt{frozen\_outputs/predictions/fixed\_substrate/} \\
-Evidence-selection trajectory & Oracle headroom, support scorer, calibration, and controller sequence & Frozen dev predictions plus train-to-dev models; no dev labels at inference & Phase-specific paper exports; controller rows use 5,000-sample bootstrap & \texttt{results/paper\_evidence/calibration\_analysis/}, \texttt{results/run\_summaries/} \\
-Phase1D controller & Dense-aware controller vs ColBERTv2 and learned HKVM & OOF train-side HKVM predictions; frozen dev predictions; seeds 13/29/43 & 5,000-sample paired bootstrap over frozen prediction files & \texttt{results/paper\_evidence/adaptive\_source\_controller/}, \texttt{frozen\_outputs/predictions/adaptive\_source\_controller/} \\
-Source-level diagnostics & WHG-KV source specificity under ColBERTv2/BM25/Contriever & First-stage source fixed per block; structured source swapped; no new LLM calls & 5,000-sample baseline-vs-WHG bootstrap; non-WHG margins are point estimates & \texttt{results/paper\_evidence/source\_level\_ablation/}, bootstrap CSVs \\
-Negative diagnostics & Naive-fusion and extraction-substrate boundaries & Diagnostic exports outside the frozen main matrix & Descriptive unless explicitly reported as paired bootstrap & \texttt{results/run\_summaries/extraction\_quality/}, prompt/schema records \\
+Fixed-substrate structured retrieval matrix & Standalone WHG-vs-KG comparison and HotpotQA boundary & Frozen dev predictions; shared tuple cache; seeds 13/29/43 & Seed-13 1,000-sample WHG-minus-KG bootstrap; claim-specific table files & Fixed-substrate result files and frozen-output manifest \\
+Evidence-selection trajectory & Oracle headroom, support scorer, calibration, and controller sequence & Frozen dev predictions plus train-to-dev models; no dev labels at inference & Claim-specific result files; controller rows use 5,000-sample bootstrap & Calibration-analysis result files and run summaries \\
+Dense-aware controller & Dense-aware controller vs ColBERTv2 and learned HKVM & OOF train-side HKVM predictions; frozen dev predictions; seeds 13/29/43 & 5,000-sample paired bootstrap over frozen prediction files & Dense-aware controller result files and frozen-output manifest \\
+Transfer and calibration boundary & Cross-dataset transfer, feature-source narrowing, target calibration, and MuSiQue subset stability & Frozen train/dev prediction artifacts; no new extraction, retrieval, or answer generation; seeds 13/29/43 & 1,000-sample bootstrap for transfer/calibration rows; 30 MuSiQue random-subset runs per reported target size & Transfer/calibration provenance records \\
+Held-out slice audit & Robustness of controller gains on a deterministic 30\% audit slice & Frozen dense-aware controller dev predictions; no retraining or reranking & 5,000-sample matched-example bootstrap on held-out rows & Held-out audit result files and manifest \\
+Cost/efficiency audit & Runtime/resource boundary for the fixed-substrate artifact & Frozen controller predictions, fixed-substrate summaries, and release manifest; no LLM calls & Seven-repeat controller replay plus run-summary latency records & Cost/replay audit result files and manifest \\
+Source-level diagnostics & WHG-KV source specificity under ColBERTv2/BM25/Contriever & First-stage source fixed per block; structured source swapped; no new LLM calls & 5,000-sample baseline-vs-WHG bootstrap; non-WHG margins are point estimates & Source-level ablation result files and bootstrap CSVs \\
+Negative diagnostics & Naive-fusion and extraction-substrate boundaries & Diagnostic result files outside the frozen main matrix & Descriptive unless explicitly reported as paired bootstrap & Extraction-quality summaries and prompt/schema records \\
 \bottomrule
 \end{tabular}
 \end{table*}
+
+\begin{thebibliography}{1}
+
+\bibitem{hipporag2}
+B. J. Gutierrez, Y. Shu, W. Qi, S. Zhou, and Y. Su, ``From RAG to memory: Non-parametric continual learning for large language models,'' in \emph{Proceedings of the 42nd International Conference on Machine Learning}, PMLR, vol. 267, pp. 21497--21515, 2025.
+
+\end{thebibliography}
 
 \end{document}
