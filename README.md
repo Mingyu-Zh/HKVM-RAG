@@ -1,6 +1,7 @@
 # HKVM-RAG: Key-Value-Separated Hypergraph Evidence Organization for Multi-Hop RAG
 
 [![Paper](https://img.shields.io/badge/paper-under_review-orange)](https://github.com/Mingyu-Zh/HKVM-RAG)
+[![arXiv](https://img.shields.io/badge/arXiv-2606.07218-b31b1b.svg)](https://arxiv.org/abs/2606.07218)
 [![License](https://img.shields.io/badge/license-MIT-green)](LICENSE)
 [![Python](https://img.shields.io/badge/python-3.10+-blue)](https://www.python.org/)
 [![Artifact](https://img.shields.io/badge/artifact-available-brightgreen)](https://github.com/Mingyu-Zh/HKVM-RAG)
@@ -150,11 +151,14 @@ Full reruns: `--setting 2wiki`, `musique`, or `hotpotqa`.
 If you use this code or data in your research, please cite the accompanying paper:
 
 ```bibtex
-@misc{zhang2025hkvmrag,
+@misc{zhang2026hkvmrag,
   title        = {{HKVM-RAG}: Key-Value-Separated Hypergraph Evidence Organization for Multi-Hop {RAG}},
   author       = {Zhang, Mingyu and Sun, Fanghui and Xiao, Chunjing and Ma, Ying},
   year         = {2026},
-  howpublished = {\url{https://github.com/Mingyu-Zh/HKVM-RAG}},
+  eprint       = {2606.07218},
+  archivePrefix = {arXiv},
+  primaryClass = {cs.IR},
+  howpublished = {\url{https://arxiv.org/abs/2606.07218}},
 }
 ```
 
