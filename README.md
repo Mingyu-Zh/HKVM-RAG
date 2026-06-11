@@ -1,6 +1,6 @@
 # HKVM-RAG: Key-Value-Separated Hypergraph Evidence Organization for Multi-Hop RAG
 
-[![Paper](https://img.shields.io/badge/paper-under_review-orange)](https://github.com/Mingyu-Zh/HKVM-RAG)
+[![Paper](https://img.shields.io/badge/paper-under_review-orange)](https://arxiv.org/abs/2606.07218)
 [![arXiv](https://img.shields.io/badge/arXiv-2606.07218-b31b1b.svg)](https://arxiv.org/abs/2606.07218)
 [![License](https://img.shields.io/badge/license-MIT-green)](LICENSE)
 [![Python](https://img.shields.io/badge/python-3.10+-blue)](https://www.python.org/)
@@ -29,6 +29,16 @@ Multi-hop RAG retrieval must find relevant passages and organize them into evide
 
 ---
 
+## Method
+
+<p align="center">
+  <img src="Fig_2.png" alt="HKVM-RAG Architecture" width="100%">
+</p>
+
+**(a)** A frozen LLM evidence tuple cache stores passage-level relation triples with confidence fields. **(b)** HKVM assembles answer-path hyperedge keys, weights them with extractor confidence, diffuses query-seeded scores, and projects to passage-value scores. **(c)** The dense-aware controller aligns frozen ColBERTv2 and HKVM predictions by passage id and trains a logistic ranker to reorder the evidence context.
+
+---
+
 ## Key Results
 
 ### Fixed-Substrate: WHG-KV vs KG-PPR
@@ -38,6 +48,8 @@ Multi-hop RAG retrieval must find relevant passages and organize them into evide
 | 2WikiMultiHopQA | **+3.426** | [+2.877, +3.984] |
 | MuSiQue | **+3.592** | [+1.917, +5.155] |
 | HotpotQA | −0.689 | [−1.453, +0.071] |
+
+> Full fixed-substrate matrix (BM25, Contriever, ColBERTv2, KG-PPR, Weighted-KG-PPR, Co-occurrence-HG, Static-HG, WHG-KV) in Table 1 of the paper.
 
 ### Dense-Aware Controller
 
@@ -78,16 +90,6 @@ Multi-hop RAG retrieval must find relevant passages and organize them into evide
 </p>
 
 *Transfer and target-calibration boundary over frozen prediction artifacts. (a) Leave-one-target transfer. (b) Transfer feature ablation. (c) Target-domain calibration. (d) MuSiQue repeated random-subset audit.*
-
----
-
-## Method
-
-<p align="center">
-  <img src="Fig_2.png" alt="HKVM-RAG Architecture" width="100%">
-</p>
-
-**(a)** A frozen LLM evidence tuple cache stores passage-level relation triples with confidence fields. **(b)** HKVM assembles answer-path hyperedge keys, weights them with extractor confidence, diffuses query-seeded scores, and projects to passage-value scores. **(c)** The dense-aware controller aligns frozen ColBERTv2 and HKVM predictions by passage id and trains a logistic ranker to reorder the evidence context.
 
 ---
 
